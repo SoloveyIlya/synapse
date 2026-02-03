@@ -1,7 +1,43 @@
 console.log("Synapse frontend ready.");
 
+// Масштабирование canvas под реальную ширину экрана на мобильных
+function scaleCanvasForMobile() {
+  var canvas = document.querySelector('.canvas');
+  if (!canvas) return;
+  
+  var viewportWidth = window.innerWidth;
+  var designWidth = 375; // Ширина макета для мобильного
+  var mobileBreakpoint = 375; // Третье медиа
+  
+  if (viewportWidth <= mobileBreakpoint) {
+    // Экран уже 375px — масштабируем canvas
+    var scale = viewportWidth / designWidth;
+    canvas.style.transform = 'scale(' + scale + ')';
+    canvas.style.transformOrigin = 'top center';
+    canvas.style.width = designWidth + 'px';
+    // Корректируем высоту wrapper для правильного скролла
+    var canvasHeight = canvas.scrollHeight || canvas.offsetHeight;
+    document.body.style.minHeight = (canvasHeight * scale) + 'px';
+  } else {
+    // Сбрасываем масштабирование
+    canvas.style.transform = '';
+    canvas.style.transformOrigin = '';
+    document.body.style.minHeight = '';
+  }
+}
+
+// Запускаем при загрузке и ресайзе
+window.addEventListener('load', scaleCanvasForMobile);
+window.addEventListener('resize', scaleCanvasForMobile);
+// Также при изменении ориентации
+window.addEventListener('orientationchange', function() {
+  setTimeout(scaleCanvasForMobile, 100);
+});
+
 // Маска телефона: цифры автоматически раскладываются по шаблону _-___-___-__-__
 document.addEventListener("DOMContentLoaded", function () {
+  // Первичное масштабирование
+  scaleCanvasForMobile();
   var phoneInput = document.querySelector(".lead-phone-field input[type='tel']");
   if (!phoneInput) return;
 

@@ -47,6 +47,16 @@
   padding: 0;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
+html {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   background: #FFFFFF;
   display: flex;
@@ -56,14 +66,14 @@ body {
 .canvas {
   position: relative;
   width: 1120px;
-  height: 4572px;
+  height: 4574px;
 
   /* Координаты текстовых блоков (относительно canvas), при адаптивности меняй здесь */
   --c2-logo-left: 82.69px;
   --c2-logo-top: 19.58px;
   --c2-logo-width: 200px;
   --c2-logo-height: 43.72px;
-  --c2-logo-gap: 3.48px;
+  --c2-logo-gap: 5px;
 
   --c2-case-left: 83.09px;
   --c2-case-top: 144px;
@@ -277,7 +287,7 @@ body {
 }
 
 /* --- планшет: viewport ≤1120px --- */
-@media (max-width: 1120px) {
+@media (max-width: 768px) {
   .canvas .c2-text br {
     display: none;
   }
@@ -299,9 +309,10 @@ body {
 
   .canvas {
     width: 768px;
-    height: 4504px;
+    height: 4458px;
     background-image: url('../img/Infographic-2-768.webp');
     background-size: 100% auto;
+    background-position: top center;
 
     /* Координаты для 768 под Infographic-2-768.webp */
     --c2-logo-left: 31.7px;
@@ -492,16 +503,21 @@ body {
 }
 
 /* --- мобильный: viewport ≤768px --- */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
+  html,
+  body {
+    overscroll-behavior: auto;
+  }
   .canvas .c2-text--ref-list {
     font-size: 13px;
     line-height: 150%;
   }
   .canvas {
     width: 375px;
-    height: 6084px;
+    height: 6075px;
     background-image: url('../img/Infographic-2-375.webp');
     background-size: 100% auto;
+    background-position: top center;
 
     /* Логотип «Синапс» */
     --c2-logo-left: 24.2px;
@@ -632,7 +648,7 @@ body {
 
     /* Квиз (масштаб от 768) */
     --c2-quiz-title-left: 22px;
-    --c2-quiz-title-top: 2770px;
+    --c2-quiz-title-top: 2859px;
     --c2-quiz-title-width: 320px;
     --c2-quiz-title-height: 59px;
     --c2-quiz-question-left: 42px;
@@ -719,7 +735,7 @@ body {
   font-weight: var(--c2-fw-700);
   font-size: calc(var(--c2-fs-42) * var(--c2-font-scale));
   line-height: 44px;
-  letter-spacing: -2px;
+  letter-spacing: 0px;
   display: flex;
   align-items: center;
   gap: var(--c2-logo-gap);

@@ -47,6 +47,16 @@
     padding: 0;
 }
 
+html,
+body {
+    overscroll-behavior: none;
+}
+
+html {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 body {
     background: #FFFFFF;
     /* Цвет полей вокруг, если экран очень широкий */
@@ -57,14 +67,14 @@ body {
 .canvas {
     position: relative;
     width: 1120px;
-    height: 4636px;
+    height: 4635px;
 
     /* Координаты текстовых блоков (относительно canvas), при адаптивности меняй здесь */
-    --c1-logo-left: 17px;
-    --c1-logo-top: 29px;
+    --c1-logo-left: 35px;
+    --c1-logo-top: 18px;
     --c1-logo-width: 201.34px;
     --c1-logo-height: 44px;
-    --c1-logo-gap: 3.48px;
+    --c1-logo-gap: 5px;
 
     --c1-hero-left: 441.2px;
     --c1-hero-top: 66px;
@@ -267,7 +277,7 @@ body {
 }
 
 /* --- планшет: viewport ≤1120px --- */
-@media (max-width: 1120px) {
+@media (max-width: 768px) {
   .canvas .c1-text br {
     display: none;
   }
@@ -297,7 +307,7 @@ body {
 
   .canvas {
     width: 768px;
-    height: 4504px;
+    height: 4503px;
     background-image: url('../img/Infographic-768.webp');
     background-size: 100% auto;
 
@@ -489,14 +499,14 @@ body {
 
     /* Список литературы (текст): Old Soviet 14px, line-height 150%, ссылки — underline */
     --c1-ref-list-left: 25px;
-    --c1-ref-list-top: 3993px;
+    --c1-ref-list-top: 3977px;
     --c1-ref-list-width: 735px;
     --c1-ref-list-height: 482px;
   }
 }
 
 /* --- мобильный: viewport ≤768px --- */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   .canvas .c1-text--quiz-title {
     font-size: 40px;
     line-height: 80%;
@@ -535,8 +545,8 @@ body {
     background-size: 100% auto;
 
     /* Логотип «Синапс» */
-    --c1-logo-left: 15px;
-    --c1-logo-top: 34px;
+    --c1-logo-left: 11px;
+    --c1-logo-top: 22px;
     --c1-logo-width: 165px;
     --c1-logo-height: 36.07px;
 
@@ -757,7 +767,7 @@ body {
   font-weight: var(--c1-fw-700);
   font-size: var(--c1-fs-42);
   line-height: 44px;
-  letter-spacing: -2px;
+  letter-spacing: 0px;
   display: flex;
   align-items: center;
   gap: var(--c1-logo-gap);
