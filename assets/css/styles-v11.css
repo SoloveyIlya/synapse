@@ -1158,6 +1158,18 @@ a.btn-product:active {
     color: #FFFFFF;
 }
 
+.case-3 .case-date,
+.case-4 .case-date {
+    font-family: "Old Soviet", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    opacity: 0.5;
+}
+
 /* 4. Темная */
 .case-4 {
     top: var(--case-4-top);
@@ -2474,6 +2486,10 @@ a.btn-product:active {
         width: 238px !important;
     }
 
+    .case-date {
+        font-size: 18px !important;
+    }
+
     /* Фрейм заголовка: 596×77, left 34px — шрифт и линии ещё +15px выше */
     .case-item h4 {
         font-size: 24px;
@@ -3111,14 +3127,14 @@ a.btn-product:active {
         height: 208px !important;
     }
 
-    /* Ушко (tab): 213×65, left 135px, border-radius 10px, без скоса */
+    /* Ушко (tab): 213×65, left 135px, border-radius 10px, со скосом */
     .case-tab {
         width: 213px !important;
         height: 65px !important;
         left: 135px !important;
         top: 0 !important;
-        clip-path: none;
-        border-radius: 10px;
+        clip-path: polygon(30px 0, 100% 0, 100% 100%, 0% 100%);
+        border-radius: 10px 10px 0 0;
     }
 
     /* Тело папки: 348×339 (case-4: 174), top 34px, border-radius 10px 10px 0 0 */
@@ -3140,7 +3156,7 @@ a.btn-product:active {
     .case-date {
         font-family: "Old Soviet", sans-serif;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 18px !important;
         line-height: 21px;
         text-align: center;
         opacity: 0.5;
