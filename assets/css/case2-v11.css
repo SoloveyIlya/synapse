@@ -287,7 +287,7 @@ body {
 }
 
 /* --- планшет: viewport ≤1120px --- */
-@media (max-width: 768px) {
+@media (max-width: 1120px) {
   .canvas .c2-text br {
     display: none;
   }
@@ -502,8 +502,8 @@ body {
   }
 }
 
-/* --- мобильный: viewport ≤768px --- */
-@media (max-width: 375px) {
+/* --- мобильный: viewport ≤760px --- */
+@media (max-width: 760px) {
   html,
   body {
     overscroll-behavior: auto;

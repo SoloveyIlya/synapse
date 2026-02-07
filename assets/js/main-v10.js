@@ -1,5 +1,3 @@
-console.log("Synapse frontend ready.");
-
 // Масштабирование canvas под реальную ширину экрана на мобильных
 function scaleCanvasForMobile() {
   var canvas = document.querySelector('.canvas');

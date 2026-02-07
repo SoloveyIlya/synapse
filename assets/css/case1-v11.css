@@ -277,7 +277,7 @@ body {
 }
 
 /* --- планшет: viewport ≤1120px --- */
-@media (max-width: 768px) {
+@media (max-width: 1120px) {
   .canvas .c1-text br {
     display: none;
   }
@@ -505,8 +505,8 @@ body {
   }
 }
 
-/* --- мобильный: viewport ≤768px --- */
-@media (max-width: 375px) {
+/* --- мобильный: viewport ≤760px --- */
+@media (max-width: 760px) {
   .canvas .c1-text--quiz-title {
     font-size: 40px;
     line-height: 80%;
