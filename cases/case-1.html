@@ -69,17 +69,27 @@
 
       <div class="c1-text c1-text--quiz-opt3">Монотерапия адеметионином</div>
 
-      <div class="c1-text c1-text--answer-title">Правильный<br>ответ</div>
+      <!-- Кнопки ответов квиза -->
+      <button class="c1-quiz-btn c1-quiz-btn--1" data-answer="1"></button>
+      <button class="c1-quiz-btn c1-quiz-btn--2" data-answer="2"></button>
+      <button class="c1-quiz-btn c1-quiz-btn--3" data-answer="3"></button>
 
-      <div class="c1-text c1-text--answer-line">Гепатопротектор на основе глицирризиновой кислоты + УДХК (Фосфоглив Урсо) + прокинетик</div>
-
-      <div class="c1-text c1-text--answer-body">
-        <p>Ингибиторы протонной помпы показаны при лечении рефлюксной болезни, обусловленной наличием «кислого» рефлюкса. В данной клинической ситуации назначение ИПП патогенетически не обосновано.<sup>1</sup> Более того, при наличии конкрементов желчного пузыря, согласно клиническим рекомендациям МЗ «Желчнокаменная болезнь» — «Всем пациентам с наличием желчных камней пероральная терапия препаратами урсодезоксихолевой кислоты (УДХК) с целью растворения (литолиза) желчных камней не рекомендуется». В связи с чем, данная комбинация не может быть назначена в данной ситуации.<sup>2</sup></p>
-        <p>Монотерапия молекулой адеметионин патогенетически не обоснована, учитывая отсутствие влияния молекулы на реологические свойства желчи, а также низкий уровень убедительности рекомендаций – В, и уровень достоверности доказательств – 2.</p>
-        <p>В данном кейсе патогенетическое обоснование к применению имеет гепатопротектор на основе глицирризиновой кислоты + УДХК (Фосфоглив Урсо) + в сочетании с прокинетиком.</p>
-        <p>УДХК оказывает желчегонное действие, способствует растворению конкрементов в желчном пузыре, стимулирует образование и выделение желчи. ГК оказывает антиоксидантное и противовоспалительное действие.<sup>3,4</sup></p>
-        <p>Таким образом, в данном случае комбинация глицирризиновой кислоты + УДХК оказывает синергетическое действие на оба ключевых звена патогенеза заболеваний желчевыводящей системы — застой желчи и воспаление, а также последствия дуоденогастрального рефлюкса.<sup>5,6</sup></p>
+      <!-- Окно правильного ответа (под footer-bg) -->
+      <div class="c1-answer-window">
+        <div class="c1-aw-handle"></div>
+        <div class="c1-aw-title">Правильный<br>ответ</div>
+        <div class="c1-aw-line">Гепатопротектор на основе глицирризиновой кислоты + УДХК (Фосфоглив Урсо) + прокинетик</div>
+        <div class="c1-aw-label">Пояснение.</div>
+        <div class="c1-aw-body">
+          <p>Ингибиторы протонной помпы показаны при лечении рефлюксной болезни, обусловленной наличием «кислого» рефлюкса. В данной клинической ситуации назначение ИПП патогенетически не обосновано.<sup>1</sup> Более того, при наличии конкрементов желчного пузыря, согласно клиническим рекомендациям МЗ «Желчнокаменная болезнь» — «Всем пациентам с наличием желчных камней пероральная терапия препаратами урсодезоксихолевой кислоты (УДХК) с целью растворения (литолиза) желчных камней не рекомендуется». В связи с чем, данная комбинация не может быть назначена в данной ситуации.<sup>2</sup></p>
+          <p>Монотерапия молекулой адеметионин патогенетически не обоснована, учитывая отсутствие влияния молекулы на реологические свойства желчи, а также низкий уровень убедительности рекомендаций – В, и уровень достоверности доказательств – 2.</p>
+          <p>В данном кейсе патогенетическое обоснование к применению имеет гепатопротектор на основе глицирризиновой кислоты + УДХК (Фосфоглив Урсо) + в сочетании с прокинетиком.</p>
+          <p>УДХК оказывает желчегонное действие, способствует растворению конкрементов в желчном пузыре, стимулирует образование и выделение желчи. ГК оказывает антиоксидантное и противовоспалительное действие.<sup>3,4</sup></p>
+          <p>Таким образом, в данном случае комбинация глицирризиновой кислоты + УДХК оказывает синергетическое действие на оба ключевых звена патогенеза заболеваний желчевыводящей системы — застой желчи и воспаление, а также последствия дуоденогастрального рефлюкса.<sup>5,6</sup></p>
+        </div>
       </div>
+
+      <div class="c1-footer-bg"></div>
 
       <div class="c1-text c1-text--info-title">Информация для специалистов здравоохранения</div>
 
@@ -100,6 +110,149 @@
       <!-- <a href="#" class="btn-hotspot" style="left: 100px; top: 200px; width: 200px; height: 50px;"></a> -->
 
     </main>
+
+    <!-- Модалка неправильного ответа -->
+    <div class="c1-wrong-overlay" id="c1WrongOverlay">
+      <div class="c1-wrong-modal">
+        <div class="c1-wrong-title">Ответ<br>неверный</div>
+        <button class="c1-wrong-btn">Попробовать ещё раз</button>
+      </div>
+    </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn2 = document.querySelector('.c1-quiz-btn--2');
+      var answerWindow = document.querySelector('.c1-answer-window');
+      var handle = document.querySelector('.c1-aw-handle');
+      if (!answerWindow || !handle) return;
+
+      var startTop = 3322;   // начальная позиция (скрыто под футером)
+      var revealedTop = 2687; // позиция после раскрытия
+
+      // Нажатие на кнопку 2 — выезд вверх
+      if (btn2) {
+        btn2.addEventListener('click', function() {
+          answerWindow.classList.remove('dragging');
+          answerWindow.classList.add('revealed');
+          answerWindow.style.top = '';
+        });
+      }
+
+      // Перетаскивание за верх — только вниз, обратно на место
+      var isDragging = false;
+      var dragStartY = 0;
+      var dragStartTop = 0;
+
+      handle.addEventListener('mousedown', function(e) {
+        if (!answerWindow.classList.contains('revealed')) return;
+        isDragging = true;
+        dragStartY = e.clientY;
+        // Текущий top из computed style (в px от canvas)
+        dragStartTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        answerWindow.classList.add('dragging');
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        var deltaY = e.clientY - dragStartY;
+        // Только вниз (deltaY > 0), не выше revealed позиции
+        var newTop = Math.max(revealedTop, dragStartTop + deltaY);
+        // Не ниже начальной позиции
+        newTop = Math.min(newTop, startTop);
+        answerWindow.style.top = newTop + 'px';
+      });
+
+      document.addEventListener('mouseup', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        answerWindow.classList.remove('dragging');
+
+        var currentTop = parseInt(answerWindow.style.top) || revealedTop;
+        var threshold = revealedTop + (startTop - revealedTop) * 0.4;
+
+        if (currentTop > threshold) {
+          // Отпустили ниже 40% пути — возвращаем на исходную (скрываем)
+          answerWindow.classList.remove('revealed');
+          answerWindow.style.top = '';
+        } else {
+          // Отпустили выше 40% — возвращаем в revealed
+          answerWindow.style.top = '';
+        }
+      });
+
+      // Поддержка тач-событий
+      handle.addEventListener('touchstart', function(e) {
+        if (!answerWindow.classList.contains('revealed')) return;
+        isDragging = true;
+        dragStartY = e.touches[0].clientY;
+        dragStartTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        answerWindow.classList.add('dragging');
+        e.preventDefault();
+      }, { passive: false });
+
+      document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        var deltaY = e.touches[0].clientY - dragStartY;
+        var newTop = Math.max(revealedTop, dragStartTop + deltaY);
+        newTop = Math.min(newTop, startTop);
+        answerWindow.style.top = newTop + 'px';
+      }, { passive: false });
+
+      document.addEventListener('touchend', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        answerWindow.classList.remove('dragging');
+
+        var currentTop = parseInt(answerWindow.style.top) || revealedTop;
+        var threshold = revealedTop + (startTop - revealedTop) * 0.4;
+
+        if (currentTop > threshold) {
+          answerWindow.classList.remove('revealed');
+          answerWindow.style.top = '';
+        } else {
+          answerWindow.style.top = '';
+        }
+      });
+      // --- Модалка неправильного ответа ---
+      var btn1 = document.querySelector('.c1-quiz-btn--1');
+      var btn3 = document.querySelector('.c1-quiz-btn--3');
+      var overlay = document.getElementById('c1WrongOverlay');
+      var wrongBtn = document.querySelector('.c1-wrong-btn');
+
+      // Блокировка скролла через перехват событий (не ломает layout)
+      function preventScroll(e) { e.preventDefault(); }
+      var scrollEvents = ['wheel', 'touchmove'];
+
+      function showWrong() {
+        if (overlay) overlay.classList.add('active');
+        document.body.classList.add('modal-open');
+        scrollEvents.forEach(function(evt) {
+          window.addEventListener(evt, preventScroll, { passive: false });
+        });
+      }
+      function hideWrong() {
+        if (overlay) overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        scrollEvents.forEach(function(evt) {
+          window.removeEventListener(evt, preventScroll);
+        });
+      }
+
+      if (btn1) btn1.addEventListener('click', showWrong);
+      if (btn3) btn3.addEventListener('click', showWrong);
+
+      // Закрытие по кнопке «Попробовать ещё раз»
+      if (wrongBtn) wrongBtn.addEventListener('click', hideWrong);
+
+      // Закрытие по клику на область за модалкой
+      if (overlay) {
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) hideWrong();
+        });
+      }
+    });
+  </script>
   </body>
 
   </html>

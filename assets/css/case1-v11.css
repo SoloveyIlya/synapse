@@ -67,7 +67,7 @@ body {
 .canvas {
     position: relative;
     width: 1120px;
-    height: 4635px;
+    height: 4317px;
 
     /* Координаты текстовых блоков (относительно canvas), при адаптивности меняй здесь */
     --c1-logo-left: 35px;
@@ -223,19 +223,19 @@ body {
     --c1-answer-body-height: 336px;
 
     --c1-info-title-left: 60px;
-    --c1-info-title-top: 3918px;
+    --c1-info-title-top: 3455px;
     --c1-info-title-width: 1000px;
     --c1-info-title-height: 236px;
 
-    --c1-ref-heading-left: 118px;
-    --c1-ref-heading-top: 4186px;
+    --c1-ref-heading-left: 143px;
+    --c1-ref-heading-top: 3834px;
     --c1-ref-heading-width: 180px;
     --c1-ref-heading-height: 24px;
 
     --c1-ref-list-left: 60px;
-    --c1-ref-list-top: 4247px;
+    --c1-ref-list-top: 3893px;
     --c1-ref-list-width: 1000px;
-    --c1-ref-list-height: 297px;
+    --c1-ref-list-height: 190px;
 
     /* Шрифты (для адаптива можно переопределять в медиа) */
     --c1-font-old-soviet: "Old Soviet", serif;
@@ -248,7 +248,7 @@ body {
     --c1-fw-700: 700;
     --c1-fs-9: 9px;
     --c1-fs-13: 13px;
-    --c1-fs-14: 14px;
+    --c1-fs-14: 12px;
     --c1-fs-16: 16px;
     --c1-fs-21: 21px;
     --c1-fs-24: 24px;
@@ -1205,6 +1205,7 @@ body {
   font-size: var(--c1-fs-14);
   line-height: 130%;
   letter-spacing: 0;
+  z-index: 3; /* ниже блока ответа */
   opacity: 1;
   color: #333333;
   display: flex;
@@ -1230,65 +1231,218 @@ body {
 }
 
 /* Правильный ответ: заголовок «Правильный ответ» (переносы — <br>) */
-.c1-text--answer-title {
-  left: var(--c1-answer-title-left);
-  top: var(--c1-answer-title-top);
-  width: var(--c1-answer-title-width);
-  height: var(--c1-answer-title-height);
-  font-family: var(--c1-font-rubik);
-  font-weight: var(--c1-fw-400);
-  font-size: var(--c1-fs-65);
+/* --- КНОПКИ ОТВЕТОВ КВИЗА --- */
+.c1-quiz-btn {
+  position: absolute;
+  width: 922px;
+  height: 95px;
+  left: 92px;
+  background: rgba(255, 0, 0, 0.25); /* полупрозрачный красный для отладки */
+  border: none;
+  cursor: pointer;
+  z-index: 3; /* ниже блока ответа (z-index: 4) */
+  border-radius: 0;
+  padding: 0;
+}
+.c1-quiz-btn--1 { top: 2721px; }
+.c1-quiz-btn--2 { top: 2837px; }
+.c1-quiz-btn--3 { top: 2953px; }
+
+/* --- ОКНО ПРАВИЛЬНОГО ОТВЕТА (под footer-bg) --- */
+.c1-answer-window {
+  position: absolute;
+  width: 1000px;
+  height: 738px;
+  top: 3322px;
+  left: 60px;
+  border-radius: 10px;
+  background: url('../img/answer-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+  z-index: 4; /* под footer-bg (z-index: 5) */
+  overflow: hidden;
+  transition: top 0.8s ease, box-shadow 0.8s ease;
+}
+.c1-answer-window.revealed {
+  top: 2687px;
+  box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Зона захвата для перетаскивания (верх окна ответа) — скрыта пока не revealed */
+.c1-aw-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  cursor: grab;
+  z-index: 10;
+  display: none;
+}
+.c1-answer-window.revealed .c1-aw-handle {
+  display: block;
+}
+.c1-aw-handle:active {
+  cursor: grabbing;
+}
+
+/* Убираем transition при перетаскивании */
+.c1-answer-window.dragging {
+  transition: none;
+}
+
+/* --- МОДАЛКА НЕПРАВИЛЬНОГО ОТВЕТА --- */
+.c1-wrong-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.c1-wrong-overlay.active {
+  display: flex;
+}
+
+.c1-wrong-modal {
+  position: relative;
+  width: 526px;
+  height: 324px;
+  border-radius: 10px;
+  background: url('../img/incorrect-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+  overflow: visible;
+}
+
+.c1-wrong-title {
+  position: absolute;
+  width: 663px;
+  height: 88px;
+  top: 62px;
+  left: -69px;
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 400;
+  font-size: 55px;
   line-height: 80%;
   letter-spacing: 0;
-  opacity: 1;
+  text-align: center;
   color: #333333;
 }
 
-/* Правильный ответ: строка ответа */
-.c1-text--answer-line {
-  left: var(--c1-answer-line-left);
-  top: var(--c1-answer-line-top);
-  width: var(--c1-answer-line-width);
-  height: var(--c1-answer-line-height);
-  font-family: var(--c1-font-old-soviet);
-  font-weight: var(--c1-fw-400);
-  font-size: var(--c1-fs-14);
-  line-height: 130%;
+.c1-wrong-btn {
+  position: absolute;
+  width: 284px;
+  height: 52px;
+  top: 206px;
+  left: 121px;
+  background: rgba(255, 0, 0, 0.25); /* полупрозрачный красный для отладки */
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 140%;
   letter-spacing: 0;
-  opacity: 1;
+  text-align: center;
   color: #333333;
   display: flex;
   align-items: center;
-  transform: rotate(3.58deg); /* макет -3.58 → противоположный знак */
+  justify-content: center;
 }
 
-/* Правильный ответ: пояснение (переносы — <br>, ссылки в степени — <sup>). Обычный текст в строчки, не в столбики. */
-.c1-text--answer-body {
-  left: var(--c1-answer-body-left);
-  top: var(--c1-answer-body-top);
-  width: var(--c1-answer-body-width);
-  height: var(--c1-answer-body-height);
-  font-family: var(--c1-font-old-soviet);
-  font-weight: var(--c1-fw-400);
-  font-size: var(--c1-fs-13);
+/* Блокировка скролла при открытой модалке */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+.c1-aw-title {
+  position: absolute;
+  width: 502px;
+  height: 104px;
+  top: 57px;
+  left: 44px;
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 80%;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.c1-aw-line {
+  position: absolute;
+  width: 303.74px;
+  height: 46px;
+  top: 118px;
+  left: 596px;
+  transform: rotate(3.58deg);
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.c1-aw-label {
+  position: absolute;
+  width: 960px;
+  height: 40px;
+  top: 255px;
+  left: 56px;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.c1-aw-body {
+  position: absolute;
+  width: 926px;
+  top: 313px;
+  left: 56px;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 13px;
   line-height: 140%;
   letter-spacing: -0.5px;
-  opacity: 1;
   color: #333333;
-  display: block;
-  columns: 1;
-  column-count: 1;
 }
-.c1-text--answer-body p {
-  margin: 0 0 22.81px;
+.c1-aw-body p {
+  margin: 0 0 16px;
 }
-.c1-text--answer-body p:last-child {
+.c1-aw-body p:last-child {
   margin-bottom: 0;
 }
-.c1-text--answer-body sup {
+.c1-aw-body sup {
   font-size: 0.75em;
   vertical-align: super;
   line-height: 0;
+}
+
+/* Фоновый блок футера: над фоном canvas, но под текстом */
+.c1-footer-bg {
+  position: absolute;
+  width: 1374px;
+  height: 1022px;
+  top: 3276px;
+  left: -9px;
+  transform: rotate(0.78deg);
+  opacity: 1;
+  z-index: 5;
+  pointer-events: none;
+  background: url('../img/footer-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
 }
 
 /* «Информация для специалистов здравоохранения» */
@@ -1309,6 +1463,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20;
 }
 
 /* «Список литературы» */
@@ -1328,6 +1483,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20;
 }
 
 /* Список литературы: нумерованный список, при переносе строка на уровне текста (висячий отступ) */
@@ -1343,6 +1499,7 @@ body {
   letter-spacing: 0;
   opacity: 1;
   color: #333333;
+  z-index: 20;
 }
 .c1-text--ref-list ol {
   margin: 0;
