@@ -309,7 +309,7 @@ body {
 
   .canvas {
     width: 768px;
-    height: 4458px;
+    height: 4210px;
     background-image: url('../img/Infographic-2-768.webp');
     background-size: 100% auto;
     background-position: top center;
@@ -466,19 +466,19 @@ body {
     --c2-answer-body-height: 422px;
 
     --c2-info-title-left: -116px;
-    --c2-info-title-top: 3776px;
+    --c2-info-title-top: 3490px !important;
     --c2-info-title-width: 1000px;
     --c2-info-title-height: 172px;
     --c2-fs-info-title: 100px;
 
-    --c2-ref-heading-left: 21.5px;
-    --c2-ref-heading-top: 3987px;
+    --c2-ref-heading-left: 91.5px !important;
+    --c2-ref-heading-top: 3810px !important;
     --c2-ref-heading-width: 279.4px;
     --c2-ref-heading-height: 23.6px;
 
     --c2-ref-list-left: 41.1px;
-    --c2-ref-list-top: 4031px;
-    --c2-ref-list-width: 730px;
+    --c2-ref-list-top: 3860px !important;
+    --c2-ref-list-width: 712px !important;
     --c2-ref-list-height: 381px;
 
     /* Шрифты для 768: без сжатия (scale 1), только явно заданные блоки; остальные как на десктопе (13 остаётся 13) */
@@ -500,7 +500,7 @@ body {
     --c2-fs-quiz-title: 55px;
     --c2-fs-quiz-prompt: 18px;
 
-    --c2-fs-14: 12px !important;
+    --c2-fs-14: 13px !important;
   }
 
   /* --- Кнопки квиза (планшет) --- */
@@ -509,13 +509,13 @@ body {
     left: 53px !important;
   }
   .c2-quiz-btn--1 {
-    top: 2464px !important;
+    top: 2417px !important;
   }
   .c2-quiz-btn--2 {
-    top: 2577px !important;
+    top: 2532px !important;
   }
   .c2-quiz-btn--3 {
-    top: 2693px !important;
+    top: 2648px !important;
   }
 
   /* --- Список литературы line-height (планшет) --- */
@@ -531,7 +531,7 @@ body {
     background-image: url('../img/answer-bg-768.webp') !important;
   }
   .c2-answer-window.revealed {
-    top: 2388px !important;
+    top: 2374px !important;
   }
 
   /* --- Содержимое окна ответа (планшет) --- */
@@ -568,12 +568,12 @@ body {
     overscroll-behavior: auto;
   }
   .canvas .c2-text--ref-list {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 150%;
   }
   .canvas {
     width: 375px;
-    height: 6075px;
+    height: 4960px;
     background-image: url('../img/Infographic-2-375.webp');
     background-size: 100% auto;
     background-position: top center;
@@ -754,23 +754,23 @@ body {
 
     /* Информация для специалистов здравоохранения */
     --c2-info-title-left: 11px;
-    --c2-info-title-top: 5127px;
+    --c2-info-title-top: 3863px !important;
     --c2-info-title-width: 349px;
     --c2-info-title-height: 82px;
     --c2-fs-info-title: 47.81px;
-    --c2-ref-heading-left: 3px;
-    --c2-ref-heading-top: 5245px;
+    --c2-ref-heading-left: -3.5px !important;
+    --c2-ref-heading-top: 4027px !important;
     --c2-ref-heading-width: 225px;
     --c2-ref-heading-height: 32px;
     --c2-ref-list-left: 20px;
-    --c2-ref-list-top: 5308px;
-    --c2-ref-list-width: 341px;
+    --c2-ref-list-top: 4101px !important;
+    --c2-ref-list-width: 308px !important;
     --c2-ref-list-height: 744px;
   }
 
   .c2-footer-bg {
     width: 382px !important;
-    height: 1561px !important;
+    height: 1214px !important;
     top: 3749px !important;
     background-image: url('../img/footer-bg-375.webp') !important;
   }
@@ -792,13 +792,14 @@ body {
     left: 33px !important;
   }
   .c2-quiz-btn--1 {
-    top: 3401px !important;
+    top: 3412px !important;
+    height: 105px !important;
   }
   .c2-quiz-btn--2 {
-    top: 3505px !important;
+    top: 3529px !important;
   }
   .c2-quiz-btn--3 {
-    top: 3610px !important;
+    top: 3635px !important;
   }
 
   /* --- Содержимое окна ответа (мобильный) --- */
@@ -1448,7 +1449,7 @@ body {
   width: 915px;
   height: 95px;
   left: 95px;
-  background: rgba(255, 0, 0, 0.25); /* полупрозрачный красный для отладки */
+  background: transparent;
   border: none;
   cursor: pointer;
   z-index: 3;
@@ -1549,7 +1550,7 @@ body {
   height: 52px;
   top: 206px;
   left: 121px;
-  background: rgba(255, 0, 0, 0.25);
+  background: transparent;
   border: none;
   cursor: pointer;
   border-radius: 0;
