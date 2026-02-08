@@ -307,7 +307,7 @@ body {
 
   .canvas {
     width: 768px;
-    height: 4503px;
+    height: 4303px;
     background-image: url('../img/Infographic-768.webp');
     background-size: 100% auto;
 
@@ -487,21 +487,80 @@ body {
 
     /* Информация для специалистов здравоохранения: Attentica 4F 100px, line-height 86%, uppercase */
     --c1-info-title-left: -116px;
-    --c1-info-title-top: 3719px;
+    --c1-info-title-top: 3529px !important;
     --c1-info-title-width: 1000px;
     --c1-info-title-height: 172px;
 
     /* Список литературы: Old Soviet 16px, line-height 150%, text-align center */
-    --c1-ref-heading-left: 73px;
-    --c1-ref-heading-top: 3921px;
+    --c1-ref-heading-left: 139px !important;
+    --c1-ref-heading-top: 3832px !important;
     --c1-ref-heading-width: 180px;
     --c1-ref-heading-height: 24px;
 
     /* Список литературы (текст): Old Soviet 14px, line-height 150%, ссылки — underline */
     --c1-ref-list-left: 25px;
-    --c1-ref-list-top: 3977px;
+    --c1-ref-list-top: 3883px !important;
     --c1-ref-list-width: 735px;
     --c1-ref-list-height: 482px;
+
+    --c1-fs-14: 12px !important;
+  }
+
+  /* --- Кнопки квиза (планшет) --- */
+  .c1-quiz-btn {
+    width: 660px !important;
+    left: 53px !important;
+  }
+  .c1-quiz-btn--1 {
+    top: 2464px !important;
+  }
+  .c1-quiz-btn--2 {
+    top: 2577px !important;
+  }
+  .c1-quiz-btn--3 {
+    top: 2693px !important;
+  }
+
+  /* --- Список литературы line-height (планшет) --- */
+  .c1-text--ref-list {
+    line-height: 120% !important;
+  }
+
+  /* --- Окно ответа (планшет) --- */
+  .c1-answer-window {
+    width: 730px !important;
+    left: 20px !important;
+    height: 1021px !important;
+    background-image: url('../img/answer-bg-768.webp') !important;
+  }
+  .c1-answer-window.revealed {
+    top: 2388px !important;
+  }
+
+  /* --- Содержимое окна ответа (планшет) --- */
+  .c1-aw-title {
+    width: 502px !important;
+    height: 104px !important;
+    top: 70px !important;
+    left: 25px !important;
+    font-size: 49px !important;
+  }
+  .c1-aw-line {
+    width: 256.7px !important;
+    height: 46px !important;
+    top: 106px !important;
+    left: 439px !important;
+    font-size: 13px !important;
+  }
+  .c1-aw-body {
+    width: 653px !important;
+    top: 406px !important;
+    left: 56px !important;
+    font-size: 15px !important;
+  }
+  .c1-aw-label {
+    font-size: 25px !important;
+    top: 353px !important;
   }
 }
 

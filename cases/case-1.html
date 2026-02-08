@@ -75,7 +75,7 @@
       <button class="c1-quiz-btn c1-quiz-btn--3" data-answer="3"></button>
 
       <!-- Окно правильного ответа (под footer-bg) -->
-      <div class="c1-answer-window">
+      <div class="c1-answer-window" style="z-index:4">
         <div class="c1-aw-handle"></div>
         <div class="c1-aw-title">Правильный<br>ответ</div>
         <div class="c1-aw-line">Гепатопротектор на основе глицирризиновой кислоты + УДХК (Фосфоглив Урсо) + прокинетик</div>
@@ -89,13 +89,13 @@
         </div>
       </div>
 
-      <div class="c1-footer-bg"></div>
+      <div class="c1-footer-bg" style="z-index:5"></div>
 
-      <div class="c1-text c1-text--info-title">Информация для специалистов здравоохранения</div>
+      <div class="c1-text c1-text--info-title" style="z-index:20">Информация для специалистов здравоохранения</div>
 
-      <div class="c1-text c1-text--ref-heading">Список литературы</div>
+      <div class="c1-text c1-text--ref-heading" style="z-index:20">Список литературы</div>
 
-      <div class="c1-text c1-text--ref-list">
+      <div class="c1-text c1-text--ref-list" style="z-index:20">
         <ol>
           <li>Ивашкин В.Т., Трухманов А.С., Маев И.В., Драпкина О.М., Ливзан М.А. и соавт. Диагностика и лечение гастроэзофагеальной рефлюксной болезни (Рекомендации Российской гастроэнтерологической ассоциации, Российского научного медицинского общества терапевтов, Российского общества профилактики неинфекционных заболеваний, Научного сообщества по изучению микробиома человека). Российский журнал гастроэнтерологии, гепатологии, колопроктологии. 2024;34(5):111–135. <a href="https://doi.org/10.22416/1382-4376-2024-34-5-111-135" class="c1-ref-link" target="_blank" rel="noopener">https://doi.org/10.22416/1382-4376-2024-34-5-111-135</a></li>
           <li>Клинические рекомендации. Желчнокаменная болезнь. 2024. Ссылка активна на 24.10.2025. <a href="https://cr.minzdrav.gov.ru/preview-cr/580_3" class="c1-ref-link" target="_blank" rel="noopener">https://cr.minzdrav.gov.ru/preview-cr/580_3</a></li>
@@ -126,12 +126,24 @@
       var handle = document.querySelector('.c1-aw-handle');
       if (!answerWindow || !handle) return;
 
-      var startTop = 3322;   // начальная позиция (скрыто под футером)
-      var revealedTop = 2687; // позиция после раскрытия
+      // Позиции по viewport: десктоп / планшет
+      function getPositions() {
+        if (window.innerWidth <= 1120) {
+          return { start: 3322, revealed: 2388 };
+        }
+        return { start: 3322, revealed: 2687 };
+      }
+
+      var pos = getPositions();
+      var startTop = pos.start;
+      var revealedTop = pos.revealed;
 
       // Нажатие на кнопку 2 — выезд вверх
       if (btn2) {
         btn2.addEventListener('click', function() {
+          pos = getPositions();
+          startTop = pos.start;
+          revealedTop = pos.revealed;
           answerWindow.classList.remove('dragging');
           answerWindow.classList.add('revealed');
           answerWindow.style.top = '';
@@ -147,20 +159,25 @@
         if (!answerWindow.classList.contains('revealed')) return;
         isDragging = true;
         dragStartY = e.clientY;
-        // Текущий top из computed style (в px от canvas)
         dragStartTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
         answerWindow.classList.add('dragging');
         e.preventDefault();
       });
 
+      // Хелпер: ставим top с !important чтобы перебить CSS !important в медиа
+      function setTop(val) {
+        answerWindow.style.setProperty('top', val + 'px', 'important');
+      }
+      function clearTop() {
+        answerWindow.style.removeProperty('top');
+      }
+
       document.addEventListener('mousemove', function(e) {
         if (!isDragging) return;
         var deltaY = e.clientY - dragStartY;
-        // Только вниз (deltaY > 0), не выше revealed позиции
         var newTop = Math.max(revealedTop, dragStartTop + deltaY);
-        // Не ниже начальной позиции
         newTop = Math.min(newTop, startTop);
-        answerWindow.style.top = newTop + 'px';
+        setTop(newTop);
       });
 
       document.addEventListener('mouseup', function() {
@@ -168,16 +185,15 @@
         isDragging = false;
         answerWindow.classList.remove('dragging');
 
-        var currentTop = parseInt(answerWindow.style.top) || revealedTop;
-        var threshold = revealedTop + (startTop - revealedTop) * 0.4;
+        var currentTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        var thresholdPct = (window.innerWidth <= 1120) ? 0.10 : 0.4;
+        var threshold = revealedTop + (startTop - revealedTop) * thresholdPct;
 
         if (currentTop > threshold) {
-          // Отпустили ниже 40% пути — возвращаем на исходную (скрываем)
           answerWindow.classList.remove('revealed');
-          answerWindow.style.top = '';
+          clearTop();
         } else {
-          // Отпустили выше 40% — возвращаем в revealed
-          answerWindow.style.top = '';
+          clearTop();
         }
       });
 
@@ -196,7 +212,7 @@
         var deltaY = e.touches[0].clientY - dragStartY;
         var newTop = Math.max(revealedTop, dragStartTop + deltaY);
         newTop = Math.min(newTop, startTop);
-        answerWindow.style.top = newTop + 'px';
+        setTop(newTop);
       }, { passive: false });
 
       document.addEventListener('touchend', function() {
@@ -204,14 +220,15 @@
         isDragging = false;
         answerWindow.classList.remove('dragging');
 
-        var currentTop = parseInt(answerWindow.style.top) || revealedTop;
-        var threshold = revealedTop + (startTop - revealedTop) * 0.4;
+        var currentTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        var thresholdPct = (window.innerWidth <= 1120) ? 0.10 : 0.4;
+        var threshold = revealedTop + (startTop - revealedTop) * thresholdPct;
 
         if (currentTop > threshold) {
           answerWindow.classList.remove('revealed');
-          answerWindow.style.top = '';
+          clearTop();
         } else {
-          answerWindow.style.top = '';
+          clearTop();
         }
       });
       // --- Модалка неправильного ответа ---
