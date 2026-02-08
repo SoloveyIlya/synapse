@@ -68,24 +68,40 @@
 
     <div class="c2-text c2-text--quiz-opt3">Эссенцеальные <br>фосфолипиды <br>+ <br>прокинетик</div>
 
-    <div class="c2-text c2-text--answer-title">Правильный<br>ответ</div>
+    <!-- Кнопки ответов квиза -->
+    <button class="c2-quiz-btn c2-quiz-btn--1" data-answer="1"></button>
+    <button class="c2-quiz-btn c2-quiz-btn--2" data-answer="2"></button>
+    <button class="c2-quiz-btn c2-quiz-btn--3" data-answer="3"></button>
 
-    <div class="c2-text c2-text--answer-question">Почему в данном случае применение Комбинации УДХК + <br>глицирризиновой кислоты УДХК (например, Фосфоглив <br>УРСО) + прокинетика может быть наиболее рационально <br>для «желчного человека»?</div>
-
-    <div class="c2-text c2-text--answer-line">Комбинация УДХК<br>+ глицирризиновая кислота<br>(Фосфоглив УРСО) + прокинетик</div>
-
-    <div class="c2-text c2-text--answer-body">
-      <p>После бариатрических операций формирование сладжа и камней — это не вопрос «если», а вопрос «когда». Патогенез связан с быстрой потерей массы тела, изменением метаболизма холестерина и моторики ЖКТ. Наша задача — не ждать катастрофы, а действовать на опережение.</p>
-      <p>Согласно клиническим рекомендациям «Ожирение» 2024 г.: всем пациентам на этапе снижения массы тела после бариатрической операции рекомендуется применение урсодезоксихолевой кислоты перорально с целью профилактики образования камней в желчном пузыре 500–1000 мг в течение 6 месяцев<sup>2,4,6</sup>. Учитывая развитие диареи на фоне приема «стандартной» дозы УДХК (1250 мг в сутки) у нашей пациентки в анамнезе, а также ссылаясь на клинические рекомендации<sup>4</sup> возможно применение меньшей дозы УДХК. Более того, УДХК, делая желчь менее «токсичной», снижает ее повреждающее действие на слизистую желудка при дуоденогастральном рефлюксе. Глицирризиновая кислота (ГК) может применяться пациентами с НАЖБП/МАЖБП<sup>3</sup>. Основным фармакологическим действием ГК является противовоспалительное, антиоксидантное, антифибротическое, а также способность угнетать некроз и апоптоз гепатоцитов<sup>7</sup>.</p>
-      <p>Для коррекции моторики, устранения дуоденогастрального рефлюкса оправдано добавление прокинетического препарата.</p>
-      <p>Таким образом, это комплексный подход для подобной категории пациентов, позволяющий сохранить достижения бариатрической операции без «желчных» осложнений.</p>
+    <!-- Окно правильного ответа (под footer-bg) -->
+    <div class="c2-answer-window" style="z-index:4">
+      <div class="c2-aw-handle"></div>
+      <div class="c2-aw-title">Правильный<br>ответ</div>
+      <div class="c2-aw-line">Комбинация УДХК<br>+ глицирризиновая кислота<br>(Фосфоглив УРСО) + прокинетик</div>
+      <div class="c2-aw-label">Пояснение.</div>
+      <div class="c2-aw-body">
+        <p>После бариатрических операций формирование сладжа и камней — это не вопрос «если», а вопрос «когда». Патогенез связан с быстрой потерей массы тела, изменением метаболизма холестерина и моторики ЖКТ. Наша задача — не ждать катастрофы, а действовать на опережение.</p>
+        <p>Согласно клиническим рекомендациям «Ожирение» 2024 г.: всем пациентам на этапе снижения массы тела после бариатрической операции рекомендуется применение урсодезоксихолевой кислоты перорально с целью профилактики образования камней в желчном пузыре 500–1000 мг в течение 6 месяцев.<sup>2,4,6</sup> Учитывая развитие диареи на фоне приема «стандартной» дозы УДХК (1250 мг в сутки) у нашей пациентки в анамнезе, а также ссылаясь на клинические рекомендации<sup>4</sup> возможно применение меньшей дозы УДХК. Более того, УДХК, делая желчь менее «токсичной», снижает ее повреждающее действие на слизистую желудка при дуоденогастральном рефлюксе. Глицирризиновая кислота (ГК) может применяться пациентами с НАЖБП/МАЖБП.<sup>3</sup> Основным фармакологическим действием ГК является противовоспалительное, антиоксидантное, антифибротическое, а также способность угнетать некроз и апоптоз гепатоцитов.<sup>7</sup></p>
+        <p>Для коррекции моторики, устранения дуоденогастрального рефлюкса оправдано добавление прокинетического препарата.</p>
+        <p>Таким образом, это комплексный подход для подобной категории пациентов, позволяющий сохранить достижения бариатрической операции без «желчных» осложнений.</p>
+      </div>
     </div>
 
-    <div class="c2-text c2-text--info-title">Информация для специалистов здравоохранения</div>
+    <div class="c2-footer-bg" style="z-index:5"></div>
 
-    <div class="c2-text c2-text--ref-heading">Список литературы</div>
+    <!-- Модалка неправильного ответа -->
+    <div class="c2-wrong-overlay" id="c2WrongOverlay">
+      <div class="c2-wrong-modal">
+        <div class="c2-wrong-title">Ответ неверный</div>
+        <button class="c2-wrong-btn">Попробовать еще раз</button>
+      </div>
+    </div>
 
-    <div class="c2-text c2-text--ref-list">
+    <div class="c2-text c2-text--info-title" style="z-index:20">Информация для специалистов здравоохранения</div>
+
+    <div class="c2-text c2-text--ref-heading" style="z-index:20">Список литературы</div>
+
+    <div class="c2-text c2-text--ref-list" style="z-index:20">
       <ol>
         <li>Инструкция по медицинскому применению лекарственного препарата Фосфоглив® УРСО</li>
         <li>Клинические рекомендации МЗ «Желчнокаменная болезнь», год утверждения 2024</li>
@@ -100,6 +116,162 @@
     <!-- Кнопки-хотспоты: <a href="#" class="hotspot" style="left: Xpx; top: Ypx; width: Wpx; height: Hpx;"></a> -->
 
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn2 = document.querySelector('.c2-quiz-btn--2');
+      var answerWindow = document.querySelector('.c2-answer-window');
+      var handle = document.querySelector('.c2-aw-handle');
+      if (!answerWindow || !handle) return;
+
+      // Позиции по viewport: десктоп / планшет / мобильный
+      function getPositions() {
+        if (window.innerWidth <= 760) {
+          return { start: 3784, revealed: 3330 };
+        }
+        if (window.innerWidth <= 1120) {
+          return { start: 3322, revealed: 2388 };
+        }
+        return { start: 3302, revealed: 2610 };
+      }
+
+      var pos = getPositions();
+      var startTop = pos.start;
+      var revealedTop = pos.revealed;
+
+      // Нажатие на кнопку 2 — выезд вверх
+      if (btn2) {
+        btn2.addEventListener('click', function() {
+          pos = getPositions();
+          startTop = pos.start;
+          revealedTop = pos.revealed;
+          answerWindow.classList.remove('dragging');
+          answerWindow.classList.add('revealed');
+          answerWindow.style.top = '';
+        });
+      }
+
+      // Перетаскивание за верх — только вниз, обратно на место
+      var isDragging = false;
+      var dragStartY = 0;
+      var dragStartTop = 0;
+
+      handle.addEventListener('mousedown', function(e) {
+        if (!answerWindow.classList.contains('revealed')) return;
+        isDragging = true;
+        dragStartY = e.clientY;
+        dragStartTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        answerWindow.classList.add('dragging');
+        e.preventDefault();
+      });
+
+      // Хелпер: ставим top с !important чтобы перебить CSS !important в медиа
+      function setTop(val) {
+        answerWindow.style.setProperty('top', val + 'px', 'important');
+      }
+      function clearTop() {
+        answerWindow.style.removeProperty('top');
+      }
+
+      document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        var deltaY = e.clientY - dragStartY;
+        var newTop = Math.max(revealedTop, dragStartTop + deltaY);
+        newTop = Math.min(newTop, startTop);
+        setTop(newTop);
+      });
+
+      document.addEventListener('mouseup', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        answerWindow.classList.remove('dragging');
+
+        var currentTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        var thresholdPct = (window.innerWidth <= 1120) ? 0.10 : 0.4;
+        var threshold = revealedTop + (startTop - revealedTop) * thresholdPct;
+
+        if (currentTop > threshold) {
+          answerWindow.classList.remove('revealed');
+          clearTop();
+        } else {
+          clearTop();
+        }
+      });
+
+      // Поддержка тач-событий
+      handle.addEventListener('touchstart', function(e) {
+        if (!answerWindow.classList.contains('revealed')) return;
+        isDragging = true;
+        dragStartY = e.touches[0].clientY;
+        dragStartTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        answerWindow.classList.add('dragging');
+        e.preventDefault();
+      }, { passive: false });
+
+      document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        var deltaY = e.touches[0].clientY - dragStartY;
+        var newTop = Math.max(revealedTop, dragStartTop + deltaY);
+        newTop = Math.min(newTop, startTop);
+        setTop(newTop);
+      }, { passive: false });
+
+      document.addEventListener('touchend', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        answerWindow.classList.remove('dragging');
+
+        var currentTop = parseInt(window.getComputedStyle(answerWindow).top) || revealedTop;
+        var thresholdPct = (window.innerWidth <= 1120) ? 0.10 : 0.4;
+        var threshold = revealedTop + (startTop - revealedTop) * thresholdPct;
+
+        if (currentTop > threshold) {
+          answerWindow.classList.remove('revealed');
+          clearTop();
+        } else {
+          clearTop();
+        }
+      });
+
+      // --- Модалка неправильного ответа ---
+      var btn1 = document.querySelector('.c2-quiz-btn--1');
+      var btn3 = document.querySelector('.c2-quiz-btn--3');
+      var overlay = document.getElementById('c2WrongOverlay');
+      var wrongBtn = document.querySelector('.c2-wrong-btn');
+
+      // Блокировка скролла через перехват событий (не ломает layout)
+      function preventScroll(e) { e.preventDefault(); }
+      var scrollEvents = ['wheel', 'touchmove'];
+
+      function showWrong() {
+        if (overlay) overlay.classList.add('active');
+        document.body.classList.add('modal-open');
+        scrollEvents.forEach(function(evt) {
+          window.addEventListener(evt, preventScroll, { passive: false });
+        });
+      }
+      function hideWrong() {
+        if (overlay) overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        scrollEvents.forEach(function(evt) {
+          window.removeEventListener(evt, preventScroll);
+        });
+      }
+
+      if (btn1) btn1.addEventListener('click', showWrong);
+      if (btn3) btn3.addEventListener('click', showWrong);
+
+      // Закрытие по кнопке «Попробовать ещё раз»
+      if (wrongBtn) wrongBtn.addEventListener('click', hideWrong);
+
+      // Закрытие по клику на область за модалкой
+      if (overlay) {
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) hideWrong();
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
