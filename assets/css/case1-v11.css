@@ -599,7 +599,7 @@ body {
   }
   .canvas {
     width: 375px;
-    height: 6184px;
+    height: 5001px;
     background-image: url('../img/Infographic-375.webp');
     background-size: 100% auto;
 
@@ -787,19 +787,93 @@ body {
 
     /* Информация для специалистов здравоохранения: Attentica 4F 47.81px, line-height 86%, uppercase, center */
     --c1-info-title-left: 11px;
-    --c1-info-title-top: 5041px;
+    --c1-info-title-top: 3898px !important;
     --c1-info-title-width: 349px;
     --c1-info-title-height: 82px;
     /* Список литературы (заголовок): Old Soviet 14px, line-height 150%, center */
     --c1-ref-heading-left: 37px;
+    --c1-ref-heading-left: 27px !important;
     --c1-ref-heading-top: 5162px;
     --c1-ref-heading-width: 158px;
-    --c1-ref-heading-height: 21px;
+    --c1-ref-heading-height: 582px;
     /* Список литературы (текст): Old Soviet 13px, line-height 150% */
     --c1-ref-list-left: 25px;
-    --c1-ref-list-top: 5223px;
+    --c1-ref-list-top: 4193px !important;
     --c1-ref-list-width: 341px;
     --c1-ref-list-height: 920px;
+  }
+
+  .c1-footer-bg {
+    width: 382px !important;
+    height: 1561px !important;
+    top: 3749px !important;
+    background-image: url('../img/footer-bg-375.webp') !important;
+  }
+
+  .c1-answer-window {
+    width: 346px !important;
+    top: 3784px !important;
+    height: 477px !important;
+    left: 14px !important;
+    background-image: url('../img/answer-bg-375.webp') !important;
+  }
+  .c1-answer-window.revealed {
+    top: 3330px !important;
+  }
+
+  /* --- Кнопки квиза (мобильный) --- */
+  .c1-quiz-btn {
+    width: 310px !important;
+    left: 33px !important;
+  }
+  .c1-quiz-btn--1 {
+    top: 3401px !important;
+  }
+  .c1-quiz-btn--2 {
+    top: 3505px !important;
+  }
+  .c1-quiz-btn--3 {
+    top: 3610px !important;
+  }
+
+  /* --- Содержимое окна ответа (мобильный) --- */
+  .c1-aw-title {
+    width: 344px !important;
+    height: 76px !important;
+    top: 23px !important;
+    left: 14px !important;
+    font-size: 45px !important;
+  }
+  .c1-aw-line {
+    width: 272.6px !important;
+    font-size: 11px !important;
+    top: 135px !important;
+    left: 75px !important;
+  }
+  .c1-aw-label {
+    top: 280px !important;
+    left: 26px !important;
+  }
+  .c1-aw-body {
+    width: 305px !important;
+    top: 321px !important;
+    left: 26px !important;
+    font-size: 13px !important;
+    max-height: calc(477px - 321px - 20px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .c1-aw-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  .c1-aw-body::-webkit-scrollbar-track {
+    background: #EBEBEB;
+    border-radius: 10px;
+  }
+  .c1-aw-body::-webkit-scrollbar-thumb {
+    width: 6px;
+    background: #B7B7B7;
+    border-radius: 10px;
   }
 }
 
