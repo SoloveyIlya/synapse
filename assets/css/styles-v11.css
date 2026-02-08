@@ -1370,7 +1370,8 @@ a.btn-product:active {
     /* Размер из фигмы */
     height: var(--btn-product-height);
     border: transparent;
-    background: transparent;
+    background: url('../img/button-blue.webp') no-repeat center center;
+    background-size: 100% 100%;
     color: #333333;
     font-family: "Old Soviet";
     font-size: 20px;
@@ -2577,7 +2578,7 @@ a.btn-product:active {
         color: #333;
     }
 
-    /* Кнопка «Зарегистрироваться» — прозрачная, без текста, размеры и позиция по макету */
+    /* Кнопка «Зарегистрироваться» — с фоном и текстом */
     .product-block .btn-product {
         position: absolute;
         width: 254px !important;
@@ -2586,12 +2587,13 @@ a.btn-product:active {
         left: 237px;
         margin: 0;
         padding: 9px 20px;
-        border: 10px solid transparent;
+        border: none;
         border-radius: 3px;
         box-sizing: border-box;
-        background: transparent;
-        color: transparent;
-        font-size: 0;
+        background: url('../img/button-blue.webp') no-repeat center center !important;
+        background-size: 100% 100% !important;
+        color: #333333;
+        font-size: 14px;
         cursor: pointer;
     }
 
@@ -2852,9 +2854,13 @@ a.btn-product:active {
     /* Все кнопки в третьем медиа — полностью прозрачный фон (отладка выключена) */
     .header-btn,
     .canvas>.btn-case,
-    .btn-product,
     .btn-lead {
         background: transparent !important;
+        border: none !important;
+    }
+    .btn-product {
+        background: url('../img/button-blue.webp') no-repeat center center !important;
+        background-size: 100% 100% !important;
         border: none !important;
     }
 
@@ -3280,10 +3286,10 @@ a.btn-product:active {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0 !important; /* скрываем текст "Зарегистрироваться" */
-        color: transparent !important;
-        text-indent: -9999px;
-        overflow: hidden;
+        font-size: 20px !important;
+        color: #333333 !important;
+        text-indent: 0;
+        overflow: visible;
     }
 
   /* Лид-блок «Получите памятку юриста»: 345×auto, top 4404px, left 15px */
