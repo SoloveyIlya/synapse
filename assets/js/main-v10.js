@@ -2,10 +2,30 @@
 (function() {
   var meta = document.querySelector('meta[name="viewport"]');
   if (!meta) return;
-  var sw = screen.width || 375;
-  if (sw < 375) {
-    meta.setAttribute('content', 'width=375');
+  var fixed = false;
+  var busy = false;
+
+  function fixViewport() {
+    if (busy) return;
+    if (!fixed) {
+      var vw = window.innerWidth || 375;
+      if (vw < 375) {
+        busy = true; fixed = true;
+        meta.setAttribute('content', 'width=375');
+        setTimeout(function() { busy = false; }, 500);
+      }
+    } else {
+      var ow = window.outerWidth || 375;
+      if (ow >= 400) {
+        busy = true; fixed = false;
+        meta.setAttribute('content', 'width=device-width, initial-scale=1');
+        setTimeout(function() { busy = false; }, 500);
+      }
+    }
   }
+
+  fixViewport();
+  window.addEventListener('resize', fixViewport);
 })();
 
 // Маска телефона: цифры автоматически раскладываются по шаблону _-___-___-__-__
