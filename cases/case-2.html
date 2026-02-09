@@ -118,6 +118,16 @@
   </main>
 
   <script>
+    // Масштабирование страницы для экранов уже 375px через viewport
+    (function() {
+      var meta = document.querySelector('meta[name="viewport"]');
+      if (!meta) return;
+      var sw = screen.width || 375;
+      if (sw < 375) {
+        meta.setAttribute('content', 'width=375');
+      }
+    })();
+
     document.addEventListener('DOMContentLoaded', function() {
       var btn2 = document.querySelector('.c2-quiz-btn--2');
       var answerWindow = document.querySelector('.c2-answer-window');
