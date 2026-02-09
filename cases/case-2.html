@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Кейс 2 — Synapse</title>
-  <link rel="stylesheet" href="../assets/css/case2-v11.css" />
+  <link rel="stylesheet" href="../assets/css/case2-v12.css" />
 </head>
 
 <body>
@@ -92,7 +92,7 @@
     <!-- Модалка неправильного ответа -->
     <div class="c2-wrong-overlay" id="c2WrongOverlay">
       <div class="c2-wrong-modal">
-        <div class="c2-wrong-title">Ответ неверный</div>
+        <div class="c2-wrong-title">Ответ<br>неверный</div>
         <button class="c2-wrong-btn">Попробовать еще раз</button>
       </div>
     </div>
@@ -127,7 +127,7 @@
       // Позиции по viewport: десктоп / планшет / мобильный
       function getPositions() {
         if (window.innerWidth <= 760) {
-          return { start: 3784, revealed: 3330 };
+          return { start: 3899, revealed: 3330 };
         }
         if (window.innerWidth <= 1120) {
           return { start: 3302, revealed: 2374 };
@@ -148,6 +148,7 @@
           answerWindow.classList.remove('dragging');
           answerWindow.classList.add('revealed');
           answerWindow.style.top = '';
+          trapPageScroll();
         });
       }
 
@@ -193,6 +194,7 @@
         if (currentTop > threshold) {
           answerWindow.classList.remove('revealed');
           clearTop();
+          untrapPageScroll();
         } else {
           clearTop();
         }
@@ -228,10 +230,134 @@
         if (currentTop > threshold) {
           answerWindow.classList.remove('revealed');
           clearTop();
+          untrapPageScroll();
         } else {
           clearTop();
         }
       });
+
+      // --- Закрытие окна ответа по клику вне блока ---
+      document.addEventListener('click', function(e) {
+        if (!answerWindow.classList.contains('revealed')) return;
+        if (answerWindow.contains(e.target)) return;
+        if (e.target.closest('.c2-quiz-btn')) return;
+        answerWindow.classList.remove('revealed');
+        clearTop();
+        untrapPageScroll();
+      });
+
+      // --- Scroll trap для мобильного: общий скролл скроллит текст ответа ---
+      var awBody = document.querySelector('.c2-aw-body');
+      var infoTitle = document.querySelector('.c2-text--info-title');
+      var scrollTrapped = false;
+      var trapPaused = false;
+      var trapLastTouchY = 0;
+
+      function isAwBodyInView() {
+        if (!awBody) return false;
+        var rect = awBody.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      }
+
+      function trapPageScroll() {
+        if (window.innerWidth > 760 || scrollTrapped) return;
+        if (awBody && awBody.scrollHeight <= awBody.clientHeight + 2) return;
+        scrollTrapped = true;
+        trapPaused = false;
+        if (awBody) awBody.scrollTop = 0;
+        document.addEventListener('touchstart', onTrapTouchStart, { passive: true });
+        document.addEventListener('touchmove', onTrapTouchMove, { passive: false });
+        window.addEventListener('wheel', onTrapWheel, { passive: false });
+      }
+
+      function untrapPageScroll() {
+        if (!scrollTrapped) return;
+        scrollTrapped = false;
+        trapPaused = false;
+        document.removeEventListener('touchstart', onTrapTouchStart);
+        document.removeEventListener('touchmove', onTrapTouchMove);
+        window.removeEventListener('wheel', onTrapWheel);
+      }
+
+      function onTrapTouchStart(e) {
+        trapLastTouchY = e.touches[0].clientY;
+      }
+
+      function onTrapTouchMove(e) {
+        if (isDragging) return;
+
+        var touchY = e.touches[0].clientY;
+        var deltaY = trapLastTouchY - touchY;
+        trapLastTouchY = touchY;
+
+        var atBottom = awBody.scrollTop + awBody.clientHeight >= awBody.scrollHeight - 2;
+        var atTop = awBody.scrollTop <= 0;
+
+        // Дочитал до конца — снимаем захват навсегда
+        if (atBottom && deltaY > 0) {
+          untrapPageScroll();
+          return;
+        }
+
+        // Пауза: пользователь ушёл вверх — ждём возврата
+        if (trapPaused) {
+          // Возврат: верх блока «Информация для специалистов» вошёл во вьюпорт
+          if (infoTitle && deltaY > 0) {
+            var infoRect = infoTitle.getBoundingClientRect();
+            if (infoRect.top <= window.innerHeight) {
+              trapPaused = false;
+              e.preventDefault();
+              awBody.scrollTop += deltaY;
+            }
+          }
+          return;
+        }
+
+        if (!isAwBodyInView()) return;
+
+        // Текст вверху и скролл вверх — пауза, отпускаем страницу
+        if (atTop && deltaY < 0) {
+          trapPaused = true;
+          return;
+        }
+
+        e.preventDefault();
+        awBody.scrollTop += deltaY;
+      }
+
+      function onTrapWheel(e) {
+        if (isDragging) return;
+
+        var atBottom = awBody.scrollTop + awBody.clientHeight >= awBody.scrollHeight - 2;
+        var atTop = awBody.scrollTop <= 0;
+
+        if (atBottom && e.deltaY > 0) {
+          untrapPageScroll();
+          return;
+        }
+
+        if (trapPaused) {
+          if (infoTitle && e.deltaY > 0) {
+            var infoRect = infoTitle.getBoundingClientRect();
+            if (infoRect.top <= window.innerHeight) {
+              trapPaused = false;
+              e.preventDefault();
+              awBody.scrollTop += e.deltaY;
+            }
+          }
+          return;
+        }
+
+        if (!isAwBodyInView()) return;
+
+        if (atTop && e.deltaY < 0) {
+          trapPaused = true;
+          return;
+        }
+
+        e.preventDefault();
+        awBody.scrollTop += e.deltaY;
+      }
 
       // --- Модалка неправильного ответа ---
       var btn1 = document.querySelector('.c2-quiz-btn--1');

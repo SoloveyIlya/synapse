@@ -1,0 +1,1701 @@
+/* --- Шрифты из assets/fonts --- */
+@font-face {
+  font-family: "Old Soviet";
+  src: url("../fonts/Old-Soviet.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik Dirt";
+  src: url("../fonts/RubikDirt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Attentica 4F";
+  src: url("../fonts/Attentica 4F UltraLight.ttf") format("truetype");
+  font-weight: 250;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+html {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+}
+
+.canvas {
+  position: relative;
+  width: 1120px;
+  height: 4211px;
+
+  /* Координаты текстовых блоков (относительно canvas), при адаптивности меняй здесь */
+  --c2-logo-left: 82.69px;
+  --c2-logo-top: 19.58px;
+  --c2-logo-width: 200px;
+  --c2-logo-height: 43.72px;
+  --c2-logo-gap: 5px;
+
+  --c2-case-left: 83.09px;
+  --c2-case-top: 144px;
+  --c2-case-width: 1176.91px;
+  --c2-case-height: 237px;
+
+  --c2-intro-left: 105px;
+  --c2-intro-top: 497.9px;
+  --c2-intro-width: 865.54px;
+  --c2-intro-height: 108px;
+
+  --c2-kees-left: 155px;
+  --c2-kees-top: 689px;
+  --c2-kees-width: 809.64px;
+  --c2-kees-height: 40px;
+
+  --c2-complaints-left: 398px;
+  --c2-complaints-top: 757px;
+  --c2-complaints-width: 104px;
+  --c2-complaints-height: 36px;
+
+  --c2-complaints-body-left: 398px;
+  --c2-complaints-body-top: 808px;
+  --c2-complaints-body-width: 568px;
+  --c2-complaints-body-height: 140px;
+
+  --c2-reception-left: 140px;
+  --c2-reception-top: 889px;
+  --c2-reception-width: 164.93px;
+  --c2-reception-height: 36px;
+
+  --c2-anamnesis-left: 82px;
+  --c2-anamnesis-top: 1029.35px;
+  --c2-anamnesis-width: 308px;
+  --c2-anamnesis-height: 36px;
+
+  --c2-anamnesis-body-left: 82px;
+  --c2-anamnesis-body-top: 1086px;
+  --c2-anamnesis-body-width: 842px;
+  --c2-anamnesis-body-height: 100px;
+
+  --c2-alcohol-left: 82px;
+  --c2-alcohol-top: 1210px;
+  --c2-alcohol-width: 325px;
+  --c2-alcohol-height: 20px;
+
+  --c2-surgery-left: 342px;
+  --c2-surgery-top: 1210px;
+  --c2-surgery-width: 697px;
+  --c2-surgery-height: 60px;
+
+  --c2-exam-left: 98.5px;
+  --c2-exam-top: 1434.75px;
+  --c2-exam-width: 728.23px;
+  --c2-exam-height: 72px;
+
+  --c2-exam-uzi-left: 92.4px;
+  --c2-exam-uzi-top: 1530px;
+  --c2-exam-uzi-width: 431px;
+  --c2-exam-uzi-height: 80px;
+
+  --c2-exam-bio-left: 562.4px;
+  --c2-exam-bio-top: 1530px;
+  --c2-exam-bio-width: 480px;
+  --c2-exam-bio-height: 60px;
+
+  --c2-exam-markers-left: 92.4px;
+  --c2-exam-markers-top: 1637.67px;
+  --c2-exam-markers-width: 431px;
+  --c2-exam-markers-height: 20px;
+
+  --c2-exam-fgds-left: 562.4px;
+  --c2-exam-fgds-top: 1636.67px;
+  --c2-exam-fgds-width: 480px;
+  --c2-exam-fgds-height: 60px;
+
+  --c2-diagnosis-left: 77px;
+  --c2-diagnosis-top: 1769px;
+  --c2-diagnosis-width: 319px;
+  --c2-diagnosis-height: 36px;
+
+  --c2-diagnosis-line-left: 498px;
+  --c2-diagnosis-line-top: 1798px;
+  --c2-diagnosis-line-width: 313.39px;
+  --c2-diagnosis-line-height: 45px;
+
+  --c2-diagnosis-gkb-left: 730px;
+  --c2-diagnosis-gkb-top: 1889px;
+  --c2-diagnosis-gkb-width: 313.39px;
+  --c2-diagnosis-gkb-height: 11px;
+
+  --c2-diagnosis-nafb-left: 404px;
+  --c2-diagnosis-nafb-top: 1949px;
+  --c2-diagnosis-nafb-width: 313.39px;
+  --c2-diagnosis-nafb-height: 62px;
+
+  --c2-quiz-title-left: 91px;
+  --c2-quiz-title-top: 2328px;
+  --c2-quiz-title-width: 656px;
+  --c2-quiz-title-height: 52px;
+
+  --c2-quiz-question-left: 124px;
+  --c2-quiz-question-top: 2439px;
+  --c2-quiz-question-width: 826px;
+  --c2-quiz-question-height: 126px;
+
+  --c2-quiz-prompt-left: 95px;
+  --c2-quiz-prompt-top: 2611px;
+  --c2-quiz-prompt-width: 826px;
+  --c2-quiz-prompt-height: 30px;
+
+  --c2-quiz-opt1-left: 166px;
+  --c2-quiz-opt1-top: 2689px;
+  --c2-quiz-opt1-width: 736px;
+  --c2-quiz-opt1-height: 30px;
+
+  --c2-quiz-opt2-left: 159px;
+  --c2-quiz-opt2-top: 2814px;
+  --c2-quiz-opt2-width: 736px;
+  --c2-quiz-opt2-height: 12px;
+
+  --c2-quiz-opt3-left: 162px;
+  --c2-quiz-opt3-top: 2927px;
+  --c2-quiz-opt3-width: 736px;
+  --c2-quiz-opt3-height: 12px;
+
+  --c2-answer-title-left: 91px;
+  --c2-answer-title-top: 3087.6px;
+  --c2-answer-title-width: 502px;
+  --c2-answer-title-height: 104px;
+
+  --c2-answer-question-left: 91px;
+  --c2-answer-question-top: 3205px;
+  --c2-answer-question-width: 960px;
+  --c2-answer-question-height: 160px;
+
+  --c2-answer-line-left: 641px;
+  --c2-answer-line-top: 3101px;
+  --c2-answer-line-width: 303.74px;
+  --c2-answer-line-height: 48px;
+  --c2-answer-line-rotate: -2.13deg; /* десктоп и 768: макет 2.13 → противоположный знак */
+
+  --c2-answer-body-left: 91px;
+  --c2-answer-body-top: 3421px;
+  --c2-answer-body-width: 952px;
+  --c2-answer-body-height: 314px;
+
+  --c2-info-title-left: 60px;
+  --c2-info-title-top: 3493px;
+  --c2-info-title-width: 1000px;
+  --c2-info-title-height: 236px;
+
+  --c2-ref-heading-left: 138px;
+  --c2-ref-heading-top: 3807px;
+  --c2-ref-heading-width: 180px;
+  --c2-ref-heading-height: 24px;
+
+  --c2-ref-list-left: 60px;
+  --c2-ref-list-top: 3861px;
+  --c2-ref-list-width: 1000px;
+  --c2-ref-list-height: 297px;
+
+  /* Шрифты (для адаптива переопределяем в медиа) */
+  --c2-font-old-soviet: "Old Soviet", serif;
+  --c2-font-ubuntu: "Ubuntu", sans-serif;
+  --c2-font-open-sans: "Open Sans", sans-serif;
+  --c2-font-rubik: "Rubik Dirt", sans-serif;
+  --c2-font-attentica: "Attentica 4F", sans-serif;
+  --c2-fw-400: 400;
+  --c2-fw-250: 250;
+  --c2-fw-700: 700;
+  --c2-fs-9: 9px;
+  --c2-fs-13: 13px;
+  --c2-fs-14: 14px;
+  --c2-fs-16: 16px;
+  --c2-fs-20: 20px;
+  --c2-fs-21: 21px;
+  --c2-fs-24: 24px;
+  --c2-fs-28: 28px;
+  --c2-fs-36: 36px;
+  --c2-fs-42: 42px;
+  --c2-fs-50: 50px;
+  --c2-fs-65: 65px;
+  --c2-fs-137: 137px;
+  /* Семантические (разные на 768): переопределяются в медиа */
+  --c2-fs-case: 66.2px;
+  --c2-fs-intro: 21px;
+  --c2-fs-kees: 36px;
+  --c2-fs-reception: 13px;
+  --c2-fs-complaints: 24px;
+  --c2-fs-complaints-body: 13px;
+  --c2-fs-anamnesis: 24px;
+  --c2-fs-anamnesis-body: 13px;
+  --c2-fs-surgery: 13px;
+  --c2-fs-exam: 24px;
+  --c2-fs-diagnosis: 24px;
+  --c2-fs-diagnosis-small: 13px;
+  --c2-fs-quiz-title: 65px;
+  --c2-fs-quiz-prompt: 20px;
+  --c2-fs-answer-title: 65px;
+  --c2-fs-answer-question: 24px;
+  --c2-fs-info-title: 137px;
+  --c2-lh-kees: 40px;
+  --c2-font-scale: 1;
+
+  background: url('../img/Infographic-2.webp') no-repeat top center;
+  background-size: 100% auto;
+
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* --- планшет: viewport ≤1120px --- */
+@media (max-width: 1120px) {
+  .canvas .c2-text br {
+    display: none;
+  }
+  .canvas .c2-text--answer-title br {
+    display: block;
+  }
+  .canvas .c2-text--case br {
+    display: block;
+  }
+  .canvas .c2-text--answer-body br {
+    display: block;
+  }
+  .canvas .c2-text--answer-question {
+    line-height: 24px;
+  }
+  .canvas .c2-text--ref-list br {
+    display: none;
+  }
+
+  .canvas {
+    width: 768px;
+    height: 4210px;
+    background-image: url('../img/Infographic-2-768.webp');
+    background-size: 100% auto;
+    background-position: top center;
+
+    /* Координаты для 768 под Infographic-2-768.webp */
+    --c2-logo-left: 31.7px;
+    --c2-logo-top: 19.3px;
+    --c2-logo-width: 137.1px;
+    --c2-logo-height: 43.1px;
+
+    --c2-case-left: 57px;
+    --c2-case-top: 109.9px;
+    --c2-case-width: 806.2px;
+    --c2-case-height: 233.5px;
+
+    --c2-intro-left: 72px;
+    --c2-intro-top: 404.5px;
+    --c2-intro-width: 593.4px;
+    --c2-intro-height: 106.4px;
+
+    --c2-kees-left: 52px;
+    --c2-kees-top: 565.64px;
+    --c2-kees-width: 664.69px;
+    --c2-kees-height: 33px;
+
+    --c2-complaints-left: 281.23px;
+    --c2-complaints-top: 621.47px;
+    --c2-complaints-width: 87px;
+    --c2-complaints-height: 30px;
+
+    --c2-complaints-body-left: 282px;
+    --c2-complaints-body-top: 656.3px;
+    --c2-complaints-body-width: 466.31px;
+    --c2-complaints-body-height: 157px;
+
+    --c2-reception-left: 67.42px;
+    --c2-reception-top: 729.84px;
+    --c2-reception-width: 135.4px;
+    --c2-reception-height: 30px;
+
+    --c2-anamnesis-left: 20.8px;
+    --c2-anamnesis-top: 845.04px;
+    --c2-anamnesis-width: 257px;
+    --c2-anamnesis-height: 30px;
+
+    --c2-anamnesis-body-left: 20px;
+    --c2-anamnesis-body-top: 892px;
+    --c2-anamnesis-body-width: 707px;
+    --c2-anamnesis-body-height: 140px;
+
+    --c2-alcohol-left: 19.81px;
+    --c2-alcohol-top: 1043px;
+    --c2-alcohol-width: 266.81px;
+    --c2-alcohol-height: 20px;
+
+    --c2-surgery-left: 223px;
+    --c2-surgery-top: 1043px;
+    --c2-surgery-width: 523px;
+    --c2-surgery-height: 80px;
+
+    --c2-exam-left: 23px;
+    --c2-exam-top: 1254px;
+    --c2-exam-width: 597.85px;
+    --c2-exam-height: 60px;
+
+    --c2-exam-uzi-left: 28px;
+    --c2-exam-uzi-top: 1329.45px;
+    --c2-exam-uzi-width: 340px;
+    --c2-exam-uzi-height: 100px;
+
+    --c2-exam-bio-left: 414.2px;
+    --c2-exam-bio-top: 1329.53px;
+    --c2-exam-bio-width: 394.06px;
+    --c2-exam-bio-height: 80px;
+
+    --c2-exam-markers-left: 28.35px;
+    --c2-exam-markers-top: 1461.8px;
+    --c2-exam-markers-width: 353.84px;
+    --c2-exam-markers-height: 20px;
+
+    --c2-exam-fgds-left: 414.2px;
+    --c2-exam-fgds-top: 1460.98px;
+    --c2-exam-fgds-width: 394.06px;
+    --c2-exam-fgds-height: 80px;
+
+    --c2-diagnosis-left: 18px;
+    --c2-diagnosis-top: 1594px;
+    --c2-diagnosis-width: 266px;
+    --c2-diagnosis-height: 30px;
+
+    --c2-diagnosis-line-left: 356.5px;
+    --c2-diagnosis-line-top: 1612px;
+    --c2-diagnosis-line-width: 257.28px;
+    --c2-diagnosis-line-height: 37px;
+
+    --c2-diagnosis-gkb-left: 543.5px;
+    --c2-diagnosis-gkb-top: 1689.9px;
+    --c2-diagnosis-gkb-width: 257.28px;
+    --c2-diagnosis-gkb-height: 9px;
+
+    --c2-diagnosis-nafb-left: 277px;
+    --c2-diagnosis-nafb-top: 1739px;
+    --c2-diagnosis-nafb-width: 257.28px;
+    --c2-diagnosis-nafb-height: 51px;
+
+    --c2-quiz-title-left: 45px;
+    --c2-quiz-title-top: 2052px;
+    --c2-quiz-title-width: 656px;
+    --c2-quiz-title-height: 44px;
+
+    --c2-quiz-question-left: 85px;
+    --c2-quiz-question-top: 2133.4px;
+    --c2-quiz-question-width: 591px;
+    --c2-quiz-question-height: 168px;
+
+    --c2-quiz-prompt-left: 65.1px;
+    --c2-quiz-prompt-top: 2371.4px;
+    --c2-quiz-prompt-width: 826px;
+    --c2-quiz-prompt-height: 27px;
+
+    --c2-quiz-opt1-left: 113.8px;
+    --c2-quiz-opt1-top: 2447.2px;
+    --c2-quiz-opt1-width: 552px;
+    --c2-quiz-opt1-height: 30px;
+
+    --c2-quiz-opt2-left: 114px;
+    --c2-quiz-opt2-top: 2564.6px;
+    --c2-quiz-opt2-width: 554px;
+    --c2-quiz-opt2-height: 30px;
+
+    --c2-quiz-opt3-left: 111px;
+    --c2-quiz-opt3-top: 2689.9px;
+    --c2-quiz-opt3-width: 736px;
+    --c2-quiz-opt3-height: 12px;
+
+    --c2-answer-title-left: 62.4px;
+    --c2-answer-title-top: 2839.3px;
+    --c2-answer-title-width: 502px;
+    --c2-answer-title-height: 88px;
+
+    --c2-answer-question-left: 62.4px;
+    --c2-answer-question-top: 3015px;
+    --c2-answer-question-width: 666px;
+    --c2-answer-question-height: 96px;
+
+    --c2-answer-line-left: 395.5px;
+    --c2-answer-line-top: 2928px;
+    --c2-answer-line-width: 303.74px;
+    --c2-answer-line-height: 48px;
+
+    --c2-answer-body-left: 62.4px;
+    --c2-answer-body-top: 3191.2px;
+    --c2-answer-body-width: 680px;
+    --c2-answer-body-height: 422px;
+
+    --c2-info-title-left: -116px;
+    --c2-info-title-top: 3490px !important;
+    --c2-info-title-width: 1000px;
+    --c2-info-title-height: 172px;
+    --c2-fs-info-title: 100px;
+
+    --c2-ref-heading-left: 91.5px !important;
+    --c2-ref-heading-top: 3810px !important;
+    --c2-ref-heading-width: 279.4px;
+    --c2-ref-heading-height: 23.6px;
+
+    --c2-ref-list-left: 41.1px;
+    --c2-ref-list-top: 3860px !important;
+    --c2-ref-list-width: 712px !important;
+    --c2-ref-list-height: 381px;
+
+    /* Шрифты для 768: без сжатия (scale 1), только явно заданные блоки; остальные как на десктопе (13 остаётся 13) */
+    --c2-font-scale: 1;
+    --c2-fs-13: 13px;
+    --c2-fs-case: 50px;
+    --c2-fs-intro: 15px;
+    --c2-fs-kees: 28px;
+    --c2-lh-kees: 32.84px;
+    --c2-fs-reception: 10.67px;
+    --c2-fs-complaints: 20px;
+    --c2-fs-complaints-body: 13px;
+    --c2-fs-anamnesis: 20px;
+    --c2-fs-anamnesis-body: 13px;
+    --c2-fs-surgery: 13px;
+    --c2-fs-exam: 20px;
+    --c2-fs-diagnosis: 20px;
+    --c2-fs-diagnosis-small: 10.67px;
+    --c2-fs-quiz-title: 55px;
+    --c2-fs-quiz-prompt: 18px;
+
+    --c2-fs-14: 13px !important;
+  }
+
+  /* --- Кнопки квиза (планшет) --- */
+  .c2-quiz-btn {
+    width: 660px !important;
+    left: 53px !important;
+  }
+  .c2-quiz-btn--1 {
+    top: 2417px !important;
+  }
+  .c2-quiz-btn--2 {
+    top: 2532px !important;
+  }
+  .c2-quiz-btn--3 {
+    top: 2648px !important;
+  }
+
+  /* --- Список литературы line-height (планшет) --- */
+  .c2-text--ref-list {
+    line-height: 120% !important;
+  }
+
+  /* --- Окно ответа (планшет) --- */
+  .c2-answer-window {
+    width: 730px !important;
+    left: 20px !important;
+    height: 1021px !important;
+    background-image: url('../img/answer-bg-768.webp') !important;
+  }
+  .c2-answer-window.revealed {
+    top: 2374px !important;
+  }
+
+  /* --- Содержимое окна ответа (планшет) --- */
+  .c2-aw-title {
+    width: 502px !important;
+    height: 104px !important;
+    top: 70px !important;
+    left: 25px !important;
+    font-size: 49px !important;
+  }
+  .c2-aw-line {
+    width: 256.7px !important;
+    height: 46px !important;
+    top: 106px !important;
+    left: 439px !important;
+    font-size: 13px !important;
+  }
+  .c2-aw-body {
+    width: 653px !important;
+    top: 406px !important;
+    left: 56px !important;
+    font-size: 15px !important;
+  }
+  .c2-aw-label {
+    font-size: 25px !important;
+    top: 353px !important;
+  }
+}
+
+/* --- мобильный: viewport ≤760px --- */
+@media (max-width: 760px) {
+  html,
+  body {
+    overscroll-behavior: auto;
+  }
+  .canvas .c2-text--ref-list {
+    font-size: 13px;
+    line-height: 150%;
+  }
+  .canvas {
+    width: 375px;
+    height: 4960px;
+    background-image: url('../img/Infographic-2-375.webp');
+    background-size: 100% auto;
+    background-position: top center;
+
+    /* Логотип «Синапс» */
+    --c2-logo-left: 24.2px;
+    --c2-logo-top: 15.46px;
+    --c2-logo-width: 157.1px;
+    --c2-logo-height: 34.35px;
+
+    /* Клинический случай */
+    --c2-case-left: 21px;
+    --c2-case-top: 112.68px;
+    --c2-case-width: 353.45px;
+    --c2-case-height: 102px;
+    --c2-fs-case: 28px;
+
+    /* Уважаемые коллеги! (intro) */
+    --c2-intro-left: 25.67px;
+    --c2-intro-top: 300.72px;
+    --c2-intro-width: 330.09px;
+    --c2-intro-height: 189px;
+    --c2-fs-intro: 16px;
+
+    /* Клинический кейс */
+    --c2-kees-left: -217.32px;
+    --c2-kees-top: 553.6px;
+    --c2-kees-width: 809.64px;
+    --c2-kees-height: 40px;
+    --c2-fs-kees: 24px;
+    --c2-lh-kees: 40px;
+
+    /* На приеме женщина, 42 года */
+    --c2-reception-left: 82.73px;
+    --c2-reception-top: 741.6px;
+    --c2-reception-width: 164.93px;
+    --c2-reception-height: 36px;
+    --c2-fs-reception: 13px;
+
+    /* Жалобы */
+    --c2-complaints-left: 20px;
+    --c2-complaints-top: 820.66px;
+    --c2-complaints-width: 87px;
+    --c2-complaints-height: 30px;
+    --c2-fs-complaints: 20px;
+
+    /* Текст жалоб */
+    --c2-complaints-body-left: 17px;
+    --c2-complaints-body-top: 878.66px;
+    --c2-complaints-body-width: 343px;
+    --c2-complaints-body-height: 200px;
+    --c2-fs-complaints-body: 13px;
+
+    /* Анамнез заболевания */
+    --c2-anamnesis-left: 16.38px;
+    --c2-anamnesis-top: 1133.38px;
+    --c2-anamnesis-width: 257px;
+    --c2-anamnesis-height: 30px;
+    --c2-fs-anamnesis: 20px;
+
+    /* Текст анамнеза */
+    --c2-anamnesis-body-left: 17px;
+    --c2-anamnesis-body-top: 1198.15px;
+    --c2-anamnesis-body-width: 343px;
+    --c2-anamnesis-body-height: 280px;
+    --c2-fs-anamnesis-body: 13px;
+
+    /* Алкоголь не употребляет */
+    --c2-alcohol-left: 15px;
+    --c2-alcohol-top: 1493.95px;
+    --c2-alcohol-width: 325px;
+    --c2-alcohol-height: 20px;
+
+    /* Блок про операцию */
+    --c2-surgery-left: 15px;
+    --c2-surgery-top: 1543.44px;
+    --c2-surgery-width: 342px;
+    --c2-surgery-height: 140px;
+    --c2-fs-surgery: 13px;
+
+    /* Данные обследования на визите */
+    --c2-exam-left: 15px;
+    --c2-exam-top: 1792.03px;
+    --c2-exam-width: 343.35px;
+    --c2-exam-height: 90px;
+    --c2-fs-exam: 20px;
+
+    /* УЗИ органов брюшной полости */
+    --c2-exam-uzi-left: 14.4px;
+    --c2-exam-uzi-top: 1906.4px;
+    --c2-exam-uzi-width: 343.94px;
+    --c2-exam-uzi-height: 100px;
+
+    /* Биохимический анализ крови */
+    --c2-exam-bio-left: 14px;
+    --c2-exam-bio-top: 2034.88px;
+    --c2-exam-bio-width: 347px;
+    --c2-exam-bio-height: 100px;
+
+    /* Маркеры вирусных гепатитов */
+    --c2-exam-markers-left: 13.85px;
+    --c2-exam-markers-top: 2157.7px;
+    --c2-exam-markers-width: 431px;
+    --c2-exam-markers-height: 20px;
+
+    /* ФГДС */
+    --c2-exam-fgds-left: 14.7px;
+    --c2-exam-fgds-top: 2205.74px;
+    --c2-exam-fgds-width: 345.3px;
+    --c2-exam-fgds-height: 80px;
+
+    /* Клинический диагноз */
+    --c2-diagnosis-left: 14.7px;
+    --c2-diagnosis-top: 2347.58px;
+    --c2-diagnosis-width: 266px;
+    --c2-diagnosis-height: 30px;
+    --c2-fs-diagnosis: 20px;
+    --c2-diagnosis-line-left: 80.7px;
+    --c2-diagnosis-line-top: 2420px;
+    --c2-diagnosis-line-width: 260.73px;
+    --c2-diagnosis-line-height: 62px;
+    --c2-diagnosis-gkb-left: 93.7px;
+    --c2-diagnosis-gkb-top: 2533px;
+    --c2-diagnosis-gkb-width: 313.39px;
+    --c2-diagnosis-gkb-height: 11px;
+    --c2-diagnosis-nafb-left: 84.7px;
+    --c2-diagnosis-nafb-top: 2605px;
+    --c2-diagnosis-nafb-width: 257.67px;
+    --c2-diagnosis-nafb-height: 79px;
+    --c2-fs-diagnosis-small: 13px;
+
+    /* Квиз (масштаб от 768) */
+    --c2-quiz-title-left: 26px;
+    --c2-quiz-title-top: 2890px;
+    --c2-quiz-title-width: 320px;
+    --c2-quiz-title-height: 59px;
+    --c2-fs-quiz-title: 43px;
+    --c2-quiz-question-left: 42px;
+    --c2-quiz-question-top: 2953px;
+    --c2-quiz-question-width: 300px;
+    --c2-quiz-question-height: 227px;
+    --c2-quiz-prompt-left: 23px;
+    --c2-quiz-prompt-top: 3343px;
+    --c2-quiz-prompt-width: 403px;
+    --c2-quiz-prompt-height: 36px;
+    --c2-quiz-opt1-left: 82px;
+    --c2-quiz-opt1-top: 3445px;
+    --c2-quiz-opt1-width: 270px;
+    --c2-quiz-opt1-height: 41px;
+    --c2-quiz-opt2-left: 85px;
+    --c2-quiz-opt2-top: 3557px;
+    --c2-quiz-opt2-width: 270px;
+    --c2-quiz-opt2-height: 41px;
+    --c2-quiz-opt3-left: 87px;
+    --c2-quiz-opt3-top: 3619px;
+    --c2-quiz-opt3-width: 168px;
+    --c2-quiz-opt3-height: 128px;
+
+    /* Правильный ответ */
+    --c2-answer-title-left: 34px;
+    --c2-answer-title-top: 3784px;
+    --c2-answer-title-width: 329px;
+    --c2-answer-title-height: 64px;
+    --c2-fs-answer-title: 40px;
+    --c2-answer-line-left: 98px;
+    --c2-answer-line-top: 3885px;
+    --c2-answer-line-width: 223px;
+    --c2-answer-line-height: 66px;
+    --c2-answer-line-rotate: 2.09deg; /* 375: макет -2.09 → противоположный знак */
+    --c2-answer-question-left: 15px;
+    --c2-answer-question-top: 3994px;
+    --c2-answer-question-width: 345px;
+    --c2-answer-question-height: 168px;
+    --c2-fs-answer-question: 18px;
+    --c2-answer-body-left: 33px;
+    --c2-answer-body-top: 4205px;
+    --c2-answer-body-width: 314px;
+    --c2-answer-body-height: 800px;
+
+    /* Информация для специалистов здравоохранения */
+    --c2-info-title-left: 11px;
+    --c2-info-title-top: 3977px !important;
+    --c2-info-title-width: 349px;
+    --c2-info-title-height: 82px;
+    --c2-fs-info-title: 47.81px;
+    --c2-ref-heading-left: -3.5px !important;
+    --c2-ref-heading-top: 4147px !important;
+    --c2-ref-heading-width: 225px;
+    --c2-ref-heading-height: 32px;
+    --c2-ref-list-left: 20px;
+    --c2-ref-list-top: 4199px !important;
+    --c2-ref-list-width: 308px !important;
+    --c2-ref-list-height: 744px;
+  }
+
+  .c2-footer-bg {
+    width: 382px !important;
+    height: 1186px !important;
+    top: 3877px !important;
+    background-image: url('../img/footer-bg-375.webp') !important;
+  }
+
+  .c2-answer-window {
+    width: 346px !important;
+    top: 3899px !important;
+    height: 623px !important;
+    left: 14px !important;
+    background-image: url('../img/answer-bg-375.webp') !important;
+  }
+  .c2-answer-window.revealed {
+    top: 3330px !important;
+  }
+
+  /* --- Кнопки квиза (мобильный) --- */
+  .c2-quiz-btn {
+    width: 310px !important;
+    left: 33px !important;
+  }
+  .c2-quiz-btn--1 {
+    top: 3412px !important;
+    height: 105px !important;
+  }
+  .c2-quiz-btn--2 {
+    top: 3529px !important;
+  }
+  .c2-quiz-btn--3 {
+    top: 3635px !important;
+  }
+
+  /* --- Содержимое окна ответа (мобильный) --- */
+  .c2-aw-title {
+    width: 344px !important;
+    height: 76px !important;
+    top: 59px !important;
+    left: 14px !important;
+    font-size: 45px !important;
+  }
+  .c2-aw-line {
+    width: 272.6px !important;
+    font-size: 11px !important;
+    top: 181px !important;
+    left: 75px !important;
+  }
+  .c2-aw-label {
+    top: 351px !important;
+    left: 26px !important;
+  }
+  .c2-aw-body {
+    width: 305px !important;
+    top: 388px !important;
+    left: 26px !important;
+    font-size: 13px !important;
+    max-height: 180px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .c2-aw-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  .c2-aw-body::-webkit-scrollbar-track {
+    background: #EBEBEB;
+    border-radius: 10px;
+  }
+  .c2-aw-body::-webkit-scrollbar-thumb {
+    width: 6px;
+    background: #B7B7B7;
+    border-radius: 10px;
+  }
+  .c2-aw-body p {
+    margin: 0 0 0 0 !important;
+  }
+
+  /* --- Модалка неправильного ответа (мобильный) --- */
+  .c2-wrong-modal {
+    width: 310px !important;
+    height: 191px !important;
+  }
+  .c2-wrong-title {
+    width: 310px !important;
+    left: 0 !important;
+    top: 49px !important;
+    font-size: 33px !important;
+  }
+  .c2-wrong-btn {
+    width: 200px !important;
+    height: 40px !important;
+    top: 115px !important;
+    left: 55px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* --- Текстовые блоки (координаты в переменных .canvas) ---
+   Угол поворота: в CSS всегда ставим знак, противоположный значению из макета.
+   Формат: <div class="c2-text c2-text--имя">Текст</div> + класс стиля в CSS с left/top/width/height из var(--c2-...) */
+.c2-text {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 10;
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Логотип «Синапс Онлайн» — стили из styles.css */
+.c2-text--logo {
+  left: var(--c2-logo-left);
+  top: var(--c2-logo-top);
+  width: var(--c2-logo-width);
+  height: var(--c2-logo-height);
+  font-family: var(--c2-font-ubuntu);
+  font-weight: var(--c2-fw-700);
+  font-size: calc(var(--c2-fs-42) * var(--c2-font-scale));
+  line-height: 44px;
+  letter-spacing: 0px;
+  display: flex;
+  align-items: center;
+  gap: var(--c2-logo-gap);
+  opacity: 1;
+  color: inherit;
+  transform: rotate(-1.39deg); /* макет 1.39 → противоположный знак */
+}
+.c2-text--logo .c2-text__badge {
+  font-family: var(--c2-font-open-sans);
+  font-size: calc(var(--c2-fs-9) * var(--c2-font-scale));
+  font-weight: var(--c2-fw-400);
+  border: 1px solid #252575;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Заголовок «Клинический случай: Цена стройности...» (переносы — <br>) */
+.c2-text--case {
+  left: var(--c2-case-left);
+  top: var(--c2-case-top);
+  width: var(--c2-case-width);
+  height: var(--c2-case-height);
+  font-family: var(--c2-font-rubik);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-case) * var(--c2-font-scale));
+  line-height: 120%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-1.03deg); /* макет 1.03 → противоположный знак */
+}
+
+/* Вводный текст (переносы — <br>) */
+.c2-text--intro {
+  left: var(--c2-intro-left);
+  top: var(--c2-intro-top);
+  width: var(--c2-intro-width);
+  height: var(--c2-intro-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-intro) * var(--c2-font-scale));
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-3deg); /* макет 3 → противоположный знак */
+}
+
+/* Заголовок «Клинический кейс» */
+.c2-text--kees {
+  left: var(--c2-kees-left);
+  top: var(--c2-kees-top);
+  width: var(--c2-kees-width);
+  height: var(--c2-kees-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-kees) * var(--c2-font-scale));
+  line-height: calc(var(--c2-lh-kees) * var(--c2-font-scale));
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Заголовок «Жалобы» */
+.c2-text--complaints {
+  left: var(--c2-complaints-left);
+  top: var(--c2-complaints-top);
+  width: var(--c2-complaints-width);
+  height: var(--c2-complaints-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-complaints) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Текст жалоб (три абзаца, переносы — <br>) */
+.c2-text--complaints-body {
+  left: var(--c2-complaints-body-left);
+  top: var(--c2-complaints-body-top);
+  width: var(--c2-complaints-body-width);
+  height: var(--c2-complaints-body-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-complaints-body) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+.c2-text--complaints-body p {
+  margin: 0 0 0.75em;
+}
+.c2-text--complaints-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* На приеме женщина, 42 года */
+.c2-text--reception {
+  left: var(--c2-reception-left);
+  top: var(--c2-reception-top);
+  width: var(--c2-reception-width);
+  height: var(--c2-reception-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-reception) * var(--c2-font-scale));
+  line-height: 140%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #5B5B5B;
+  transform: rotate(0.54deg); /* макет -0.54 → противоположный знак */
+}
+
+/* Заголовок «Анамнез заболевания» */
+.c2-text--anamnesis {
+  left: var(--c2-anamnesis-left);
+  top: var(--c2-anamnesis-top);
+  width: var(--c2-anamnesis-width);
+  height: var(--c2-anamnesis-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-anamnesis) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0.62deg); /* макет -0.62 → противоположный знак */
+}
+
+/* Текст анамнеза заболевания (переносы — <br>) */
+.c2-text--anamnesis-body {
+  left: var(--c2-anamnesis-body-left);
+  top: var(--c2-anamnesis-body-top);
+  width: var(--c2-anamnesis-body-width);
+  height: var(--c2-anamnesis-body-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-anamnesis-body) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Алкоголь не употребляет */
+.c2-text--alcohol {
+  left: var(--c2-alcohol-left);
+  top: var(--c2-alcohol-top);
+  width: var(--c2-alcohol-width);
+  height: var(--c2-alcohol-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-13) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Блок про операцию (переносы — <br>) */
+.c2-text--surgery {
+  left: var(--c2-surgery-left);
+  top: var(--c2-surgery-top);
+  width: var(--c2-surgery-width);
+  height: var(--c2-surgery-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-surgery) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Заголовок «Данные обследования на визите...» (переносы — <br>) */
+.c2-text--exam {
+  left: var(--c2-exam-left);
+  top: var(--c2-exam-top);
+  width: var(--c2-exam-width);
+  height: var(--c2-exam-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-exam) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  transform: rotate(-0.22deg); /* макет 0.22 → противоположный знак */
+}
+
+/* УЗИ (переносы — <br>) */
+.c2-text--exam-uzi {
+  left: var(--c2-exam-uzi-left);
+  top: var(--c2-exam-uzi-top);
+  width: var(--c2-exam-uzi-width);
+  height: var(--c2-exam-uzi-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-13) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Биохимический анализ (переносы — <br>) */
+.c2-text--exam-bio {
+  left: var(--c2-exam-bio-left);
+  top: var(--c2-exam-bio-top);
+  width: var(--c2-exam-bio-width);
+  height: var(--c2-exam-bio-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-13) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Маркеры вирусных гепатитов */
+.c2-text--exam-markers {
+  left: var(--c2-exam-markers-left);
+  top: var(--c2-exam-markers-top);
+  width: var(--c2-exam-markers-width);
+  height: var(--c2-exam-markers-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-13) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* ФГДС (переносы — <br>) */
+.c2-text--exam-fgds {
+  left: var(--c2-exam-fgds-left);
+  top: var(--c2-exam-fgds-top);
+  width: var(--c2-exam-fgds-width);
+  height: var(--c2-exam-fgds-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-13) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Заголовок «Клинический диагноз:» */
+.c2-text--diagnosis {
+  left: var(--c2-diagnosis-left);
+  top: var(--c2-diagnosis-top);
+  width: var(--c2-diagnosis-width);
+  height: var(--c2-diagnosis-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-diagnosis) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0.62deg); /* макет -0.62 → противоположный знак */
+}
+
+/* Текст диагноза */
+.c2-text--diagnosis-line {
+  left: var(--c2-diagnosis-line-left);
+  top: var(--c2-diagnosis-line-top);
+  width: var(--c2-diagnosis-line-width);
+  height: var(--c2-diagnosis-line-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-diagnosis-small) * var(--c2-font-scale));
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-0.31deg); /* макет 0.31 → противоположный знак */
+}
+
+/* ЖКБ 1 стадии: билиарный сладж */
+.c2-text--diagnosis-gkb {
+  left: var(--c2-diagnosis-gkb-left);
+  top: var(--c2-diagnosis-gkb-top);
+  width: var(--c2-diagnosis-gkb-width);
+  height: var(--c2-diagnosis-gkb-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-diagnosis-small) * var(--c2-font-scale));
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-2.98deg); /* макет 2.98 → противоположный знак */
+}
+
+/* НАЖБП (переносы — <br>) */
+.c2-text--diagnosis-nafb {
+  left: var(--c2-diagnosis-nafb-left);
+  top: var(--c2-diagnosis-nafb-top);
+  width: var(--c2-diagnosis-nafb-width);
+  height: var(--c2-diagnosis-nafb-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-diagnosis-small) * var(--c2-font-scale));
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(1.83deg); /* макет -1.83 → противоположный знак */
+}
+
+/* Квиз: заголовок «Вопрос квиза» */
+.c2-text--quiz-title {
+  left: var(--c2-quiz-title-left);
+  top: var(--c2-quiz-title-top);
+  width: var(--c2-quiz-title-width);
+  height: var(--c2-quiz-title-height);
+  font-family: var(--c2-font-rubik);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-quiz-title) * var(--c2-font-scale));
+  line-height: 80%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Квиз: текст вопроса (внутри блока 938×177 от 32,144, без отдельного родителя) */
+.c2-text--quiz-question {
+  left: var(--c2-quiz-question-left);
+  top: var(--c2-quiz-question-top);
+  width: var(--c2-quiz-question-width);
+  height: var(--c2-quiz-question-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-14) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+.c2-text--quiz-question .c2-quiz-underline {
+  text-decoration: underline;
+}
+
+/* Квиз: «Выберите правильный вариант ответа:» */
+.c2-text--quiz-prompt {
+  left: var(--c2-quiz-prompt-left);
+  top: var(--c2-quiz-prompt-top);
+  width: var(--c2-quiz-prompt-width);
+  height: var(--c2-quiz-prompt-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-quiz-prompt) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  z-index: 3; /* ниже блока ответа */
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+/* Квиз: варианты ответа */
+.c2-text--quiz-opt1,
+.c2-text--quiz-opt2,
+.c2-text--quiz-opt3 {
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-14) * var(--c2-font-scale));
+  line-height: 130%;
+  letter-spacing: 0;
+  z-index: 3; /* ниже блока ответа */
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+.c2-text--quiz-opt1 {
+  left: var(--c2-quiz-opt1-left);
+  top: var(--c2-quiz-opt1-top);
+  width: var(--c2-quiz-opt1-width);
+  height: var(--c2-quiz-opt1-height);
+}
+.c2-text--quiz-opt2 {
+  left: var(--c2-quiz-opt2-left);
+  top: var(--c2-quiz-opt2-top);
+  width: var(--c2-quiz-opt2-width);
+  height: var(--c2-quiz-opt2-height);
+}
+.c2-text--quiz-opt3 {
+  left: var(--c2-quiz-opt3-left);
+  top: var(--c2-quiz-opt3-top);
+  width: var(--c2-quiz-opt3-width);
+  height: var(--c2-quiz-opt3-height);
+}
+.c2-text--quiz-opt3 br {
+  display: none;
+}
+
+/* Правильный ответ: заголовок «Правильный ответ» (переносы — <br>) */
+.c2-text--answer-title {
+  left: var(--c2-answer-title-left);
+  top: var(--c2-answer-title-top);
+  width: var(--c2-answer-title-width);
+  height: var(--c2-answer-title-height);
+  font-family: var(--c2-font-rubik);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-answer-title) * var(--c2-font-scale));
+  line-height: 80%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Правильный ответ: вопрос «Почему в данном случае...» (переносы — <br>) */
+.c2-text--answer-question {
+  left: var(--c2-answer-question-left);
+  top: var(--c2-answer-question-top);
+  width: var(--c2-answer-question-width);
+  height: var(--c2-answer-question-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-answer-question) * var(--c2-font-scale));
+  line-height: 40px;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Правильный ответ: строка ответа (переносы — <br>) */
+.c2-text--answer-line {
+  left: var(--c2-answer-line-left);
+  top: var(--c2-answer-line-top);
+  width: var(--c2-answer-line-width);
+  height: var(--c2-answer-line-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-14) * var(--c2-font-scale));
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(var(--c2-answer-line-rotate));
+}
+
+/* Правильный ответ: пояснение (ссылки в степени — <sup>) */
+.c2-text--answer-body {
+  left: var(--c2-answer-body-left);
+  top: var(--c2-answer-body-top);
+  width: var(--c2-answer-body-width);
+  height: var(--c2-answer-body-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-13) * var(--c2-font-scale));
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  opacity: 1;
+  color: #333333;
+  display: block;
+  columns: 1;
+  column-count: 1;
+}
+.c2-text--answer-body p {
+  margin: 0 0 1em;
+}
+.c2-text--answer-body p:last-child {
+  margin-bottom: 0;
+}
+.c2-text--answer-body sup {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+/* «Информация для специалистов здравоохранения» */
+.c2-text--info-title {
+  left: var(--c2-info-title-left);
+  top: var(--c2-info-title-top);
+  width: var(--c2-info-title-width);
+  height: var(--c2-info-title-height);
+  font-family: var(--c2-font-attentica);
+  font-weight: var(--c2-fw-250);
+  font-size: calc(var(--c2-fs-info-title) * var(--c2-font-scale));
+  line-height: 86%;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* «Список литературы» */
+.c2-text--ref-heading {
+  left: var(--c2-ref-heading-left);
+  top: var(--c2-ref-heading-top);
+  width: var(--c2-ref-heading-width);
+  height: var(--c2-ref-heading-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-16) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Список литературы: нумерованный список (висячий отступ) */
+.c2-text--ref-list {
+  left: var(--c2-ref-list-left);
+  top: var(--c2-ref-list-top);
+  width: var(--c2-ref-list-width);
+  height: var(--c2-ref-list-height);
+  font-family: var(--c2-font-old-soviet);
+  font-weight: var(--c2-fw-400);
+  font-size: calc(var(--c2-fs-14) * var(--c2-font-scale));
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+.c2-text--ref-list ol {
+  margin: 0;
+  padding-left: 1.8em;
+  list-style-position: outside;
+}
+.c2-text--ref-list li {
+  margin-bottom: 0.75em;
+}
+.c2-text--ref-list .c2-ref-link {
+  text-decoration: underline;
+}
+
+/* --- КНОПКИ ОТВЕТОВ КВИЗА --- */
+.c2-quiz-btn {
+  position: absolute;
+  width: 915px;
+  height: 95px;
+  left: 95px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 0;
+  padding: 0;
+}
+.c2-quiz-btn--1 { top: 2659px; }
+.c2-quiz-btn--2 { top: 2775px; }
+.c2-quiz-btn--3 { top: 2886px; }
+
+/* --- ОКНО ПРАВИЛЬНОГО ОТВЕТА (под footer-bg) --- */
+.c2-answer-window {
+  position: absolute;
+  width: 1000px;
+  height: 763px;
+  top: 3302px;
+  left: 60px;
+  border-radius: 10px;
+  background: url('../img/answer-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+  z-index: 4;
+  overflow: hidden;
+  transition: top 0.8s ease, box-shadow 0.8s ease;
+}
+.c2-answer-window.revealed {
+  top: 2610px;
+  box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Зона захвата для перетаскивания */
+.c2-aw-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  cursor: grab;
+  z-index: 10;
+  display: none;
+}
+.c2-answer-window.revealed .c2-aw-handle {
+  display: block;
+}
+.c2-aw-handle:active {
+  cursor: grabbing;
+}
+.c2-answer-window.dragging {
+  transition: none;
+}
+
+/* --- МОДАЛКА НЕПРАВИЛЬНОГО ОТВЕТА --- */
+.c2-wrong-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.c2-wrong-overlay.active {
+  display: flex;
+}
+
+.c2-wrong-modal {
+  position: relative;
+  width: 526px;
+  min-width: 310px;
+  height: 324px;
+  border-radius: 10px;
+  background: url('../img/incorrect-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+  overflow: visible;
+}
+
+.c2-wrong-title {
+  position: absolute;
+  width: 663px;
+  height: 88px;
+  top: 62px;
+  left: -69px;
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 80%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #333333;
+}
+
+.c2-wrong-btn {
+  position: absolute;
+  width: 284px;
+  height: 52px;
+  top: 206px;
+  left: 121px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 140%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Блокировка скролла при открытой модалке */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+.c2-aw-title {
+  position: absolute;
+  width: 502px;
+  height: 104px;
+  top: 57px;
+  left: 44px;
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 80%;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.c2-aw-line {
+  position: absolute;
+  width: 303.74px;
+  height: 46px;
+  top: 118px;
+  left: 596px;
+  transform: rotate(3.58deg);
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.c2-aw-label {
+  position: absolute;
+  width: 960px;
+  height: 40px;
+  top: 255px;
+  left: 56px;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.c2-aw-body {
+  position: absolute;
+  width: 926px;
+  top: 313px;
+  left: 56px;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  color: #333333;
+}
+.c2-aw-body p {
+  margin: 0 0 16px;
+}
+.c2-aw-body p:last-child {
+  margin-bottom: 0;
+}
+.c2-aw-body sup {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+/* Фоновый блок футера */
+.c2-footer-bg {
+  position: absolute;
+  width: 1374px;
+  height: 1022px;
+  top: 3253px;
+  left: -9px;
+  transform: rotate(0.78deg);
+  opacity: 1;
+  z-index: 5;
+  pointer-events: none;
+  background: url('../img/footer-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+}
+
+/* Скрываем старые блоки ответа (заменены на c2-answer-window) */
+.c2-text--answer-title,
+.c2-text--answer-question,
+.c2-text--answer-line,
+.c2-text--answer-body {
+  display: none !important;
+}
+
+/* z-index для текста поверх футера */
+.c2-text--info-title { z-index: 20; }
+.c2-text--ref-heading { z-index: 20; }
+.c2-text--ref-list { z-index: 20; }
+
+.hotspot {
+  position: absolute;
+  display: block;
+  background: rgba(255, 0, 0, 0);
+  cursor: pointer;
+  z-index: 100;
+}

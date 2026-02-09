@@ -1,0 +1,3528 @@
+/* --- ШРИФТЫ --- */
+@font-face {
+    font-family: "Old Soviet";
+    src: url("../fonts/Old-Soviet.otf") format("opentype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rubik Dirt";
+    src: url("../fonts/RubikDirt-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/helveticaneuecyr_ultralight.otf") format("opentype");
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/helveticaneuecyr_roman.otf") format("opentype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyrThin";
+    src: url("../fonts/helveticaneuecyr_thin.otf") format("opentype");
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Attentica 4F";
+    src: url("../fonts/Attentica 4F UltraLight.ttf") format("truetype");
+    font-weight: 250;
+    font-display: swap;
+}
+
+/* --- СБРОС --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+html {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+    cursor: default;
+}
+
+/* --- CSS ПЕРЕМЕННЫЕ ДЛЯ ПОЗИЦИЙ И РАЗМЕРОВ --- */
+:root {
+    /* Canvas (высота увеличена под блок "Информация для специалистов здравоохранения") */
+    --canvas-width: 1280px;
+    --canvas-height: 4700px;
+
+    /* Background */
+    --book-bg-width: 1281px;
+    --book-bg-height: 2485px;
+    --book-bg-left: 0;
+    --book-bg-top: 0;
+
+  /* Logo */
+  --logo-width: 200px;
+  --logo-height: 98.7px;
+  --logo-left: 117px;
+  --logo-top: 17px;
+
+    /* Header Button */
+    --header-btn-width: 260.8px;
+    --header-btn-height: 70.02px;
+    --header-btn-left: 879px;
+    --header-btn-top: 69px;
+
+    /* Hero */
+    --hero-header-width: 829px;
+    --hero-header-left: 226px;
+    --hero-header-top: 186px;
+
+    /* Group 1 (Раздражительные) — контейнер с абсолютным left/top */
+    --group-1-left: 142px;
+    --group-1-top: 361px;
+    --group-1-tag-left: 142px;
+    --group-1-tag-top: 363px;
+    --group-1-tag-width: 129px;
+    --p1-width: 137px;
+    --p1-left: 145px;
+    --p1-top: 393px;
+    --p2-width: 125px;
+    --p2-left: 267px;
+    --p2-top: 402px;
+    --p3-width: 118px;
+    --p3-left: 348px;
+    --p3-top: 361px;
+
+    /* Group 2 */
+    --group-2-tag-left: 550px;
+    --group-2-tag-top: 559px;
+    --group-2-tag-width: 98px;
+    --p4-width: 101px;
+    --p4-left: 500px;
+    --p4-top: 405px;
+    --p5-width: 160px;
+    --p5-left: 561px;
+    --p5-top: 385px;
+    --p6-width: 101px;
+    --p6-left: 669px;
+    --p6-top: 482px;
+
+    /* Group 3 */
+    --group-3-tag-left: 937px;
+    --group-3-tag-top: 510px;
+    --group-3-tag-width: 182px;
+    --p7-width: 109px;
+    --p7-left: 794px;
+    --p7-top: 406px;
+    --p8-width: 148px;
+    --p8-left: 877px;
+    --p8-top: 350px;
+    --p9-width: 113px;
+    --p9-left: 1021px;
+    --p9-top: 374px;
+
+    /* Intro */
+    --intro-question-width: 485px;
+    --intro-question-left: 140px;
+    --intro-question-top: 652px;
+    --intro-answer-width: 483px;
+    --intro-answer-left: 655px;
+    --intro-answer-top: 652px;
+
+    /* Casefile Card */
+    --casefile-card-width: 351px;
+    --casefile-card-height: 232px;
+    --casefile-card-left: 163px;
+    --casefile-card-top: 1024px;
+    --casefile-photo-width: 152px;
+    --casefile-photo-height: 115px;
+    --casefile-photo-left: 14px;
+    --casefile-photo-top: 12px;
+    --casefile-label-width: 106px;
+    --casefile-label-left: 180px;
+    --casefile-label-top: 15px;
+    --casefile-meta-width: 130px;
+    --casefile-meta-left: 180px;
+    --casefile-meta-top: 60px;
+    --casefile-text-width: 310px;
+    --casefile-text-left: 20px;
+    --casefile-text-top: 135px;
+
+    /* Casefile Manifest */
+    --casefile-manifest-width: 571px;
+    --casefile-manifest-left: 569px;
+    --casefile-manifest-top: 1061px;
+    /* Овал под правым текстом дела 451 */
+    --casefile-circle-width: 153px;
+    --casefile-circle-height: 38px;
+    --casefile-circle-left: 568px;
+    --casefile-circle-top: 1087px;
+
+    /* Question Cards */
+    --question-card-width: 312px;
+    --question-card-height: 250px;
+    --question-card-top: 1332px;
+    --q1-left: 140px;
+    --q2-left: 483px;
+    --q3-left: 825px;
+    --patient-img-width: 104px;
+    --patient-img-top: 0;
+    --q1-patient-img-left: 104px;
+    --q1-patient-img-height: 119px;
+    --q2-patient-img-left: 104px;
+    --q2-patient-img-height: 120px;
+    --q3-patient-img-left: 104px;
+    --q3-patient-img-height: 119px;
+    --question-photo-width: 312px;
+    --question-photo-height: 148px;
+    --question-photo-left: 0;
+    --question-photo-top: 60px;
+    --question-card-p-top: 131px;
+    --question-card-p-left: 26px;
+    --question-card-p-width: 260px;
+
+    /* Quote */
+    --quote-width: 887px;
+    --quote-left: 197px;
+    --quote-top: 1618px;
+
+    /* Author */
+    --author-photo-width: 434px;
+    --author-photo-height: 451px;
+    --author-photo-left: 205px;
+    --author-photo-top: 1930px;
+    --author-clip-width: 41px;
+    --author-clip-height: 69px;
+    --author-clip-left: 441px;
+    --author-clip-top: 2343px;
+    --author-info-left: 742px;
+    --author-info-top: 2200px;
+    --author-info-width: 264px;
+    --author-label-width: 185px;
+    --author-label-height: 34px;
+    --author-label-left: 790px;
+    --author-label-top: 2017px;
+    --author-text-min-width: 264px;
+    --author-text-height: 116px;
+    --author-text-left: 743px;
+    --author-text-top: 2200px;
+
+    /* Cases Container */
+    --cases-container-width: 1000px;
+    --cases-container-height: 852px;
+    --cases-container-left: 140px;
+    --cases-container-top: 2512px;
+    --case-item-width: 1000px;
+    --case-item-left: 0;
+    --case-tab-width: 329px;
+    --case-tab-height: 70px;
+    --case-tab-left: 671px;
+    --case-tab-top: 0;
+    --case-body-width: 1000px;
+    --case-body-top: 45px;
+    --case-1-top: 0;
+    --case-1-height: 578px;
+    --case-2-top: 200px;
+    --case-2-height: 578px;
+    --case-3-top: 400px;
+    --case-3-height: 452px;
+    --case-4-top: 600px;
+    --case-4-height: 252px;
+    --case-item-h4-top: 85px;
+    --case-item-h4-left: 40px;
+    --case-item-h4-width: 596px;
+    --case-line-left: 40px;
+    --case-line-width: 602px;
+    --case-line-height: 1px;
+    --line-1-top: 125px;
+    --line-2-top: 167px;
+    --btn-case-left: 741px;
+    --btn-case-top: 103px;
+    --btn-case-width: 227px;
+    --btn-case-height: 52px;
+    --case-link-top: 0;
+    --case-link-left: 0;
+    --case-link-width: 100%;
+    --case-link-height: 100%;
+
+    /* Product Block */
+    --product-block-width: 1000px;
+    --product-block-height: 271px;
+    --product-block-left: 140px;
+    --product-block-top: 3414px;
+    --btn-product-width: 325px;
+    --btn-product-height: 52px;
+
+  /* Lead Block */
+  --lead-block-width: 1000px;
+  --lead-block-height: 650px;
+  --lead-block-top: 3735px;
+    --lead-block-left: 140px;
+    --lead-block-h2-width: 427px;
+    --lead-block-h2-height: 192px;
+    --lead-block-h2-left: 32px;
+    --lead-block-h2-top: 45px;
+    --lead-info-group-width: 416px;
+    --lead-info-group-height: 159px;
+    --lead-info-group-left: 32px;
+    --lead-info-group-top: 321px;
+    --lead-avatar-width: 80px;
+    --lead-avatar-height: 80px;
+    --lead-caption-width: 354px;
+    --lead-form-width: 457px;
+    --lead-form-left: 515px;
+    --lead-form-top: 32px;
+    --lead-consent-width: 420px;
+    --lead-consent-left: 515px;
+    --lead-consent-top: 381px;
+    --btn-lead-width: 272px;
+    --btn-lead-height: 52px;
+    --btn-lead-left: 515px;
+    --btn-lead-top: 517px;
+
+    /* Footer */
+    --site-footer-width: 1000px;
+    --site-footer-height: 460px;
+    --site-footer-left: 140px;
+    --site-footer-top: 4408px;
+    --footer-disclaimer-width: 1000px;
+    --footer-disclaimer-height: 236px;
+    --footer-disclaimer-top: 0;
+    --footer-disclaimer-left: 0;
+    --footer-main-wrap-width: 1000px;
+    --footer-main-wrap-height: 212px;
+    --footer-main-wrap-top: 248px;
+    --footer-main-wrap-left: 0;
+    --footer-tab-width: 299px;
+    --footer-tab-height: 79px;
+    --footer-tab-top: 0;
+    --tab-info-left: 32px;
+    --tab-list-left: 309px;
+    --footer-content-width: 1000px;
+    --footer-content-height: 173px;
+    --footer-content-left: 0;
+    --footer-content-top: 39px;
+
+    /* Info block (Информация для специалистов здравоохранения) */
+    --info-block-left: 140px;
+    --info-block-top: 4408px;
+    --info-title-width: 1000px;
+    --info-title-height: 236px;
+}
+
+/* --- ХОЛСТ (CANVAS) --- */
+.canvas {
+    position: relative;
+    width: var(--canvas-width);
+    max-width: 100%;
+    min-height: var(--canvas-height);
+    height: auto;
+    /* Высота из Фигмы */
+    background: #FFFFFF;
+    overflow-x: hidden;
+    overflow-y: visible;
+    flex-shrink: 0;
+}
+
+/* Все элементы на холсте абсолютные */
+.canvas>* {
+    position: absolute;
+}
+
+/* Система текстовых блоков главной (аналогично c1-text в cases) */
+.site-text {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* --- ФОН --- */
+.book-bg {
+    width: var(--book-bg-width);
+    height: var(--book-bg-height);
+    left: var(--book-bg-left);
+    top: var(--book-bg-top);
+    z-index: 0;
+}
+
+/* --- СЛОИ И КЛИКАБЕЛЬНОСТЬ --- */
+/* Текст и кнопки выше фона */
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+.btn,
+a,
+input,
+label,
+form,
+.casefile-card {
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* --- ШАПКА --- */
+.logo {
+  width: var(--logo-width);
+  height: var(--logo-height);
+  left: var(--logo-left);
+  top: var(--logo-top);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-title {
+    font-family: "Ubuntu";
+    font-weight: 700;
+    font-size: 46px;
+    letter-spacing: -2px;
+}
+
+.logo-badge {
+    font-family: "Open Sans";
+    font-size: 9px;
+    border: 1px solid #252575;
+    padding: 4px 8px;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.header-btn {
+    width: var(--header-btn-width);
+    height: var(--header-btn-height);
+    left: var(--header-btn-left);
+    top: var(--header-btn-top);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.header-btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.header-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ссылки-кнопки (ведут на форму сбора ПД с памяткой) — без подчёркивания и обводки фокуса (важно для продакшена при глобальных стилях) */
+a.header-btn,
+a.btn-case,
+a.btn-product {
+    text-decoration: none !important;
+    color: inherit;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a.header-btn:hover,
+a.header-btn:focus,
+a.header-btn:visited,
+a.header-btn:active,
+a.btn-case:hover,
+a.btn-case:focus,
+a.btn-case:visited,
+a.btn-case:active,
+a.btn-product:hover,
+a.btn-product:focus,
+a.btn-product:visited,
+a.btn-product:active {
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* --- HERO (ЗАГОЛОВОК) --- */
+.hero-header {
+    width: var(--hero-header-width);
+    left: var(--hero-header-left);
+    top: var(--hero-header-top);
+    text-align: center;
+}
+
+.hero-header h1 {
+    font-family: "Rubik Dirt";
+    font-size: 80px;
+    line-height: 0.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-header p {
+    font-family: "Old Soviet";
+    font-size: 24px;
+    color: #333;
+}
+
+.hero-desc__second-line {
+    display: block;
+    padding-left: 1.5em;
+}
+
+/* --- ГРУППЫ КАРТИНОК --- */
+/* Теги */
+.tag {
+    position: absolute;
+    border: none;
+    background: transparent;
+    color: #5B5B5B;
+    font-size: 12px;
+    text-align: center;
+    font-family: "Old Soviet";
+    z-index: 15;
+    width: 100%;
+}
+
+.hero-group {
+    display: contents;
+}
+
+/* Группа 1 (Раздражительные) — абсолютный left/top у контейнера */
+.group-1 {
+    position: absolute;
+    left: var(--group-1-left);
+    top: var(--group-1-top);
+    display: block;
+    z-index: 10;
+}
+
+.group-1 .tag {
+    left: calc(var(--group-1-tag-left) - var(--group-1-left));
+    top: calc(var(--group-1-tag-top) - var(--group-1-top));
+    width: var(--group-1-tag-width);
+}
+
+.group-1 .p1 {
+    left: calc(var(--p1-left) - var(--group-1-left));
+    top: calc(var(--p1-top) - var(--group-1-top));
+}
+
+.group-1 .p2 {
+    left: calc(var(--p2-left) - var(--group-1-left));
+    top: calc(var(--p2-top) - var(--group-1-top));
+}
+
+.group-1 .p3 {
+    left: calc(var(--p3-left) - var(--group-1-left));
+    top: calc(var(--p3-top) - var(--group-1-top));
+}
+
+/* Фото 1–3: отключаем max-width: 100%, иначе в контейнере без ширины они сжимаются в точки */
+.group-1 .p1,
+.group-1 .p2,
+.group-1 .p3 {
+    max-width: none;
+}
+
+.p1 {
+    position: absolute;
+    width: var(--p1-width);
+    left: var(--p1-left);
+    top: var(--p1-top);
+    transform: rotate(-1.67deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+.p2 {
+    position: absolute;
+    width: var(--p2-width);
+    left: var(--p2-left);
+    top: var(--p2-top);
+    transform: rotate(1.12deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+.p3 {
+    position: absolute;
+    width: var(--p3-width);
+    left: var(--p3-left);
+    top: var(--p3-top);
+    transform: rotate(-5.56deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+/* Группа 2 (Вспыльчивые) - left 500px, top 385px (база) */
+.group-2 .tag {
+    left: var(--group-2-tag-left);
+    top: var(--group-2-tag-top);
+    width: var(--group-2-tag-width);
+}
+
+.p4 {
+    position: absolute;
+    width: var(--p4-width);
+    left: var(--p4-left);
+    top: var(--p4-top);
+    transform: rotate(0.8deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+.p5 {
+    position: absolute;
+    width: var(--p5-width);
+    left: var(--p5-left);
+    top: var(--p5-top);
+    transform: rotate(2.95deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+.p6 {
+    position: absolute;
+    width: var(--p6-width);
+    left: var(--p6-left);
+    top: var(--p6-top);
+    transform: rotate(1.1deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+/* Группа 3 («С вечным недовольством») — по левому краю, не по центру */
+.group-3 .tag {
+    left: var(--group-3-tag-left);
+    top: var(--group-3-tag-top);
+    width: var(--group-3-tag-width);
+    text-align: left;
+}
+
+.p7 {
+    position: absolute;
+    width: var(--p7-width);
+    left: var(--p7-left);
+    top: var(--p7-top);
+    transform: rotate(-1.67deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+.p8 {
+    position: absolute;
+    width: var(--p8-width);
+    left: var(--p8-left);
+    top: var(--p8-top);
+    transform: rotate(1.23deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+.p9 {
+    position: absolute;
+    width: var(--p9-width);
+    left: var(--p9-left);
+    top: var(--p9-top);
+    transform: rotate(-1.71deg);
+    border: 2px solid #333;
+    border-radius: 2px;
+    box-shadow: -4px 4px 2.8px rgba(0, 0, 0, 0.13);
+}
+
+/* --- INTRO --- */
+.intro-question {
+    width: var(--intro-question-width);
+    left: var(--intro-question-left);
+    top: var(--intro-question-top);
+}
+
+.intro-question h2 {
+    font-family: "Old Soviet";
+    font-size: 24px;
+    line-height: 1.4;
+    color: #333;
+}
+
+.intro-answer {
+    width: var(--intro-answer-width);
+    left: var(--intro-answer-left);
+    top: var(--intro-answer-top);
+}
+
+.intro-answer p {
+    font-family: "Old Soviet";
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* --- CASEFILE CARD --- */
+.casefile-card {
+    display: none;
+    /* Блок «Дело №451» скрыт */
+    width: var(--casefile-card-width);
+    height: var(--casefile-card-height);
+    left: var(--casefile-card-left);
+    top: var(--casefile-card-top);
+    background: url('../img/bg451.png');
+    transform: rotate(0.54deg);
+}
+
+.casefile-card>* {
+    position: absolute;
+}
+
+/* Все внутри карточки */
+.casefile-photo {
+    width: var(--casefile-photo-width);
+    height: var(--casefile-photo-height);
+    left: var(--casefile-photo-left);
+    top: var(--casefile-photo-top);
+    transform: rotate(-3deg);
+    border: 2px solid #333;
+    object-fit: cover;
+    object-position: top;
+}
+
+.casefile-label {
+    width: var(--casefile-label-width);
+    left: var(--casefile-label-left);
+    top: var(--casefile-label-top);
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #5b5b5b;
+}
+
+.casefile-meta {
+    width: var(--casefile-meta-width);
+    left: var(--casefile-meta-left);
+    top: var(--casefile-meta-top);
+    font-size: 10px;
+    color: #5b5b5b;
+    font-family: "Old Soviet";
+}
+
+.casefile-text {
+    width: var(--casefile-text-width);
+    left: var(--casefile-text-left);
+    top: var(--casefile-text-top);
+    font-family: "Old Soviet", serif;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #5b5b5b;
+    text-align: left;
+}
+
+/* --- MANIFEST (СПРАВА) --- */
+.casefile-manifest {
+    width: var(--casefile-manifest-width);
+    left: var(--casefile-manifest-left);
+    top: var(--casefile-manifest-top);
+    z-index: 5;
+}
+
+.casefile-manifest p {
+    font-family: "Old Soviet";
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.big-text {
+    font-size: 24px;
+}
+
+.small-text {
+    font-size: 16px;
+}
+
+/* Овал под правым текстом дела 451 (153×38): ниже текста манифеста, выше фона */
+.casefile-circle {
+    position: absolute;
+    width: var(--casefile-circle-width);
+    height: var(--casefile-circle-height);
+    left: var(--casefile-circle-left);
+    top: var(--casefile-circle-top);
+    display: block;
+    z-index: 1;
+}
+
+/* --- ВОПРОСЫ --- */
+/* Контейнер карточки (привязан к верхней точке — 1332px) */
+/* Контейнер карточки */
+.question-card {
+    position: absolute;
+    width: var(--question-card-width);
+    height: var(--question-card-height);
+    top: var(--question-card-top);
+    z-index: 10;
+}
+
+.q1 {
+    left: var(--q1-left);
+}
+
+.q2 {
+    left: var(--q2-left);
+}
+
+.q3 {
+    left: var(--q3-left);
+}
+
+/* ФОТО ПАЦИЕНТА (Твои координаты и правила обрезки) */
+.patient-img {
+    position: absolute;
+    width: var(--patient-img-width);
+    top: var(--patient-img-top);
+
+    /* МАГИЯ ОБРЕЗКИ: */
+    object-fit: cover;
+    /* Заполняет блок, сохраняя пропорции */
+    object-position: top center;
+    /* Фиксирует верх, центрует лево/право, режет низ */
+
+    border-radius: 2px;
+    z-index: 5;
+}
+
+/* Точные размеры и отступы внутри карточек */
+.q1 .patient-img {
+    left: var(--q1-patient-img-left);
+    height: var(--q1-patient-img-height);
+}
+
+.q2 .patient-img {
+    left: var(--q2-patient-img-left);
+    height: var(--q2-patient-img-height);
+}
+
+.q3 .patient-img {
+    left: var(--q3-patient-img-left);
+    height: var(--q3-patient-img-height);
+}
+
+/* ФОН КАРТОЧКИ (убрали — без фона) */
+.question-photo {
+    display: none;
+    position: absolute;
+    width: var(--question-photo-width);
+    height: var(--question-photo-height);
+    left: var(--question-photo-left);
+    top: var(--question-photo-top);
+    transform: scaleX(-1);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* ТЕКСТ ВОПРОСА */
+.question-card p {
+    position: absolute;
+    top: var(--question-card-p-top);
+    /* (1463 - 1332) */
+    left: var(--question-card-p-left);
+    width: var(--question-card-p-width);
+    text-align: center;
+    font-family: "Old Soviet";
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    z-index: 10;
+    margin: 0;
+}
+
+/* --- QUOTE --- */
+.quote {
+    width: var(--quote-width);
+    left: var(--quote-left);
+    top: var(--quote-top);
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.4;
+    font-family: "Old Soviet";
+}
+
+/* --- AUTHOR --- */
+.author-photo {
+    width: var(--author-photo-width);
+    height: var(--author-photo-height);
+    left: var(--author-photo-left);
+    top: var(--author-photo-top);
+    transform: rotate(2.6deg);
+    object-fit: contain;
+    position: absolute;
+}
+
+.author-clip {
+    position: absolute;
+    width: var(--author-clip-width);
+    height: var(--author-clip-height);
+    left: var(--author-clip-left);
+    top: var(--author-clip-top);
+    transform: rotate(1.04deg);
+    z-index: 20;
+}
+
+.author-info {
+    position: absolute;
+    left: var(--author-info-left);
+    top: var(--author-info-top);
+    width: var(--author-info-width);
+    transform: rotate(-0.5deg);
+}
+
+.author-info h3 {
+    color: #f6aa16;
+    font-size: 20px;
+    font-family: "Old Soviet";
+}
+
+.author-info h4 {
+    color: #00477C;
+    font-size: 24px;
+    margin: 5px 0;
+    font-family: "Old Soviet";
+}
+
+.author-info p {
+    font-size: 16px;
+    margin: 0;
+    font-family: "Old Soviet";
+}
+
+/* --- Надпись "Автор кейсов" --- */
+.author-label {
+    position: absolute;
+    /* Размеры */
+    width: var(--author-label-width);
+    height: var(--author-label-height);
+
+    /* Координаты */
+    left: var(--author-label-left);
+    /* 790.03px */
+    top: var(--author-label-top);
+    /* 2016.79px */
+
+    /* Поворот */
+    transform: rotate(1.28deg);
+
+    /* Стили текста */
+    font-family: "Old Soviet";
+    font-size: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 10;
+
+    /* Чтобы овал рисовался корректно внутри */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Блок текста (Имя + Регалии) --- */
+.author-text {
+    position: absolute;
+    /* Размеры */
+    min-width: var(--author-text-min-width);
+    height: var(--author-text-height);
+
+    /* Координаты */
+    left: var(--author-text-left);
+    /* 742.63px */
+    top: var(--author-text-top);
+    /* 2200.07px */
+
+    /* Поворот */
+    transform: rotate(-0.47deg);
+
+    /* Flexbox настройки из Фигмы */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    /* Твой гэп */
+
+    z-index: 10;
+}
+
+/* Стили внутри текстового блока */
+.author-text h4 {
+    font-family: "Old Soviet", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 130%;
+    /* 1.3 */
+    letter-spacing: 0;
+
+    /* Цвет (оставляем синий, как был в дизайне) */
+    color: #00477C;
+    margin: 0;
+}
+
+/* Регалии: Кандидат... Гастроэнтеролог... */
+.author-text p {
+    font-family: "Old Soviet", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* 1.5 */
+    letter-spacing: 0;
+
+    /* Цвет (обычный темный) */
+    color: #333333;
+    margin: 0;
+}
+
+/* =========================================
+   КЕЙСЫ - ДИЗАЙН ПАПОК (SEAMLESS FIX)
+   ========================================= */
+
+.cases-container {
+    position: absolute;
+    width: var(--cases-container-width);
+    height: var(--cases-container-height);
+    left: var(--cases-container-left);
+    top: var(--cases-container-top);
+}
+
+/* Общая обертка кейса */
+.case-item {
+    position: absolute;
+    width: var(--case-item-width);
+    left: var(--case-item-left);
+    overflow: visible;
+}
+
+/* --- УШКО ПАПКИ (TAB) --- */
+.case-tab {
+    position: absolute;
+    width: var(--case-tab-width);
+    /* Делаем его чуть выше, чтобы оно глубоко заходило под тело */
+    height: var(--case-tab-height);
+    left: var(--case-tab-left);
+    top: var(--case-tab-top);
+
+    /* Скос слева */
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 0% 100%);
+
+    border-radius: 10px 10px 0 0;
+
+    /* ВАЖНО: Ушко отправляем НАЗАД */
+    z-index: 1;
+}
+
+/* --- ТЕЛО ПАПКИ (BODY) --- */
+.case-body {
+    position: absolute;
+    width: var(--case-body-width);
+
+    /* ВАЖНО: Поднимаем тело выше, чтобы оно перекрыло низ ушка */
+    top: var(--case-body-top);
+    height: calc(100% - 45px);
+
+    /* Скругление левого угла */
+    border-radius: 10px 0 0 0;
+
+    padding: 30px 40px;
+    box-sizing: border-box;
+
+    /* ВАЖНО: Тело кладем ПОВЕРХ ушка */
+    z-index: 2;
+}
+
+/* --- ЦВЕТА И СЛОИ САМИХ ПАПОК --- */
+
+/* 1. Коричневая */
+.case-1 {
+    top: var(--case-1-top);
+    height: var(--case-1-height);
+    z-index: 3;
+}
+
+.case-1 .case-tab,
+.case-1 .case-body {
+    background: #471D0F;
+}
+
+.case-1 h4,
+.case-1 .case-date {
+    color: #FFFFFF;
+}
+
+/* 2. Бежевая */
+.case-2 {
+    top: var(--case-2-top);
+    height: var(--case-2-height);
+    z-index: 3;
+}
+
+.case-2 .case-tab,
+.case-2 .case-body {
+    background: #E8D9C6;
+}
+
+.case-2 h4,
+.case-2 .case-date {
+    color: #333333;
+}
+
+.text-dark {
+    color: #333333 !important;
+}
+
+/* 3. Серая */
+.case-3 {
+    top: var(--case-3-top);
+    height: var(--case-3-height);
+    z-index: 3;
+}
+
+.case-3 .case-tab,
+.case-3 .case-body {
+    background: #83969D;
+}
+
+.case-3 h4,
+.case-3 .case-date {
+    color: #FFFFFF;
+}
+
+.case-3 .case-date,
+.case-4 .case-date {
+    font-family: "Old Soviet", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    opacity: 0.5;
+}
+
+/* 4. Темная */
+.case-4 {
+    top: var(--case-4-top);
+    height: var(--case-4-height);
+    z-index: 3;
+}
+
+.case-4 .case-tab,
+.case-4 .case-body {
+    background: #2F2422;
+}
+
+.case-4 h4,
+.case-4 .case-date {
+    color: #FFFFFF;
+}
+
+
+/* --- КОНТЕНТ --- */
+
+/* Дата в ушке */
+.case-date {
+    display: block;
+    padding-top: 15px;
+    text-align: center;
+    font-family: "Old Soviet";
+    font-size: 24px;
+    opacity: 0.5;
+    padding-left: 20px;
+    /* Компенсация скоса */
+}
+
+/* Заголовок */
+.case-item h4 {
+    /* Параметры из твоего запроса */
+    font-family: "HelveticaNeueCyrThin", sans-serif;
+    font-weight: 300;
+    /* Light */
+    font-style: normal;
+    font-size: 30px;
+    line-height: 140%;
+    /* Это 42px */
+    letter-spacing: 0%;
+
+    /* Позиционирование */
+    position: absolute;
+    top: var(--case-item-h4-top);
+    left: var(--case-item-h4-left);
+    width: var(--case-item-h4-width);
+    margin: 0;
+    z-index: 10;
+}
+
+/* --- ЦВЕТА ТЕКСТА --- */
+
+/* 1. Коричневая */
+.case-1 h4 {
+    color: #FFFFFF;
+}
+
+/* 2. Бежевая (#333333) */
+.case-2 h4 {
+    color: #333333;
+}
+
+/* 3. Серая */
+.case-3 h4 {
+    color: #FFFFFF;
+}
+
+/* 4. Темная */
+.case-4 h4 {
+    color: #FFFFFF;
+}
+
+
+/* --- ЛИНИИ ПОД ТЕКСТОМ --- */
+/* Подгоняем линии под line-height 140% (42px) */
+
+.case-line {
+    position: absolute;
+    left: var(--case-line-left);
+    width: var(--case-line-width);
+    height: var(--case-line-height);
+    background: #FFFFFF;
+    opacity: 0.3;
+    z-index: 10;
+}
+
+/* Первая линия */
+/* Текст начинается на 85px. 85 + 42 (высота строки) = 127px. 
+   Линия должна быть чуть выше низа строки. 
+   Ставим 125px (было 122) */
+.line-1 {
+    top: var(--line-1-top);
+}
+
+/* Вторая линия */
+/* 125 + 42 (шаг строки) = 167px (было 162) */
+.line-2 {
+    top: var(--line-2-top);
+}
+
+/* Темные линии для бежевого кейса */
+.dark-lines {
+    background: #333333;
+}
+
+/* Кнопка «Узнать первым» (картинка get-first.png, обводка убрана) */
+.btn-case {
+    position: absolute;
+    left: var(--btn-case-left);
+    top: var(--btn-case-top);
+    width: var(--btn-case-width);
+    height: var(--btn-case-height);
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn-case:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* На десктопе две кнопки — каждая в своём кейсе (контейнер 2512, case-3 +400, case-4 +600, кнопка +45) */
+.btn-case--1 {
+    left: calc(var(--cases-container-left) + var(--btn-case-left));
+    top: calc(var(--cases-container-top) + var(--case-3-top) + var(--btn-case-top));
+}
+
+.btn-case--2 {
+    left: calc(var(--cases-container-left) + var(--btn-case-left));
+    top: calc(var(--cases-container-top) + var(--case-4-top) + var(--btn-case-top));
+}
+
+.btn-case img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Ссылка на всю папку */
+.case-link {
+    position: absolute;
+    top: var(--case-link-top);
+    left: var(--case-link-left);
+    width: var(--case-link-width);
+    height: var(--case-link-height);
+    z-index: 20;
+}
+
+/* --- PRODUCT --- */
+.product-block {
+    position: absolute;
+    width: var(--product-block-width);
+    height: var(--product-block-height);
+    left: var(--product-block-left);
+    top: var(--product-block-top);
+
+    background: url('../img/reg-bg1.png') no-repeat center center;
+    background-size: cover;
+
+    border-radius: 10px;
+    text-align: center;
+    z-index: 5;
+}
+
+.product-block h3 {
+    position: relative;
+    margin-top: 40px;
+    font-size: 32px;
+    font-family: "Old Soviet";
+    color: #333333;
+}
+
+.product-block p {
+    position: relative;
+    font-size: 16px;
+    max-width: 660px;
+    margin: 20px auto;
+    font-family: "Old Soviet";
+    color: #333333;
+}
+
+.btn-product {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 auto;
+    width: var(--btn-product-width);
+    /* Размер из фигмы */
+    height: var(--btn-product-height);
+    border: transparent;
+    background: url('../img/button-blue.webp') no-repeat center center;
+    background-size: 100% 100%;
+    color: #333333;
+    font-family: "Old Soviet";
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- LEAD FORM (Памятка юриста) --- */
+/* ============================================================
+   БЛОК: ПОЛУЧИТЕ ПАМЯТКУ ЮРИСТА (LEAD BLOCK)
+   ============================================================ */
+
+/* 1. Общая подложка блока */
+.lead-block {
+    position: absolute;
+    width: var(--lead-block-width);
+    height: auto;
+    min-height: var(--lead-block-height);
+    top: var(--lead-block-top);
+    left: var(--lead-block-left);
+
+    /* Фон из твоих файлов */
+    background: url('../img/reg-bg2.png') no-repeat center center;
+    background-size: 100% 100%;
+    background-position: center top;
+    border-radius: 10px;
+
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 5;
+    overflow: visible;
+}
+
+/* 2. Заголовок (Получите памятку юриста) */
+.lead-block h2 {
+    position: absolute;
+    width: var(--lead-block-h2-width);
+    height: var(--lead-block-h2-height);
+    left: var(--lead-block-h2-left);
+    top: var(--lead-block-h2-top);
+    /* Подняли чуть выше для соответствия рефу */
+
+    font-family: "Rubik Dirt", sans-serif;
+    font-size: 80px;
+    line-height: 80%;
+    /* 64px плотность */
+
+    /* Восстановление цвета (чтобы не был бледным) */
+    color: #333333 !important;
+    opacity: 1 !important;
+    text-align: left;
+    margin: 0 !important;
+    z-index: 10;
+}
+
+/* 3. Фон-подчёркивание (волнистая линия) под словом "юриста" */
+.lead-title-underline {
+    position: relative;
+    display: inline-block;
+    background: url('../img/Vector 812.png') no-repeat center bottom;
+    background-size: 100% auto;
+    padding-bottom: 0.35em;
+    background-origin: padding-box;
+}
+
+/* Оранжевая черта под словом "юриста" (запасной вариант) */
+.underline--orange {
+    position: relative;
+    display: inline-block;
+}
+
+.underline--orange::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    width: 100%;
+    height: 8px;
+    background: #f6aa16;
+    z-index: -1;
+    border-radius: 2px;
+}
+
+/* 4. Инфо-группа (Аватар + Имя + Описание) */
+.lead-info-group {
+    position: absolute;
+    width: var(--lead-info-group-width);
+    height: var(--lead-info-group-height);
+    left: var(--lead-info-group-left);
+    top: var(--lead-info-group-top);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Тот самый отступ из фигмы */
+    z-index: 10;
+}
+
+.lead-person {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.lead-avatar {
+    width: var(--lead-avatar-width);
+    height: var(--lead-avatar-height);
+    border-radius: 50%;
+    object-fit: cover;
+    background: #EAEAEA;
+    flex-shrink: 0;
+    position: relative !important;
+    /* Чтобы не улетал из флекса */
+}
+
+.lead-name-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.lead-role {
+    font-family: "Old Soviet", serif;
+    font-size: 13px;
+    color: #333333;
+    position: relative !important;
+}
+
+.lead-name {
+    font-family: "Old Soviet", serif;
+    font-size: 24px;
+    line-height: 130%;
+    color: #00477C;
+    position: relative !important;
+}
+
+.lead-caption {
+    width: var(--lead-caption-width);
+    font-family: "Old Soviet", serif;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333333;
+    position: relative !important;
+}
+
+/* --- КОНТЕЙНЕР ФОРМЫ (СЕРАЯ ПЛАШКА) --- */
+.lead-form {
+    position: absolute;
+    width: var(--lead-form-width);
+    /* Высота подстроится сама под контент */
+    height: auto;
+    left: var(--lead-form-left);
+    top: var(--lead-form-top);
+    padding: 25px;
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Расстояние между всеми полями */
+}
+
+/* ОБЩИЙ СТИЛЬ ДЛЯ ВСЕХ СТРОК (включая телефон) */
+.lead-form label {
+    position: relative !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    gap: 13px;
+    width: 100%;
+    margin: 0 !important;
+}
+
+/* Текст слева (Фамилия, Имя, Телефон...) */
+.lead-form label>span:first-child {
+    position: relative !important;
+    width: 116px !important;
+    /* Фиксированная ширина для выравнивания */
+    text-align: right;
+    font-family: "Old Soviet", serif;
+    font-size: 13px;
+    color: #333333;
+    flex-shrink: 0;
+}
+
+/* ОБЫЧНЫЕ ИНПУТЫ (Линии), кроме телефона */
+.lead-form label:not(.lead-phone) input:not([type="checkbox"]) {
+    position: relative !important;
+    flex: 1;
+    border: none !important;
+    border-bottom: 1px solid #bdb5a7 !important;
+    background: transparent !important;
+    padding: 2px 0 !important;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    color: #333333;
+    outline: none;
+}
+
+/* СПЕЦИАЛЬНЫЙ БЛОК ТЕЛЕФОНА */
+.lead-phone-field {
+    position: relative !important;
+    flex: 1;
+    height: 28px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.lead-phone-mask {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    /* как у остальных полей */
+    color: #333333;
+    opacity: 1;
+    letter-spacing: 0px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.lead-phone-field input {
+    /* Полностью убираем все границы и делаем прозрачным */
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    background: transparent !important;
+    font-family: "Times New Roman", serif !important;
+    font-size: 18px !important;
+    color: #333333 !important;
+    line-height: 1;
+    z-index: 10;
+    width: 100%;
+    letter-spacing: 0px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* БЛОК СОГЛАСИЯ */
+.lead-consent {
+    position: absolute !important;
+    width: var(--lead-consent-width);
+    height: auto;
+    /* Пусть высота будет резиновой под текст */
+    left: var(--lead-consent-left);
+    top: var(--lead-consent-top);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px;
+    z-index: 25;
+}
+
+/* Сбрасываем абсолют для всех детей внутри согласия, чтобы они слушались флекса */
+.lead-consent *,
+.lead-consent p,
+.lead-consent label,
+.lead-consent span,
+.lead-consent input {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0;
+}
+
+.lead-consent-intro {
+    font-family: "Old Soviet", serif;
+    font-size: 12px;
+    line-height: 1.3;
+    color: #333333;
+    margin-bottom: 4px !important;
+}
+
+.checkbox {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Чекбокс и текст в одну строку */
+    align-items: flex-start !important;
+    gap: 12px !important;
+    cursor: pointer;
+    width: 100%;
+}
+
+.checkbox input {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+    border: 1px solid #333333 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    /* Без системного сглаживания / заливки */
+}
+
+/* Простая галочка при клике */
+.checkbox input:checked::before {
+    content: "✓";
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+    display: block;
+    text-align: center;
+}
+
+.checkbox span {
+    font-family: "Old Soviet", serif;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: left !important;
+    color: #333333;
+    width: auto !important;
+    padding-top: 2px;
+    /* Выравнивание текста по центру чекбокса */
+}
+
+/* КНОПКА «Получить доступ» — текст скрыт, прозрачная кликабельная область */
+.btn-lead {
+    position: absolute;
+    width: var(--btn-lead-width);
+    height: var(--btn-lead-height);
+    left: var(--btn-lead-left);
+    top: var(--btn-lead-top);
+    padding: 9px 20px;
+    border: none;
+    background: transparent;
+    color: transparent;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 30;
+}
+
+/* =========================================
+   ФУТЕР (ПОЛНЫЙ ФИКС)
+   ========================================= */
+
+.site-footer {
+    position: absolute !important;
+    width: var(--site-footer-width);
+    height: var(--site-footer-height);
+    left: var(--site-footer-left);
+    top: calc(var(--lead-block-top) + var(--lead-block-height) + 50px);
+    /* Позиционируется относительно lead-block */
+    z-index: 100;
+}
+
+/* 1. Огромный верхний текст */
+.footer-disclaimer {
+    position: absolute !important;
+    width: var(--footer-disclaimer-width);
+    height: var(--footer-disclaimer-height);
+    top: var(--footer-disclaimer-top);
+    left: var(--footer-disclaimer-left);
+
+    font-family: "Attentica 4F", sans-serif;
+    font-weight: 250;
+    /* UltraLight */
+    font-size: 137px;
+    line-height: 86%;
+    /* Слипание как в дизайне */
+    text-align: center;
+    text-transform: uppercase;
+    color: #333333;
+    margin: 0 !important;
+}
+
+/* 2. Контейнер для табов и серой плашки */
+.footer-main-wrap {
+    position: absolute !important;
+    width: var(--footer-main-wrap-width);
+    height: var(--footer-main-wrap-height);
+    top: var(--footer-main-wrap-top);
+    /* v237_171 top */
+    left: var(--footer-main-wrap-left);
+}
+
+/* 3. Общий стиль табов */
+.footer-tab {
+    position: absolute !important;
+    width: var(--footer-tab-width);
+    height: var(--footer-tab-height);
+    top: var(--footer-tab-top);
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    /* Текст прижат к верху */
+    justify-content: center;
+    padding-top: 8px;
+    z-index: 5;
+}
+
+.footer-tab span {
+    position: relative !important;
+    font-family: "Old Soviet", serif;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* Левый таб (Инфо) */
+.tab-info {
+    left: var(--tab-info-left);
+    background: #F6F6F6;
+    /* v237_176 */
+}
+
+/* Правый таб (Литература) */
+.tab-list {
+    left: var(--tab-list-left);
+    background: #DFDFDF;
+    /* v237_173 */
+}
+
+/* 4. Нижняя серая плашка с контентом */
+.footer-content {
+    position: absolute !important;
+    width: var(--footer-content-width);
+    height: var(--footer-content-height);
+    left: var(--footer-content-left);
+    top: var(--footer-content-top);
+    /* Накладывается на табы снизу */
+
+    background: #F6F6F6;
+    border-radius: 10px 10px 0px 0px;
+    padding: 35px 25px;
+    z-index: 10;
+    /* Перекрывает низ табов */
+}
+
+.footer-text {
+    position: relative !important;
+    font-family: "Old Soviet", serif;
+    font-size: 12px;
+    line-height: 150%;
+    color: #333333;
+}
+
+/* --- DECOR --- */
+.oval--orange,
+.underline--orange {
+    position: relative;
+    z-index: 10;
+}
+
+.oval--orange::after,
+.underline--orange::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 3px solid #f6aa16;
+    left: -5px;
+    right: -5px;
+    top: 0;
+    bottom: 0;
+    border-radius: 20px;
+    transform: rotate(-2deg);
+}
+
+.underline--orange::after {
+    border-radius: 5px;
+    border: none;
+    background: #f6aa16;
+    height: 5px;
+    top: auto;
+    bottom: 2px;
+}
+
+/* Базовый стиль для контейнера с текстом */
+.redacted {
+    position: relative;
+    display: inline-block;
+    color: transparent !important;
+    /* Текст не виден, но занимает место */
+    user-select: none;
+    white-space: nowrap;
+    margin: 0 2px;
+    padding: 0 4px;
+    /* Небольшой запас по бокам */
+}
+
+/* Создаем сам мазок через псевдоэлемент */
+.redacted::after {
+    content: "";
+    position: absolute;
+    /* Центрируем мазок относительно текста */
+    left: -2px;
+    right: -2px;
+    top: -20%;
+    /* Вылезаем на 10% вверх за границы текста */
+    bottom: -20%;
+    /* Вылезаем на 10% вниз */
+
+    background-color: #333333;
+    /* Цвет маркера */
+
+    /* Настройки маски переносим сюда */
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    z-index: 1;
+}
+
+/* Назначаем файлы масок псевдоэлементам */
+
+.redacted:nth-of-type(1)::after {
+    -webkit-mask-image: url('../img/Vector 791.svg');
+    mask-image: url('../img/Vector 791.svg');
+}
+
+.redacted:nth-of-type(2)::after {
+    -webkit-mask-image: url('../img/Vector 792.svg');
+    mask-image: url('../img/Vector 792.svg');
+}
+
+.redacted:nth-of-type(3)::after {
+    -webkit-mask-image: url('../img/Vector 793.svg');
+    mask-image: url('../img/Vector 793.svg');
+}
+
+.redacted:nth-of-type(4)::after {
+    -webkit-mask-image: url('../img/Vector 794.svg');
+    mask-image: url('../img/Vector 794.svg');
+}
+
+.redacted:nth-of-type(5)::after {
+    -webkit-mask-image: url('../img/Vector 795.svg');
+    mask-image: url('../img/Vector 795.svg');
+}
+
+.redacted:nth-of-type(6)::after {
+    -webkit-mask-image: url('../img/Vector 796.svg');
+    mask-image: url('../img/Vector 796.svg');
+}
+
+.redacted:nth-of-type(7)::after {
+    -webkit-mask-image: url('../img/Vector 797.svg');
+    mask-image: url('../img/Vector 797.svg');
+}
+
+.redacted:nth-of-type(8)::after {
+    -webkit-mask-image: url('../img/Vector 798.svg');
+    mask-image: url('../img/Vector 798.svg');
+}
+
+/* ============================================================
+   АДАПТИВ (TABLET / MOBILE) — как в кейсах: один фон, текст + прозрачные кнопки поверх
+   Десктоп не трогаем.
+   ============================================================ */
+
+@media (max-width: 1304px) {
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Один фон на весь канвас, обрезается снизу по высоте канваса */
+    .canvas {
+        width: var(--canvas-width);
+        max-width: 100%;
+        min-height: var(--canvas-height);
+        height: auto;
+        flex-shrink: 0;
+        background-image: url('../img/main-bg-768.webp');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    /* Во втором медиа только текст, кнопки и фон canvas — все img скрыты, кроме get-first и аватара юриста */
+    .canvas img {
+        display: none !important;
+    }
+
+    .canvas .btn-case img,
+    .canvas .lead-avatar {
+        display: block !important;
+    }
+
+    /* Убираем переносы в «Памятка для врача» */
+    .lead-caption-br {
+        display: none;
+    }
+}
+
+/* Планшет: от 761px до 1304px (ниже 761 — мобилка 760) */
+@media (max-width: 1304px) and (min-width: 761px) {
+    :root {
+        /* --- ХОЛСТ --- */
+        /* Высота увеличена для блока "Информация для специалистов" (top: 3824px, height: 172px) */
+        --canvas-width: 768px;
+        --canvas-height: 4020px;
+
+        /* --- ФОН --- */
+        /* Масштабируем фон под новый размер */
+        --book-bg-width: 1300px;
+        --book-bg-height: 842px;
+        /* Центрируем фон, как в фигме: calc(50% - 1300/2 + 215) */
+        --book-bg-left: -51px;
+        --book-bg-top: 0;
+
+    /* --- ШАПКА --- */
+    --logo-left: 20px;
+    --logo-top: 22px;
+    --logo-width: 165px;
+    --logo-height: 36.0728759765625px;
+
+        /* Кнопка «Открыть доступ» по макету */
+        --header-btn-left: 567px;
+        --header-btn-top: 45.67px;
+        --header-btn-width: 169px;
+        --header-btn-height: 45px;
+
+        /* --- HERO --- */
+        --hero-header-width: 545px;
+        /* Центрируем: (768 - 545) / 2 */
+        --hero-header-left: 111px;
+        --hero-header-top: 110px;
+
+        /* Группы фото и теги по макету */
+        --group-1-left: 21px;
+        --group-1-top: 229px;
+        --group-1-tag-left: 23.44px;
+        --group-1-tag-top: 229.45px;
+        --group-1-tag-width: 108px;
+        --group-2-tag-left: 313.49px;
+        --group-2-tag-top: 371.86px;
+        --group-2-tag-width: 81px;
+        --group-3-tag-left: 602px;
+        --group-3-tag-top: 338px;
+        --group-3-tag-width: 159px;
+
+        /* Group 1 photos */
+        --p1-width: 100px;
+        --p1-left: 23px;
+        --p1-top: 254px;
+        --p2-width: 91px;
+        --p2-left: 112px;
+        --p2-top: 261px;
+        --p3-width: 86px;
+        --p3-left: 171px;
+        --p3-top: 231px;
+
+        /* Group 2 photos */
+        --p4-width: 73px;
+        --p4-left: 285px;
+        --p4-top: 263px;
+        --p5-width: 117px;
+        --p5-left: 329px;
+        --p5-top: 248px;
+        --p6-width: 73px;
+        --p6-left: 408px;
+        --p6-top: 318px;
+
+        /* Group 3 photos */
+        --p7-width: 79px;
+        --p7-left: 498px;
+        --p7-top: 263px;
+        --p8-width: 108px;
+        --p8-left: 559px;
+        --p8-top: 222px;
+        --p9-width: 82px;
+        --p9-left: 663px;
+        --p9-top: 240px;
+
+        /* --- INTRO --- */
+        --intro-question-width: 319px;
+        --intro-question-left: 43.74px;
+        --intro-question-top: 428.72px;
+        --intro-answer-width: 356px;
+        --intro-answer-left: 390px;
+        --intro-answer-top: 429px;
+
+        /* --- ДЕЛО (CASEFILE) --- */
+        --casefile-card-width: 240px;
+        --casefile-card-height: 149px;
+        --casefile-card-left: 55px;
+        --casefile-card-top: 686px;
+        --casefile-photo-width: 103px;
+        --casefile-photo-height: 78px;
+        --casefile-photo-left: 64px;
+        --casefile-photo-top: 686px;
+        --casefile-manifest-width: 375px;
+        --casefile-manifest-left: 330px;
+        --casefile-manifest-top: 685px;
+        --casefile-circle-left: 441px;
+        --casefile-circle-top: 820px;
+
+        /* --- ВОПРОСЫ --- */
+        --question-card-width: 228px;
+        --question-card-height: 152px;
+        --question-card-top: 885px;
+        --q1-left: 20px;
+        --q2-left: 270px;
+        --q3-left: 520px;
+        --patient-img-width: 76px;
+        --patient-img-top: 0;
+        --q1-patient-img-left: 62px;
+        --q1-patient-img-height: 87px;
+        --q2-patient-img-left: 62px;
+        --q2-patient-img-height: 87px;
+        --q3-patient-img-left: 62px;
+        --q3-patient-img-height: 87px;
+        --question-photo-width: 228px;
+        --question-photo-height: 152px;
+        --question-photo-left: 0;
+        --question-photo-top: 40px;
+        --question-card-p-top: 96px;
+        --question-card-p-left: 19px;
+        --question-card-p-width: 190px;
+
+        --quote-left: 89.06px;
+        --quote-top: 1064.25px;
+        --quote-width: 583px;
+
+        /* --- АВТОР --- */
+        /* В этом макете фото слева, текст справа */
+        --author-photo-width: 293px;
+        --author-photo-height: 311px;
+        --author-photo-left: 100px;
+        --author-photo-top: 1270px;
+        --author-label-width: 123px;
+        --author-label-height: 22px;
+        --author-label-left: 465.82px;
+        --author-label-top: 1335.59px;
+        --author-info-left: 441px;
+        --author-info-top: 1450px;
+        --author-info-width: 165px;
+        --author-text-left: 441.37px;
+        --author-text-top: 1450px;
+        --author-text-min-width: 165px;
+        --author-text-height: 72px;
+        --author-clip-width: 26px;
+        --author-clip-height: 45px;
+        --author-clip-left: 252px;
+        --author-clip-top: 1536px;
+
+        /* --- СПИСОК КЕЙСОВ --- */
+        --cases-container-width: 725px;
+        --cases-container-height: 831px;
+        --cases-container-left: 20px;
+        --cases-container-top: 1661px;
+        --case-item-width: 725px;
+        --case-item-left: 0;
+        --case-tab-width: 238px;
+        --case-tab-height: 73px;
+        --case-tab-left: 486px;
+        --case-tab-top: 0;
+        --case-body-width: 725px;
+        --case-body-top: 39px;
+        /* Группы кейсов по макету (Frame 2087325035, 2087325033, 2087325034, 2087325036) */
+        --case-1-top: 0;
+        --case-1-height: 420px;
+        --case-2-top: 192px;
+        --case-2-height: 419px;
+        --case-3-top: 370px;
+        --case-3-height: 328px;
+        --case-4-top: 570px;
+        --case-4-height: 261px;
+        /* Фрейм заголовка кейса: 596×77, left 34px (шрифт и линии ещё +15px выше) */
+        --case-item-h4-top: 40px;
+        --case-item-h4-left: 34px;
+        --case-item-h4-width: 596px;
+        --case-line-left: 34px;
+        --case-line-width: 551px;
+        --case-line-height: 1px;
+        --line-1-top: 72px;
+        --line-2-top: 104px;
+        /* Frame 2087327539 — кнопка в блоке кейсов */
+        --btn-case-left: calc(50% - 176px/2 - 240.5px);
+        --btn-case-top: 749px;
+        --btn-case-width: 176px;
+        --btn-case-height: 43px;
+        --case-link-top: 0;
+        --case-link-left: 0;
+        --case-link-width: 100%;
+        --case-link-height: 100%;
+
+        /* --- ПРОДУКТ --- */
+        --product-block-width: 725px;
+        --product-block-height: 257px;
+        --product-block-left: 20px;
+        --product-block-top: 2542px;
+        --btn-product-width: 214px;
+        --btn-product-height: 25px;
+
+        /* --- ЛИД-ФОРМА (ЮРИСТ) --- */
+        --lead-block-left: 20px;
+        --lead-block-top: 2849px;
+        --lead-block-width: 728px;
+        --lead-block-height: 1212px;
+        /* Блок стал выше! */
+
+        /* Перестановка внутри Лид-формы */
+        --lead-block-h2-left: 32px;
+        --lead-block-h2-top: 62px;
+        --lead-block-h2-width: 663px;
+
+        --lead-info-group-left: 32px;
+        --lead-info-group-top: 210px;
+        /* Инфо ушло вверх */
+
+        --lead-form-left: 32px;
+        --lead-form-top: 350px;
+        --lead-form-width: 651px;
+
+        --lead-consent-width: 420px;
+        --lead-consent-left: 32px;
+        --lead-consent-top: 695px;
+
+        --btn-lead-left: 29px;
+        --btn-lead-top: 825px;
+        --btn-lead-width: 214px;
+        --btn-lead-height: 43px;
+
+        /* --- ФУТЕР --- */
+        /* В макете 768 футер выглядит немного сломанным (left: -8px), 
+       ставим по центру */
+        --site-footer-width: 1000px;
+        --site-footer-height: 212px;
+        --site-footer-left: -116px;
+        /* Чтобы компенсировать ширину 1000px в контейнере 768px */
+        --site-footer-top: 4014px;
+        --footer-disclaimer-width: 1000px;
+        --footer-disclaimer-height: 172px;
+        --footer-disclaimer-top: 3824px;
+        --footer-disclaimer-left: -115px;
+        --footer-main-wrap-width: 1000px;
+        --footer-main-wrap-height: 212px;
+        --footer-main-wrap-top: 0;
+        --footer-main-wrap-left: 0;
+        --footer-tab-width: 299px;
+        --footer-tab-height: 79px;
+        --footer-tab-top: 0;
+        --tab-info-left: 32px;
+        --tab-list-left: 309px;
+        --footer-content-width: 1000px;
+        --footer-content-height: 173px;
+        --footer-content-left: 0;
+        --footer-content-top: 39px;
+
+        /* --- ИНФОРМАЦИЯ ДЛЯ СПЕЦИАЛИСТОВ ЗДРАВООХРАНЕНИЯ (второй медиа) --- */
+        --info-block-left: -115px;
+        --info-block-top: 3824px;
+        --info-title-width: 1000px;
+        --info-title-height: 172px;
+    }
+
+    /* --- ДОПОЛНИТЕЛЬНЫЕ КОРРЕКЦИИ РАЗМЕРОВ --- */
+    /* Переменные меняют только координаты, но размеры шрифтов и блоков 
+     нужно переопределить явно */
+
+    /* Кнопка «Получить материалы»: без обводки и скругления */
+    .header-btn {
+        width: 169px !important;
+        height: 45px !important;
+        left: 567px !important;
+        top: 45.67px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.18px;
+        padding: 0;
+        border: none !important;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* Логотип «Синапс» */
+    .logo {
+        left: 20px !important;
+        top: 22px !important;
+        width: 165px !important;
+        height: 36.0728759765625px !important;
+    }
+
+    /* Hero-блок: 545×92, top 110px, left 111px, gap 11.84px */
+    .hero-header {
+        width: 545px !important;
+        left: 111px !important;
+        top: 110px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 11.84px;
+        text-align: center;
+    }
+
+    .hero-header h1 {
+        font-family: "Rubik Dirt", sans-serif;
+        font-weight: 400;
+        font-size: 52px;
+        line-height: 80%;
+        letter-spacing: 0;
+        text-align: center;
+        margin: 0;
+    }
+
+    .hero-header p,
+    .hero-header .site-text__hero-desc {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        letter-spacing: 0;
+        text-align: center;
+        max-width: 402px;
+        margin: 0;
+    }
+
+    .hero-desc__second-line {
+        padding-left: 0;
+    }
+
+    /* Теги групп: Old Soviet 10px, line-height 140%, text-align center */
+    .hero-group .tag,
+    .group-1 .tag,
+    .group-2 .tag,
+    .group-3 .tag {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    .group-1 .tag {
+        width: 108px !important;
+    }
+
+    .group-2 .tag {
+        width: 81px !important;
+    }
+
+    .group-3 .tag {
+        width: 159px !important;
+        text-align: left;
+    }
+
+    /* Intro «Замечали вы когда-нибудь...»: 319×88, top 428.72px, left 43.74px, Old Soviet 16px */
+    .intro-question {
+        width: 319px !important;
+        left: 43.74px !important;
+        top: 428.72px !important;
+    }
+
+    .intro-question h2 {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0;
+    }
+
+    /* «Античные врачи видели причину...» — шрифт 13px во втором медиа */
+    .intro-answer,
+    .intro-answer p {
+        font-size: 13px;
+    }
+
+    .intro-answer {
+        width: 356px !important;
+    }
+
+    .casefile-card {
+        width: 240px !important;
+        height: 149px !important;
+    }
+
+    .casefile-photo {
+        width: 103px !important;
+        height: 78px !important;
+        left: 64px !important;
+    }
+
+    /* Блок манифеста: 375×175, top 685px, left 330px, gap 8.55px */
+    .casefile-manifest {
+        width: 375px !important;
+        left: 330px !important;
+        top: 685px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 8.55px;
+    }
+
+    .casefile-manifest .big-text {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    .casefile-manifest .small-text {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0;
+        margin: 0;
+        max-width: 375px;
+    }
+
+    /* Цитата «Желчные люди» — это не сухие отчёты...: 583×66, top 1064.25px, left 89.06px */
+    .quote {
+        width: 583px !important;
+        left: 89.06px !important;
+        top: 1064.25px !important;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    /* «Автор кейсов»: в одну строку */
+    .author-label {
+        left: 465.82px !important;
+        top: 1335.59px !important;
+        transform: rotate(-1.28deg);
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* Блок автора (Липов Андрей Васильевич + регалии): top 1450px, left 441.37px, gap 3.75px, угол 0.47deg */
+    .author-text {
+        left: 441.37px !important;
+        top: 1450px !important;
+        gap: 3.75px;
+        transform: rotate(0.47deg);
+    }
+
+    .author-text h4 {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        letter-spacing: 0;
+    }
+
+    .author-text p {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0;
+    }
+
+    /* Карточки вопросов стали уже */
+    .question-card,
+    .question-photo {
+        width: 228px !important;
+        height: 152px !important;
+    }
+
+    .question-photo {
+        top: 40px !important;
+    }
+
+    /* Подгонка фона */
+    .patient-img {
+        left: 62px !important;
+    }
+
+    /* Центровка фото в узкой карточке */
+    .question-card p {
+        width: 190px !important;
+        left: 19px !important;
+        font-size: 10px !important;
+    }
+
+    /* Кейсы стали уже */
+    /* Фрейм с кейсами: 725×831, top 1661px, left 20px — выше по слоям */
+    .cases-container {
+        width: 725px !important;
+        height: 831px !important;
+        top: 1661px !important;
+        left: 20px !important;
+        opacity: 1;
+        z-index: 25;
+    }
+
+    .case-item,
+    .case-body {
+        width: 725px !important;
+    }
+
+    .case-tab {
+        left: 486px !important;
+        width: 238px !important;
+    }
+
+    .case-date {
+        font-size: 18px !important;
+    }
+
+    /* Фрейм заголовка: 596×77, left 34px — шрифт и линии ещё +15px выше */
+    .case-item h4 {
+        font-size: 24px;
+        line-height: 1.35;
+        width: 596px !important;
+        max-height: 77px;
+        left: 34px !important;
+        top: 40px;
+    }
+
+    .case-line.line-1 {
+        top: 72px !important;
+    }
+
+    .case-line.line-2 {
+        top: 104px !important;
+    }
+
+    /* Кнопки «Узнать первым» — абсолютны относительно канваса, без отступов и рамки */
+    .canvas>.btn-case {
+        position: absolute;
+        width: 176px;
+        height: 43px;
+        padding: 0;
+        border: none;
+        z-index: 30;
+    }
+
+    .canvas>.btn-case img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .btn-case--1 {
+        left: 47px;
+        top: 2199px;
+    }
+
+    .btn-case--2 {
+        left: 47px;
+        top: 2407px;
+    }
+
+    /* Блок продукта: 725×257, top 2542px, left 20px, border-radius 10px */
+    .product-block {
+        width: 725px !important;
+        height: 257px !important;
+        left: 20px !important;
+        top: 2542px !important;
+        border-radius: 10px;
+        background: none;
+        position: absolute;
+    }
+
+    .product-block h3,
+    .product-block .site-text--product-title {
+        position: absolute;
+        width: 919px;
+        left: -95px;
+        top: 42px;
+        margin: 0;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+        color: #333;
+    }
+
+    .product-block p,
+    .product-block .site-text--product-desc {
+        position: absolute;
+        width: 662px;
+        left: 33px;
+        top: 92px;
+        margin: 0;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0;
+        text-align: center;
+        color: #333;
+    }
+
+    /* Кнопка «Зарегистрироваться» — с фоном и текстом */
+    .product-block .btn-product {
+        position: absolute;
+        width: 254px !important;
+        height: 43px !important;
+        top: 171px;
+        left: 237px;
+        margin: 0;
+        padding: 9px 20px;
+        border: none;
+        border-radius: 3px;
+        box-sizing: border-box;
+        background: url('../img/button-blue.webp') no-repeat center center !important;
+        background-size: 100% 100% !important;
+        color: #333333;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+  /* Блок регистрации (лид) для адаптива 768px — фон reg-bg2-768.webp, высота от формы */
+  .lead-block {
+    width: 728px !important;
+    height: auto !important;
+    min-height: var(--lead-block-height);
+    top: 2849px !important;
+    left: 20px !important;
+    border-radius: 10px;
+    opacity: 1;
+    background: url('../img/reg-bg2-768.webp') no-repeat center center !important;
+    background-size: 100% 100% !important;
+    background-position: center top !important;
+    overflow: visible !important;
+  }
+
+  .lead-block h2,
+  .lead-block .lead-info-group,
+  .lead-block .lead-form,
+  .lead-block .lead-consent,
+  .lead-block .btn-lead {
+    position: relative;
+    z-index: 1;
+  }
+
+    /* Информация для специалистов здравоохранения — выше фона по z-index */
+    .footer-disclaimer {
+        width: 1000px !important;
+        height: 172px !important;
+        top: 3824px !important;
+        left: -115px !important;
+        opacity: 1;
+        z-index: 110;
+    }
+
+    /* Координаты формы внутри lead-block */
+    .lead-form {
+        position: absolute !important;
+        width: 651px !important;
+        height: auto !important;
+        min-height: 630px !important;
+        top: 329px !important;
+        left: 32px !important;
+        border-radius: 4px;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 10;
+    }
+
+    .lead-form input {
+        font-size: 24px !important;
+    }
+
+    /* Блок согласия (чекбоксы) */
+    .lead-consent {
+        width: 420px !important;
+        height: 104px !important;
+        left: 32px !important;
+        top: 695px !important;
+        gap: 12px;
+    }
+
+    /* Заголовок «Получите памятку юриста»: 663×104, top 62px, left 32px — перенос: «Получите памятку» / «юриста» */
+    .lead-block h2,
+    .lead-block .site-text--lead-title {
+        width: 663px !important;
+        left: 32px !important;
+        top: 62px !important;
+        margin: 0;
+        font-family: "Rubik Dirt", sans-serif;
+        font-weight: 400;
+        font-size: 65px;
+        line-height: 80%;
+        letter-spacing: 0;
+    }
+
+    /* Во втором медиа: "Получите памятку" / "юриста" (первый <br> скрыт) */
+    .lead-block .br-lead-1 {
+        display: none;
+    }
+
+    .lead-block .br-lead-2 {
+        display: inline;
+    }
+
+    /* Информация для специалистов здравоохранения (второй медиа): 1000×172, top относительно lead-block, left -115px */
+    .info-block {
+        left: -115px !important;
+        top: calc(var(--lead-block-top) + var(--lead-block-height) + 50px) !important;
+    }
+
+    .info-title,
+    .site-text--info-title {
+        width: 1000px !important;
+        height: 172px !important;
+        font-size: 100px !important;
+    }
+
+    /* Блок инфо: 702×114, top 210px, left 32px, gap 16px */
+    .lead-info-group {
+        width: 702px !important;
+        height: 114px !important;
+        left: 32px !important;
+        top: -2px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        opacity: 1;
+    }
+
+    /* Внутренний блок: аватар + имя, 420×80, gap 24px */
+    .lead-person {
+        width: 420px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    /* Аватар — видимый, 80×80, круг */
+    .lead-avatar {
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 100px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    /* Блок имени и роли: 316×55, gap 4px */
+    .lead-name-box {
+        width: 316px !important;
+        height: 55px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        opacity: 1;
+    }
+
+    .lead-role,
+    .lead-block .site-text--lead-role {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    .lead-name,
+    .lead-block .site-text--lead-name {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    /* Памятка для врача — "Что делать, если желчные люди на Вас жалуются?" */
+    .lead-caption,
+    .lead-block .site-text--lead-caption {
+        width: 702px !important;
+        height: 18px !important;
+        margin: 0;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0;
+        opacity: 1;
+    }
+
+    /* Масштабируем скрепку и фото автора */
+    .author-photo {
+        width: 293px !important;
+        height: 311px !important;
+    }
+
+    .author-clip {
+        width: 26px !important;
+        height: 45px !important;
+    }
+
+    /* Добавляем паддинги по бокам для главного блока */
+    body {
+        padding: 0 20px;
+    }
+
+    .canvas {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+}
+
+/* --- ТРЕТИЙ МЕДИА: после 789px — 375×5520, фон main-bg-375.webp --- */
+@media (max-width: 760px) {
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: auto;
+    }
+    
+    body {
+        justify-content: center;
+        padding: 0; /* сбрасываем padding из второго медиа, чтобы canvas 375px не смещался */
+    }
+
+    :root {
+        --canvas-width: 375px;
+        --canvas-height: 5520px;
+
+        /* --- Группы фото (третий медиа) --- */
+        --group-1-left: 27px;
+        --group-1-top: 229px;
+
+        /* --- КАРТОЧКИ ВОПРОСОВ (третий медиа) --- */
+        --question-card-q1-p-top: 89px;
+        --question-card-q2-p-top: 85px;
+        --question-card-q3-p-top: 95px;
+
+        /* --- LEAD BLOCK (третий медиа) --- */
+        --lead-block-left: 15px;
+        --lead-block-top: 4404px;
+        --lead-block-width: 345px;
+        --lead-block-height: 951px;
+
+        /* --- ИНФОРМАЦИЯ ДЛЯ СПЕЦИАЛИСТОВ ЗДРАВООХРАНЕНИЯ (третий медиа) --- */
+        --info-block-left: 11px;
+        --info-block-top: 5400px;
+        --info-title-width: 349px;
+        --info-title-height: 82px;
+    }
+
+    .canvas {
+        width: 375px;
+        min-height: var(--canvas-height);
+        height: auto;
+        margin: 0;
+        flex-shrink: 0;
+        opacity: 1;
+        background-image: url('../img/main-bg-375.webp');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    /* Все кнопки в третьем медиа — полностью прозрачный фон (отладка выключена) */
+    .header-btn,
+    .canvas>.btn-case,
+    .btn-lead {
+        background: transparent !important;
+        border: none !important;
+    }
+    .btn-product {
+        background: url('../img/button-blue.webp') no-repeat center center !important;
+        background-size: 100% 100% !important;
+        border: none !important;
+    }
+
+  /* Логотип «Синапс Онлайн» в один блок: 165×36, top 22px, left 15px */
+  .logo {
+    width: 165px !important;
+    height: 36.0728759765625px !important;
+    left: 15px !important;
+    top: 22px !important;
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 5px;
+  }
+
+    /* Кнопка «Получить всё» (header): 153×41, top 54.73px, left 205px */
+    .header-btn {
+        width: 153px !important;
+        height: 41px !important;
+        left: 205px !important;
+        top: 54.73px !important;
+    }
+
+    /* Hero: 522×119, top 117px, left -74px, gap 18px */
+    .hero-header {
+        width: 522px !important;
+        left: -74px !important;
+        top: 117px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .hero-header h1 {
+        font-family: "Rubik Dirt", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 80%;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    .hero-header p,
+    .hero-header .site-text__hero-desc {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        letter-spacing: 0;
+        text-align: center;
+        max-width: 337px;
+        margin: 0;
+    }
+
+    /* На мобильном убираем перенос строки в подзаголовке hero */
+    .hero-desc-br {
+        display: none;
+    }
+
+    /* Теги групп: Old Soviet 12px, line-height 140% */
+    .group-1 .tag {
+        width: 129px !important;
+        left: 11px !important;
+        top: 26px !important;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+    }
+
+    .group-2 .tag {
+        width: 98px !important;
+        left: 103.34px !important;
+        top: 640.05px !important;
+        font-size: 12px;
+        line-height: 140%;
+    }
+
+    .group-3 .tag {
+        width: 182px !important;
+        left: 161px !important;
+        top: 860.38px !important;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: left !important;
+    }
+
+    /* Intro «Замечали вы когда-нибудь...»: 345×100, top 929px, left 17px */
+    .intro-question {
+        width: 345px !important;
+        left: 17px !important;
+        top: 929px !important;
+    }
+
+    .intro-question h2 {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+    }
+
+    /* «Античные врачи видели причину...»: 342×126, top 1059px, left 17px */
+    .intro-answer {
+        width: 342px !important;
+        left: 17px !important;
+        top: 1059px !important;
+    }
+
+    .intro-answer p {
+        font-family: "Old Soviet", sans-serif;
+        font-size: 14px;
+        line-height: 150%;
+    }
+
+    /* Блок манифеста: 345×214, top 1541px, left 15px, gap 13px */
+    .casefile-manifest {
+        width: 345px !important;
+        left: 15px !important;
+        top: 1541px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .casefile-manifest .big-text {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        max-width: 346px;
+        margin: 0;
+    }
+
+    .casefile-manifest .small-text {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        max-width: 346px;
+        margin: 0;
+    }
+
+    /* Карточки вопросов: 260×60, Old Soviet 13px, line-height 150%, text-align center */
+    .question-card {
+        width: 260px !important;
+    }
+
+    .question-card p {
+        width: 260px !important;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0;
+        text-align: center;
+        margin: 0;
+    }
+
+    .question-card.q1 {
+        top: 1814px !important;
+        left: 39px !important;
+    }
+
+    .question-card.q1 p {
+        top: var(--question-card-q1-p-top) !important;
+    }
+
+    .question-card.q2 {
+        top: 2050px !important;
+        left: 39px !important;
+    }
+
+    .question-card.q2 p {
+        top: var(--question-card-q2-p-top) !important;
+    }
+
+    .question-card.q3 {
+        top: 2267px !important;
+        left: 39px !important;
+    }
+
+    .question-card.q3 p {
+        top: var(--question-card-q3-p-top) !important;
+    }
+
+    /* Цитата «Желчные люди» — это не сухие отчёты...: 341×125, top 2481px, left 17px */
+    .quote {
+        width: 341px !important;
+        left: 17px !important;
+        top: 2481px !important;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    /* «Автор кейсов»: в одну строку, Old Soviet 18px, 140%, center */
+    .author-label {
+        left: 104.2px !important;
+        top: 2963.3px !important;
+        transform: rotate(-1.28deg);
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* Блок автора (Липов Андрей Васильевич + регалии): top 3083.16px, left 65.79px, gap 6px, угол 0.47deg */
+    .author-text {
+        left: 65.79px !important;
+        top: 3083.16px !important;
+        width: 264px !important;
+        gap: 6px;
+        transform: rotate(0.47deg);
+    }
+
+    .author-text h4 {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        letter-spacing: 0;
+    }
+
+    .author-text p {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0;
+    }
+
+    /* Блок кейсов: 348px, left 15px, top 3298px — по макету Group 2087325098 и др. */
+    .cases-container {
+        width: 348px !important;
+        height: 722px !important;
+        left: 15px !important;
+        top: 3298px !important;
+    }
+
+    .case-item {
+        width: 348px !important;
+    }
+
+    .case-1 {
+        top: 0 !important;
+        height: 373px !important;
+    }
+
+    .case-2 {
+        top: 167px !important;
+        height: 373px !important;
+    }
+
+    .case-3 {
+        top: 305px !important;
+        height: 373px !important;
+    }
+
+    .case-4 {
+        top: 514px !important;
+        height: 208px !important;
+    }
+
+    /* Ушко (tab): 213×65, left 135px, border-radius 10px, со скосом */
+    .case-tab {
+        width: 213px !important;
+        height: 65px !important;
+        left: 135px !important;
+        top: 0 !important;
+        clip-path: polygon(30px 0, 100% 0, 100% 100%, 0% 100%);
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* Тело папки: 348×339 (case-4: 174), top 34px, border-radius 10px 10px 0 0 */
+    .case-body {
+        width: 348px !important;
+        left: 0 !important;
+        top: 34px !important;
+        height: 339px !important;
+        padding: 0 16px 20px;
+        box-sizing: border-box;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .case-4 .case-body {
+        height: 174px !important;
+    }
+
+    /* Дата в ушке: Old Soviet 18px, line-height 21px, center, opacity 0.5 */
+    .case-date {
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 18px !important;
+        line-height: 21px;
+        text-align: center;
+        opacity: 0.5;
+        padding-top: 9px;
+    }
+
+    /* Заголовок кейса: 329×90, left 31px (от канваса), top 3352px — уменьшенный шрифт */
+    .case-item h4 {
+        position: absolute;
+        width: 329px !important;
+        max-height: 90px;
+        left: 16px !important;
+        top: 22px !important;
+        margin: 0;
+        font-family: "HelveticaNeueCyr", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 183%;
+    }
+
+    /* Линии под текстом: 296×1, left 16px, позиция относительно .case-body */
+    .case-line {
+        position: absolute;
+        width: 296px !important;
+        left: 16px !important;
+        height: 1px;
+        background: #FFFFFF;
+        opacity: 0.3;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        z-index: 5;
+    }
+
+    .case-2 .case-line {
+        background: #333333;
+        border-bottom-color: rgba(51, 51, 51, 0.5);
+    }
+
+    .case-line.line-1 {
+        top: 45px !important;
+    }
+
+    .case-line.line-2 {
+        top: 74px !important;
+    }
+
+    /* Кнопки «Узнать первым» в третьем медиа: без обводки и скругления */
+    .canvas>.btn-case {
+        width: 193px;
+        height: 46px;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-case--1 {
+        left: calc(50% - 193px/2 - 60px);
+        top: 3736px;
+    }
+
+    .btn-case--2 {
+        left: calc(50% - 193px/2 - 60px);
+        top: 3945px;
+    }
+
+    /* Блок продукта: 345×304, top 4060px, left 15px, border-radius 10px */
+    .product-block {
+        width: 345px !important;
+        height: 304px !important;
+        left: 15px !important;
+        top: 4060px !important;
+        border-radius: 10px;
+        position: absolute;
+        box-sizing: border-box;
+        background: none !important; /* скрываем фоновое изображение */
+        background-image: none !important;
+    }
+
+    .product-block h3,
+    .product-block .site-text--product-title {
+        position: absolute;
+        width: 318px;
+        max-height: 68px;
+        left: 13px !important;
+        top: 30px !important;
+        margin: 0;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 140%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    .product-block p,
+    .product-block .site-text--product-desc {
+        position: absolute;
+        width: 322px;
+        max-height: 90px;
+        left: 11px !important;
+        top: 113px !important;
+        margin: 0;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    .product-block .btn-product {
+        position: absolute;
+        width: 278px !important;
+        height: 46px !important;
+        left: 36.5px !important;
+        top: 228px !important;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px !important;
+        color: #333333 !important;
+        text-indent: 0;
+        overflow: visible;
+    }
+
+  /* Лид-блок «Получите памятку юриста»: 345×auto, top 4404px, left 15px */
+  .lead-block {
+    width: var(--lead-block-width) !important;
+    height: auto !important;
+    min-height: var(--lead-block-height) !important;
+    left: var(--lead-block-left) !important;
+    top: var(--lead-block-top) !important;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: visible !important;
+    background: url('../img/reg-bg2-375.webp') no-repeat center center !important;
+    background-size: 100% 100% !important;
+    background-position: center top !important;
+    border-radius: 10px;
+  }
+
+    .lead-block h2,
+    .lead-block .site-text--lead-title {
+        position: absolute;
+        width: 324px;
+        max-height: 120px;
+        left: 20px !important;
+        top: 30px !important;
+        margin: 0;
+        font-family: "Rubik Dirt", sans-serif;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 80%;
+        letter-spacing: 0;
+    }
+
+    /* В третьем медиа: "Получите" / "памятку" / "юриста" (оба <br> видны) */
+    .lead-block .br-lead-1 {
+        display: inline !important;
+    }
+
+    .lead-block .br-lead-2 {
+        display: inline !important;
+    }
+
+    .lead-info-group {
+        position: absolute;
+        width: 204px;
+        min-height: 50px;
+        gap: 4px;
+        display: flex;
+        flex-direction: column;
+        left: 21px !important;
+        top: 193px !important;
+    }
+
+    .lead-person {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        width: 204px;
+        min-height: 50px;
+    }
+
+    .lead-role,
+    .lead-block .site-text--lead-role {
+        width: 152px;
+        max-height: 20px;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    .lead-name,
+    .lead-block .site-text--lead-name {
+        width: 316px;
+        max-height: 26px;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    .lead-caption,
+    .lead-block .site-text--lead-caption {
+        position: absolute;
+        width: 293px;
+        max-height: none;
+        left: 0;
+        top: 5px;
+        margin: 0;
+        font-family: "Old Soviet", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0;
+    }
+
+    .lead-block .lead-avatar {
+        width: 80px !important;
+        height: 80px !important;
+        flex-shrink: 0;
+    }
+
+    .lead-block .lead-name-box {
+        width: auto;
+        max-width: 160px;
+        gap: 4px;
+    }
+
+    /* Форма: 326×auto, top 339px, left 5px, border-radius 4px — под узкие экраны */
+    .lead-form {
+        height: auto !important;
+        min-height: 630px !important;
+    }
+    .lead-block .lead-form {
+        position: absolute !important;
+        width: 368px !important;
+        height: auto !important;
+        min-height: 630px !important;
+        left: -12px !important;
+        top: 339px !important;
+        padding: 16px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        gap: 10px;
+    }
+
+    .lead-block .lead-form label {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .lead-block .lead-form label>span:first-child {
+        width: 90px !important;
+        font-size: 12px;
+        text-align: right;
+    }
+
+    .lead-block .lead-form input:not([type="checkbox"]) {
+        font-size: 14px !important;
+        min-width: 0;
+    }
+
+    .lead-block .lead-form .lead-phone-mask {
+        font-size: 14px;
+    }
+
+    .lead-block .lead-form .lead-phone-field input {
+        font-size: 14px !important;
+    }
+
+    .lead-caption,
+    .lead-block .site-text--lead-caption {
+        max-height: none;
+    }
+
+    /* В третьем медиа переносы видны, как в десктопе */
+    .lead-block .lead-caption-br {
+        display: inline !important;
+    }
+
+    /* Блок согласия «Нажимая на кнопку…»: 289×164, top 694px, left 34px, gap 12px */
+    .lead-block .lead-consent {
+        position: absolute !important;
+        width: 289px !important;
+        min-height: 164px;
+        left: 34px !important;
+        top: 694px !important;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Кнопка «Получить доступ»: ~233×46, top 873px, left 20px, border-radius 3px, border 10px */
+    .lead-block .btn-lead {
+        position: absolute !important;
+        width: 233px !important;
+        height: 46px !important;
+        left: 20px !important;
+        top: 873px !important;
+        border-radius: 3px;
+        border-width: 10px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Информация для специалистов здравоохранения (третий медиа): 349×82, top относительно lead-block, left 11px */
+    .info-block {
+        left: 11px !important;
+        top: calc(var(--lead-block-top) + var(--lead-block-height) + 50px) !important;
+    }
+
+    .info-title,
+    .site-text--info-title {
+        width: 349px !important;
+        height: 82px !important;
+        font-size: 47.81px !important;
+    }
+}
+
+/* --- ИНФОРМАЦИЯ ДЛЯ СПЕЦИАЛИСТОВ ЗДРАВООХРАНЕНИЯ --- */
+.info-block {
+    position: absolute;
+    left: var(--info-block-left);
+    top: calc(var(--lead-block-top) + var(--lead-block-height) + 50px);
+    width: 100%;
+    z-index: 10;
+}
+
+.info-title,
+.site-text--info-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--info-title-width);
+    height: var(--info-title-height);
+    font-family: "Attentica 4F", sans-serif;
+    font-weight: 250;
+    font-size: 137px;
+    line-height: 86%;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}

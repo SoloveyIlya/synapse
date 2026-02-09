@@ -1,0 +1,1722 @@
+/* --- Шрифты из assets/fonts --- */
+@font-face {
+  font-family: "Old Soviet";
+  src: url("../fonts/Old-Soviet.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik Dirt";
+  src: url("../fonts/RubikDirt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Attentica 4F";
+  src: url("../fonts/Attentica 4F UltraLight.ttf") format("truetype");
+  font-weight: 250;
+  font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overscroll-behavior: none;
+}
+
+html {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background: #FFFFFF;
+    /* Цвет полей вокруг, если экран очень широкий */
+    display: flex;
+    justify-content: center;
+}
+
+.canvas {
+    position: relative;
+    width: 1120px;
+    height: 4317px;
+
+    /* Координаты текстовых блоков (относительно canvas), при адаптивности меняй здесь */
+    --c1-logo-left: 35px;
+    --c1-logo-top: 18px;
+    --c1-logo-width: 201.34px;
+    --c1-logo-height: 44px;
+    --c1-logo-gap: 5px;
+
+    --c1-hero-left: 441.2px;
+    --c1-hero-top: 66px;
+
+    --c1-hero-width: 311px;
+    --c1-hero-height: 73px;
+
+    --c1-case-left: 91.48px;
+    --c1-case-top: 216px;
+    --c1-case-width: 969.43px;
+    --c1-case-height: 162px;
+
+    --c1-intro-left: 100.23px;
+    --c1-intro-top: 496.48px;
+    --c1-intro-width: 865.54px;
+    --c1-intro-height: 108px;
+
+    --c1-kees-left: -108px;
+    --c1-kees-top: 699px;
+    --c1-kees-width: 809.64px;
+    --c1-kees-height: 40px;
+
+    --c1-complaints-left: 100px;
+    --c1-complaints-top: 780px;
+    --c1-complaints-width: 104px;
+    --c1-complaints-height: 36px;
+
+    --c1-complaints-body-left: 103px;
+    --c1-complaints-body-top: 833px;
+    --c1-complaints-body-width: 613px;
+    --c1-complaints-body-height: 130px;
+
+    --c1-reception-left: 657px;
+    --c1-reception-top: 779px;
+    --c1-reception-width: 215.11px;
+    --c1-reception-height: 18px;
+
+    --c1-anamnesis-left: 100px;
+    --c1-anamnesis-top: 1048px;
+    --c1-anamnesis-width: 308px;
+    --c1-anamnesis-height: 36px;
+
+    --c1-anamnesis-body-left: 104px;
+    --c1-anamnesis-body-top: 1100px;
+    --c1-anamnesis-body-width: 842px;
+    --c1-anamnesis-body-height: 40px;
+
+    --c1-life-left: 103px;
+    --c1-life-top: 1179px;
+    --c1-life-width: 235px;
+    --c1-life-height: 36px;
+
+    --c1-life-body-left: 104px;
+    --c1-life-body-top: 1230.6px;
+    --c1-life-body-width: 767px;
+    --c1-life-body-height: 80px;
+
+    --c1-exam-left: 98.5px;
+    --c1-exam-top: 1499.77px;
+    --c1-exam-width: 728.23px;
+    --c1-exam-height: 36px;
+
+    --c1-exam-body-left: 95px;
+    --c1-exam-body-top: 1559px;
+    --c1-exam-body-width: 815px;
+    --c1-exam-body-height: 100px;
+
+    --c1-fgds-left: 95px;
+    --c1-fgds-top: 1697.08px;
+    --c1-fgds-width: 432px;
+    --c1-fgds-height: 60px;
+
+    --c1-bio-left: 588.17px;
+    --c1-bio-top: 1697.08px;
+    --c1-bio-width: 432px;
+    --c1-bio-height: 80px;
+
+    --c1-ph-left: 95px;
+    --c1-ph-top: 1808.14px;
+    --c1-ph-width: 432px;
+    --c1-ph-height: 120px;
+
+    --c1-markers-left: 588.17px;
+    --c1-markers-top: 1810.5px;
+    --c1-markers-width: 432px;
+    --c1-markers-height: 20px;
+
+    --c1-diagnosis-left: -79px;
+    --c1-diagnosis-top: 1992px;
+    --c1-diagnosis-width: 728.23px;
+    --c1-diagnosis-height: 36px;
+
+    --c1-diagnosis1-left: 173px;
+    --c1-diagnosis1-top: 2073px;
+    --c1-diagnosis1-width: 244.87px;
+    --c1-diagnosis1-height: 45px;
+
+    --c1-diagnosis2-left: 498px;
+    --c1-diagnosis2-top: 2134px;
+    --c1-diagnosis2-width: 233px;
+    --c1-diagnosis2-height: 45px;
+
+    --c1-diagnosis3-left: 245px;
+    --c1-diagnosis3-top: 2184px;
+    --c1-diagnosis3-width: 185.8px;
+    --c1-diagnosis3-height: 28px;
+
+    --c1-quiz-title-left: 90px;
+    --c1-quiz-title-top: 2425px;
+    --c1-quiz-title-width: 656px;
+    --c1-quiz-title-height: 52px;
+
+    --c1-quiz-question-left: 122px;
+    --c1-quiz-question-top: 2543px;
+    --c1-quiz-question-width: 826px;
+    --c1-quiz-question-height: 84px;
+
+    --c1-quiz-prompt-left: 105px;
+    --c1-quiz-prompt-top: 2675px;
+    --c1-quiz-prompt-width: 826px;
+    --c1-quiz-prompt-height: 30px;
+    --c1-fs-quiz-prompt: 20px;
+
+    --c1-quiz-opt1-left: 164px;
+    --c1-quiz-opt1-top: 2763px;
+    --c1-quiz-opt1-width: 736px;
+    --c1-quiz-opt1-height: 12px;
+
+    --c1-quiz-opt2-left: 164px;
+    --c1-quiz-opt2-top: 2871px;
+    --c1-quiz-opt2-width: 736px;
+    --c1-quiz-opt2-height: 30px;
+
+    --c1-quiz-opt3-left: 166px;
+    --c1-quiz-opt3-top: 2993px;
+    --c1-quiz-opt3-width: 736px;
+    --c1-quiz-opt3-height: 12px;
+
+    --c1-answer-title-left: 85px;
+    --c1-answer-title-top: 3133.6px;
+    --c1-answer-title-width: 502px;
+    --c1-answer-title-height: 104px;
+
+    --c1-answer-line-left: 641px;
+    --c1-answer-line-top: 3201px;
+    --c1-answer-line-width: 303.74px;
+    --c1-answer-line-height: 48px;
+
+    --c1-answer-body-left: 90px;
+    --c1-answer-body-top: 3349px;
+    --c1-answer-body-width: 932px;
+    --c1-answer-body-height: 336px;
+
+    --c1-info-title-left: 60px;
+    --c1-info-title-top: 3455px;
+    --c1-info-title-width: 1000px;
+    --c1-info-title-height: 236px;
+
+    --c1-ref-heading-left: 143px;
+    --c1-ref-heading-top: 3834px;
+    --c1-ref-heading-width: 180px;
+    --c1-ref-heading-height: 24px;
+
+    --c1-ref-list-left: 60px;
+    --c1-ref-list-top: 3893px;
+    --c1-ref-list-width: 1000px;
+    --c1-ref-list-height: 190px;
+
+    /* Шрифты (для адаптива можно переопределять в медиа) */
+    --c1-font-old-soviet: "Old Soviet", serif;
+    --c1-font-ubuntu: "Ubuntu", sans-serif;
+    --c1-font-open-sans: "Open Sans", sans-serif;
+    --c1-font-rubik: "Rubik Dirt", sans-serif;
+    --c1-font-attentica: "Attentica 4F", sans-serif;
+    --c1-fw-400: 400;
+    --c1-fw-250: 250;
+    --c1-fw-700: 700;
+    --c1-fs-9: 9px;
+    --c1-fs-13: 13px;
+    --c1-fs-14: 12px;
+    --c1-fs-16: 16px;
+    --c1-fs-21: 21px;
+    --c1-fs-24: 24px;
+    --c1-fs-36: 36px;
+    --c1-fs-42: 42px;
+    --c1-fs-45: 45px;
+    --c1-fs-65: 65px;
+    --c1-fs-137: 137px;
+    /* Семантические (переопределяются в медиа 768) */
+    --c1-fs-hero: 24px;
+    --c1-fs-case: 45px;
+    --c1-fs-intro: 21px;
+    --c1-fs-kees: 36px;
+    --c1-lh-kees: 40px;
+    --c1-fs-reception: 13px;
+    --c1-fs-complaints: 24px;
+    --c1-fs-complaints-body: 13px;
+    --c1-fs-anamnesis: 24px;
+
+    /* ПОДКЛЮЧАЕМ ИЗОБРАЖЕНИЕ */
+    background: url('../img/Infographic.webp') no-repeat top center;
+    background-size: 100% auto;
+
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* --- планшет: viewport ≤1120px --- */
+@media (max-width: 1120px) {
+  .canvas .c1-text br {
+    display: none;
+  }
+  .canvas .c1-text--hero br {
+    display: block;
+  }
+  .canvas .c1-text--answer-title br {
+    display: block;
+  }
+  .canvas .c1-text--answer-body br {
+    display: none;
+  }
+  .canvas .c1-text--diagnosis1 br,
+  .canvas .c1-text--diagnosis2 br,
+  .canvas .c1-text--diagnosis3 br {
+    display: block;
+  }
+  .canvas .c1-text--quiz-title {
+    font-size: 55px;
+  }
+  .canvas .c1-text--answer-title {
+    font-size: 55px;
+  }
+  .canvas .c1-text--info-title {
+    font-size: 100px;
+  }
+
+  .canvas {
+    width: 768px;
+    height: 4303px;
+    background-image: url('../img/Infographic-768.webp');
+    background-size: 100% auto;
+
+    /* Логотип «Синапс» */
+    --c1-logo-left: 20px;
+    --c1-logo-top: 22px;
+    --c1-logo-width: 165px;
+    --c1-logo-height: 36.07px;
+
+    /* Проект «Желчные люди» */
+    --c1-hero-left: 291.8px;
+    --c1-hero-top: 69.3px;
+    --c1-hero-width: 226.14px;
+    --c1-hero-height: 53.08px;
+    --c1-fs-hero: 17.45px;
+
+    /* Клинический случай */
+    --c1-case-left: 33.6px;
+    --c1-case-top: 179.6px;
+    --c1-case-width: 704.91px;
+    --c1-case-height: 108px;
+    --c1-fs-case: 30px;
+
+    /* Уважаемый коллега! (intro) */
+    --c1-intro-left: 47px;
+    --c1-intro-top: 368px;
+    --c1-intro-width: 639px;
+    --c1-intro-height: 84px;
+    --c1-fs-intro: 16px;
+
+    /* Клинический кейс */
+    --c1-kees-left: -124px;
+    --c1-kees-top: 515.95px;
+    --c1-kees-width: 647.16px;
+    --c1-kees-height: 32px;
+    --c1-fs-kees: 28px;
+    --c1-lh-kees: 31.97px;
+
+    /* На приеме пациент, 45 лет */
+    --c1-reception-left: 543.69px;
+    --c1-reception-top: 571.9px;
+    --c1-reception-width: 171.94px;
+    --c1-reception-height: 15px;
+    --c1-fs-reception: 10.39px;
+
+    /* Жалобы */
+    --c1-complaints-left: 48.26px;
+    --c1-complaints-top: 571.9px;
+    --c1-complaints-width: 87px;
+    --c1-complaints-height: 30px;
+    --c1-fs-complaints: 20px;
+
+    /* Текст жалоб */
+    --c1-complaints-body-left: 48px;
+    --c1-complaints-body-top: 629px;
+    --c1-complaints-body-width: 651px;
+    --c1-complaints-body-height: 134px;
+    --c1-fs-complaints-body: 14px;
+
+    /* Анамнез заболевания */
+    --c1-anamnesis-left: 38.55px;
+    --c1-anamnesis-top: 820.3px;
+    --c1-anamnesis-width: 257px;
+    --c1-anamnesis-height: 30px;
+    --c1-fs-anamnesis: 20px;
+
+    /* Симптомы стал отмечать... (anamnesis-body) */
+    --c1-anamnesis-body-left: 37px;
+    --c1-anamnesis-body-top: 862px;
+    --c1-anamnesis-body-width: 638px;
+    --c1-anamnesis-body-height: 40px;
+
+    /* Анамнез жизни */
+    --c1-life-left: 22px;
+    --c1-life-top: 920px;
+    --c1-life-width: 247px;
+    --c1-life-height: 30px;
+
+    /* Текст анамнеза жизни */
+    --c1-life-body-left: 37px;
+    --c1-life-body-top: 965px;
+    --c1-life-body-width: 683px;
+    --c1-life-body-height: 120px;
+
+    /* Данные обследования */
+    --c1-exam-left: 37px;
+    --c1-exam-top: 1248px;
+    --c1-exam-width: 728.23px;
+    --c1-exam-height: 30px;
+
+    /* УЗИ органов брюшной полости (exam-body) */
+    --c1-exam-body-left: 37px;
+    --c1-exam-body-top: 1303px;
+    --c1-exam-body-width: 706px;
+    --c1-exam-body-height: 120px;
+
+    /* ФГДС */
+    --c1-fgds-left: 39px;
+    --c1-fgds-top: 1453px;
+    --c1-fgds-width: 335px;
+    --c1-fgds-height: 80px;
+
+    /* Биохимический анализ крови */
+    --c1-bio-left: 395px;
+    --c1-bio-top: 1453px;
+    --c1-bio-width: 348px;
+    --c1-bio-height: 100px;
+
+    /* Суточная pH-импедансометрия */
+    --c1-ph-left: 37px;
+    --c1-ph-top: 1585px;
+    --c1-ph-width: 662px;
+    --c1-ph-height: 80px;
+
+    /* Маркеры вирусных гепатитов */
+    --c1-markers-left: 36.99px;
+    --c1-markers-top: 1690.5px;
+    --c1-markers-width: 432px;
+    --c1-markers-height: 20px;
+
+    /* Предварительный диагноз */
+    --c1-diagnosis-left: -104.6px;
+    --c1-diagnosis-top: 1761.4px;
+    --c1-diagnosis-width: 687.02px;
+    --c1-diagnosis-height: 33.96px;
+
+    --c1-diagnosis1-left: 124px;
+    --c1-diagnosis1-top: 1836px;
+    --c1-diagnosis2-left: 447px;
+    --c1-diagnosis2-top: 1892px;
+    --c1-diagnosis3-left: 188px;
+    --c1-diagnosis3-top: 1951px;
+
+    /* Вопрос квиза: Rubik Dirt 55px, line-height 80% */
+    --c1-quiz-title-left: 44px;
+    --c1-quiz-title-top: 2139px;
+    --c1-quiz-title-width: 656px;
+    --c1-quiz-title-height: 44px;
+
+    /* Текст вопроса квиза: Old Soviet 14px, line-height 150% */
+    --c1-quiz-question-left: 82px;
+    --c1-quiz-question-top: 2243px;
+    --c1-quiz-question-width: 591px;
+    --c1-quiz-question-height: 126px;
+
+    --c1-quiz-prompt-left: 57px;
+    --c1-quiz-prompt-top: 2416px;
+    --c1-quiz-prompt-width: 591px;
+    --c1-quiz-prompt-height: 27px;
+    --c1-fs-quiz-prompt: 18px;
+
+    /* Варианты ответа: Old Soviet 14px, line-height 130% */
+    --c1-quiz-opt1-left: 105px;
+    --c1-quiz-opt1-top: 2505px;
+    --c1-quiz-opt1-width: 736px;
+    --c1-quiz-opt1-height: 12px;
+    --c1-quiz-opt2-left: 114px;
+    --c1-quiz-opt2-top: 2608px;
+    --c1-quiz-opt2-width: 554px;
+    --c1-quiz-opt2-height: 30px;
+    --c1-quiz-opt3-left: 120px;
+    --c1-quiz-opt3-top: 2733px;
+    --c1-quiz-opt3-width: 736px;
+    --c1-quiz-opt3-height: 12px;
+
+    /* Правильный ответ: Rubik Dirt 55px, line-height 80% */
+    --c1-answer-title-left: 67px;
+    --c1-answer-title-top: 2865.5px;
+    --c1-answer-title-width: 502px;
+    --c1-answer-title-height: 88px;
+
+    /* Строка ответа: Old Soviet 14px, line-height 130%, angle -3.58 deg */
+    --c1-answer-line-left: 319px;
+    --c1-answer-line-top: 2973px;
+    --c1-answer-line-width: 303.74px;
+    --c1-answer-line-height: 48px;
+
+    /* Пояснение (answer-body): Old Soviet 13px, line-height 140%, letter-spacing -0.5px */
+    --c1-answer-body-left: 47px;
+    --c1-answer-body-top: 3136px;
+    --c1-answer-body-width: 705px;
+    --c1-answer-body-height: 528px;
+
+    /* Информация для специалистов здравоохранения: Attentica 4F 100px, line-height 86%, uppercase */
+    --c1-info-title-left: -116px;
+    --c1-info-title-top: 3529px !important;
+    --c1-info-title-width: 1000px;
+    --c1-info-title-height: 172px;
+
+    /* Список литературы: Old Soviet 16px, line-height 150%, text-align center */
+    --c1-ref-heading-left: 139px !important;
+    --c1-ref-heading-top: 3954px !important;
+    --c1-ref-heading-width: 180px;
+    --c1-ref-heading-height: 24px;
+
+    /* Список литературы (текст): Old Soviet 14px, line-height 150%, ссылки — underline */
+    --c1-ref-list-left: 25px;
+    --c1-ref-list-top: 3883px !important;
+    --c1-ref-list-width: 735px;
+    --c1-ref-list-height: 482px;
+
+    --c1-fs-14: 12px !important;
+  }
+
+  /* --- Кнопки квиза (планшет) --- */
+  .c1-quiz-btn {
+    width: 660px !important;
+    left: 53px !important;
+  }
+  .c1-quiz-btn--1 {
+    top: 2464px !important;
+  }
+  .c1-quiz-btn--2 {
+    top: 2577px !important;
+  }
+  .c1-quiz-btn--3 {
+    top: 2693px !important;
+  }
+
+  /* --- Список литературы line-height (планшет) --- */
+  .c1-text--ref-list {
+    line-height: 120% !important;
+  }
+
+  /* --- Окно ответа (планшет) --- */
+  .c1-answer-window {
+    width: 730px !important;
+    left: 20px !important;
+    height: 1021px !important;
+    background-image: url('../img/answer-bg-768.webp') !important;
+  }
+  .c1-answer-window.revealed {
+    top: 2388px !important;
+  }
+
+  /* --- Содержимое окна ответа (планшет) --- */
+  .c1-aw-title {
+    width: 502px !important;
+    height: 104px !important;
+    top: 70px !important;
+    left: 25px !important;
+    font-size: 49px !important;
+  }
+  .c1-aw-line {
+    width: 256.7px !important;
+    height: 46px !important;
+    top: 106px !important;
+    left: 439px !important;
+    font-size: 13px !important;
+  }
+  .c1-aw-body {
+    width: 653px !important;
+    top: 406px !important;
+    left: 56px !important;
+    font-size: 15px !important;
+  }
+  .c1-aw-label {
+    font-size: 25px !important;
+    top: 353px !important;
+  }
+}
+
+/* --- мобильный: viewport ≤760px --- */
+@media (max-width: 760px) {
+  .canvas .c1-text--quiz-title {
+    font-size: 40px;
+    line-height: 80%;
+  }
+  .canvas .c1-text--quiz-question {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .canvas .c1-text--answer-title {
+    font-size: 40px;
+    line-height: 80%;
+  }
+  .canvas .c1-text--answer-line {
+    transform: rotate(2.09deg); /* макет -2.09 → противоположный знак */
+  }
+  .canvas .c1-text--answer-body sup {
+    font-size: 13px;
+    letter-spacing: -0.5px;
+  }
+  .canvas .c1-text--info-title {
+    font-size: 47.81px;
+    line-height: 86%;
+  }
+  .canvas .c1-text--ref-heading {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .canvas .c1-text--ref-list {
+    font-size: 12px;
+    line-height: 150%;
+  }
+  .canvas {
+    width: 375px;
+    height: 5001px;
+    background-image: url('../img/Infographic-375.webp');
+    background-size: 100% auto;
+
+    /* Логотип «Синапс» */
+    --c1-logo-left: 11px;
+    --c1-logo-top: 22px;
+    --c1-logo-width: 165px;
+    --c1-logo-height: 36.07px;
+
+    /* Проект «Желчные люди»: Old Soviet 17.93px, angle 0.57 deg */
+    --c1-hero-left: 133.4px;
+    --c1-hero-top: 85.1px;
+    --c1-hero-width: 232.29px;
+    --c1-hero-height: 54.52px;
+    --c1-fs-hero: 17.93px;
+
+    /* Клинический случай: Rubik Dirt 26px, line-height 120%, angle 1.07 deg */
+    --c1-case-left: 32.5px;
+    --c1-case-top: 174px;
+    --c1-case-width: 325.9px;
+    --c1-case-height: 155px;
+    --c1-fs-case: 26px;
+
+    /* Уважаемый коллега! (intro): Old Soviet 18px, line-height 130% */
+    --c1-intro-left: 18px;
+    --c1-intro-top: 400px;
+    --c1-intro-width: 346px;
+    --c1-intro-height: 184px;
+    --c1-fs-intro: 18px;
+
+    /* На приеме пациент, 45 лет: Old Soviet 13px, angle -6.69 deg */
+    --c1-reception-left: 108px;
+    --c1-reception-top: 762px;
+    --c1-reception-width: 215.11px;
+    --c1-reception-height: 18px;
+
+    /* Клинический кейс: Old Soviet 24px, line-height 40px */
+    --c1-kees-left: 17px;
+    --c1-kees-top: 836px;
+    --c1-kees-width: 343px;
+    --c1-kees-height: 40px;
+    --c1-fs-kees: 24px;
+    --c1-lh-kees: 40px;
+
+    /* Жалобы: Old Soviet 20px */
+    --c1-complaints-left: 20px;
+    --c1-complaints-top: 880px;
+    --c1-complaints-width: 87px;
+    --c1-complaints-height: 30px;
+    --c1-fs-complaints: 20px;
+
+    /* Текст жалоб: Old Soviet 13px */
+    --c1-complaints-body-left: 17px;
+    --c1-complaints-body-top: 938px;
+    --c1-complaints-body-width: 343px;
+    --c1-complaints-body-height: 190px;
+
+    /* Анамнез заболевания: Old Soviet 20px, angle -0.62 deg */
+    --c1-anamnesis-left: 14px;
+    --c1-anamnesis-top: 1180.28px;
+    --c1-anamnesis-width: 257px;
+    --c1-anamnesis-height: 30px;
+    --c1-fs-anamnesis: 20px;
+
+    /* Симптомы стал отмечать... (anamnesis-body): 13px */
+    --c1-anamnesis-body-left: 18px;
+    --c1-anamnesis-body-top: 1232px;
+    --c1-anamnesis-body-width: 338px;
+    --c1-anamnesis-body-height: 80px;
+
+    /* Анамнез жизни: Old Soviet 20px, angle -0.62 deg */
+    --c1-life-left: 14px;
+    --c1-life-top: 1331px;
+    --c1-life-width: 196px;
+    --c1-life-height: 30px;
+    --c1-fs-24: 20px;
+
+    /* Текст анамнеза жизни (life-body): 13px */
+    --c1-life-body-left: 14px;
+    --c1-life-body-top: 1389px;
+    --c1-life-body-width: 343px;
+    --c1-life-body-height: 220px;
+
+    /* Данные обследования: Old Soviet 20px, angle 0.22 deg */
+    --c1-exam-left: 15px;
+    --c1-exam-top: 1730px;
+    --c1-exam-width: 255px;
+    --c1-exam-height: 30px;
+
+    /* УЗИ органов брюшной полости (exam-body): 13px */
+    --c1-exam-body-left: 17px;
+    --c1-exam-body-top: 1773.95px;
+    --c1-exam-body-width: 340px;
+    --c1-exam-body-height: 260px;
+
+    /* ФГДС: 13px */
+    --c1-fgds-left: 14px;
+    --c1-fgds-top: 2058.95px;
+    --c1-fgds-width: 340px;
+    --c1-fgds-height: 80px;
+
+    /* Биохимический анализ крови: 13px */
+    --c1-bio-left: 14px;
+    --c1-bio-top: 2159.95px;
+    --c1-bio-width: 346px;
+    --c1-bio-height: 100px;
+
+    /* Суточная pH-импедансометрия: 13px */
+    --c1-ph-left: 15px;
+    --c1-ph-top: 2281.95px;
+    --c1-ph-width: 346px;
+    --c1-ph-height: 140px;
+
+    /* Маркеры вирусных гепатитов: 13px */
+    --c1-markers-left: 13.99px;
+    --c1-markers-top: 2436.46px;
+    --c1-markers-width: 346px;
+    --c1-markers-height: 20px;
+
+    /* Предварительный диагноз: Old Soviet 20px, angle 3.35 deg */
+    --c1-diagnosis-left: 14px;
+    --c1-diagnosis-top: 2538px;
+    --c1-diagnosis-width: 336px;
+    --c1-diagnosis-height: 30px;
+
+    /* НАЖБП (diagnosis1): Old Soviet 13px, line-height 130%, angle 1.55 deg */
+    --c1-diagnosis1-left: 90px;
+    --c1-diagnosis1-top: 2606px;
+    --c1-diagnosis1-width: 244.87px;
+    --c1-diagnosis1-height: 45px;
+
+    /* Дуоденогастральный рефлюкс (diagnosis2): Old Soviet 13px, angle 5.29 deg */
+    --c1-diagnosis2-left: 103px;
+    --c1-diagnosis2-top: 2814px;
+    --c1-diagnosis2-width: 233px;
+    --c1-diagnosis2-height: 45px;
+
+    /* Билиарный сладж (diagnosis3): Old Soviet 13px, angle 3.35 deg */
+    --c1-diagnosis3-left: 89px;
+    --c1-diagnosis3-top: 2721px;
+    --c1-diagnosis3-width: 185.8px;
+    --c1-diagnosis3-height: 28px;
+
+    /* Вопрос квиза: Rubik Dirt 40px, line-height 80% */
+    --c1-quiz-title-left: 36px;
+    --c1-quiz-title-top: 3005px;
+    --c1-quiz-title-width: 294px;
+    --c1-quiz-title-height: 32px;
+
+    /* Текст вопроса квиза (длинный текст): Old Soviet 14px, line-height 150% */
+    --c1-quiz-question-left: 40px;
+    --c1-quiz-question-top: 3074px;
+    --c1-quiz-question-width: 304px;
+    --c1-quiz-question-height: 231px;
+
+    --c1-quiz-prompt-left: 40px;
+    --c1-quiz-prompt-top: 3334px;
+    --c1-quiz-prompt-width: 304px;
+    --c1-quiz-prompt-height: 36px;
+    --c1-fs-quiz-prompt: 18px;
+
+    /* Варианты ответа: Old Soviet 14px, line-height 130% */
+    --c1-quiz-opt1-left: 88px;
+    --c1-quiz-opt1-top: 3424px;
+    --c1-quiz-opt1-width: 236px;
+    --c1-quiz-opt1-height: 48px;
+    --c1-quiz-opt2-left: 93px;
+    --c1-quiz-opt2-top: 3517px;
+    --c1-quiz-opt2-width: 223px;
+    --c1-quiz-opt2-height: 66px;
+    --c1-quiz-opt3-left: 92px;
+    --c1-quiz-opt3-top: 3639px;
+    --c1-quiz-opt3-width: 185px;
+    --c1-quiz-opt3-height: 30px;
+
+    /* Правильный ответ: Rubik Dirt 40px, line-height 80% */
+    --c1-answer-title-left: 34px;
+    --c1-answer-title-top: 3769px;
+    --c1-answer-title-width: 329px;
+    --c1-answer-title-height: 64px;
+    /* Строка ответа: Old Soviet 14px, angle -2.09 deg */
+    --c1-answer-line-left: 100px;
+    --c1-answer-line-top: 3873px;
+    --c1-answer-line-width: 223px;
+    --c1-answer-line-height: 66px;
+    /* Пояснение (answer-body): Old Soviet 13px, line-height 140%, letter-spacing -0.5px */
+    --c1-answer-body-left: 36px;
+    --c1-answer-body-top: 4029px;
+    --c1-answer-body-width: 318px;
+    --c1-answer-body-height: 938px;
+
+    /* Информация для специалистов здравоохранения: Attentica 4F 47.81px, line-height 86%, uppercase, center */
+    --c1-info-title-left: 11px;
+    --c1-info-title-top: 3969px !important;
+    --c1-info-title-width: 349px;
+    --c1-info-title-height: 82px;
+    /* Список литературы (заголовок): Old Soviet 14px, line-height 150%, center */
+    --c1-ref-heading-left: 37px;
+    --c1-ref-heading-left: 27px !important;
+    --c1-ref-heading-top: 5162px;
+    --c1-ref-heading-width: 158px;
+    --c1-ref-heading-height: 410px;
+    /* Список литературы (текст): Old Soviet 13px, line-height 150% */
+    --c1-ref-list-left: 25px;
+    --c1-ref-list-top: 4203px !important;
+    --c1-ref-list-width: 307px;
+    --c1-ref-list-height: 920px;
+  }
+
+  .c1-footer-bg {
+    width: 382px !important;
+    height: 1186px !important;
+    top: 3877px !important;
+    background-image: url('../img/footer-bg-375.webp') !important;
+  }
+
+  .c1-answer-window {
+    width: 346px !important;
+    top: 3899px !important;
+    height: 623px !important;
+    left: 14px !important;
+    background-image: url('../img/answer-bg-375.webp') !important;
+  }
+  .c1-answer-window.revealed {
+    top: 3330px !important;
+  }
+
+  /* --- Кнопки квиза (мобильный) --- */
+  .c1-quiz-btn {
+    width: 310px !important;
+    left: 33px !important;
+  }
+  .c1-quiz-btn--1 {
+    top: 3401px !important;
+  }
+  .c1-quiz-btn--2 {
+    top: 3505px !important;
+  }
+  .c1-quiz-btn--3 {
+    top: 3610px !important;
+  }
+
+  /* --- Содержимое окна ответа (мобильный) --- */
+  .c1-aw-title {
+    width: 344px !important;
+    height: 76px !important;
+    top: 59px !important;
+    left: 14px !important;
+    font-size: 45px !important;
+  }
+  .c1-aw-line {
+    width: 272.6px !important;
+    font-size: 11px !important;
+    top: 181px !important;
+    left: 75px !important;
+  }
+  .c1-aw-label {
+    top: 351px !important;
+    left: 26px !important;
+  }
+  .c1-aw-body {
+    width: 305px !important;
+    top: 388px !important;
+    left: 26px !important;
+    font-size: 13px !important;
+    max-height: 180px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .c1-aw-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  .c1-aw-body::-webkit-scrollbar-track {
+    background: #EBEBEB;
+    border-radius: 10px;
+  }
+  .c1-aw-body::-webkit-scrollbar-thumb {
+    width: 6px;
+    background: #B7B7B7;
+    border-radius: 10px;
+  }
+  .c1-aw-body p {
+    margin: 0 0 0 0 !important;
+  }
+
+  /* --- Модалка неправильного ответа (мобильный) --- */
+  .c1-wrong-modal {
+    width: 310px !important;
+    height: 191px !important;
+  }
+  .c1-wrong-title {
+    width: 310px !important;
+    left: 0 !important;
+    top: 49px !important;
+    font-size: 33px !important;
+  }
+  .c1-wrong-btn {
+    width: 200px !important;
+    height: 40px !important;
+    top: 115px !important;
+    left: 55px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* --- Текстовые блоки (координаты в переменных .canvas) ---
+   Угол поворота: в CSS всегда ставим знак, противоположный значению из макета. */
+.c1-text {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 10;
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+/* Логотип «Синапс онлайн» */
+.c1-text--logo {
+  left: var(--c1-logo-left);
+  top: var(--c1-logo-top);
+  width: var(--c1-logo-width);
+  height: var(--c1-logo-height);
+  font-family: var(--c1-font-ubuntu);
+  font-weight: var(--c1-fw-700);
+  font-size: var(--c1-fs-42);
+  line-height: 44px;
+  letter-spacing: 0px;
+  display: flex;
+  align-items: center;
+  gap: var(--c1-logo-gap);
+  opacity: 1;
+  color: inherit;
+}
+.c1-text--logo .c1-text__badge {
+  font-family: var(--c1-font-open-sans);
+  font-size: var(--c1-fs-9);
+  font-weight: var(--c1-fw-400);
+  border: 1px solid #252575;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Заголовок проекта «Желчные люди» */
+.c1-text--hero {
+  left: var(--c1-hero-left);
+  top: var(--c1-hero-top);
+  width: var(--c1-hero-width);
+  height: var(--c1-hero-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-hero);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  transform: rotate(0.57deg); /* макет -0.57 → противоположный знак */
+  color: #333333;
+}
+
+/* Клинический случай: заголовок блока */
+.c1-text--case {
+  left: var(--c1-case-left);
+  top: var(--c1-case-top);
+  width: var(--c1-case-width);
+  height: var(--c1-case-height);
+  font-family: var(--c1-font-rubik);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-case);
+  line-height: 120%;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transform: rotate(-1.07deg); /* макет 1.07 → противоположный знак */
+  color: #333333;
+}
+
+/* Вводный текст: Уважаемый коллега! */
+.c1-text--intro {
+  left: var(--c1-intro-left);
+  top: var(--c1-intro-top);
+  width: var(--c1-intro-width);
+  height: var(--c1-intro-height);
+  padding: 0.5em 0;
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-intro);
+  line-height: 130%;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+/* Заголовок «Клинический кейс» */
+.c1-text--kees {
+  left: var(--c1-kees-left);
+  top: var(--c1-kees-top);
+  width: var(--c1-kees-width);
+  height: var(--c1-kees-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-kees);
+  line-height: var(--c1-lh-kees);
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Заголовок «Жалобы» */
+.c1-text--complaints {
+  left: var(--c1-complaints-left);
+  top: var(--c1-complaints-top);
+  width: var(--c1-complaints-width);
+  height: var(--c1-complaints-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-complaints);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Текст жалоб (описание симптомов) */
+.c1-text--complaints-body {
+  left: var(--c1-complaints-body-left);
+  top: var(--c1-complaints-body-top);
+  width: var(--c1-complaints-body-width);
+  height: var(--c1-complaints-body-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-complaints-body);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+.c1-text--complaints-body p {
+  margin: 0 0 0.75em;
+}
+.c1-text--complaints-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* На приеме пациент, 45 лет */
+.c1-text--reception {
+  left: var(--c1-reception-left);
+  top: var(--c1-reception-top);
+  width: var(--c1-reception-width);
+  height: var(--c1-reception-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-reception);
+  line-height: 140%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #5B5B5B;
+  transform: rotate(6.69deg); /* макет -6.69 → противоположный знак */
+}
+
+/* Заголовок «Анамнез заболевания» */
+.c1-text--anamnesis {
+  left: var(--c1-anamnesis-left);
+  top: var(--c1-anamnesis-top);
+  width: var(--c1-anamnesis-width);
+  height: var(--c1-anamnesis-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-anamnesis);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0.62deg); /* макет -0.62 → противоположный знак */
+}
+
+/* Текст анамнеза (один абзац, перенос — <br>) */
+.c1-text--anamnesis-body {
+  left: var(--c1-anamnesis-body-left);
+  top: var(--c1-anamnesis-body-top);
+  width: var(--c1-anamnesis-body-width);
+  height: var(--c1-anamnesis-body-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Заголовок «Анамнез жизни:» */
+.c1-text--life {
+  left: var(--c1-life-left);
+  top: var(--c1-life-top);
+  width: var(--c1-life-width);
+  height: var(--c1-life-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-24);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0.62deg); /* макет -0.62 → противоположный знак */
+}
+
+/* Текст анамнеза жизни (переносы — <br>) */
+.c1-text--life-body {
+  left: var(--c1-life-body-left);
+  top: var(--c1-life-body-top);
+  width: var(--c1-life-body-width);
+  height: var(--c1-life-body-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Заголовок «Данные обследования» */
+.c1-text--exam {
+  left: var(--c1-exam-left);
+  top: var(--c1-exam-top);
+  width: var(--c1-exam-width);
+  height: var(--c1-exam-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-24);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-0.22deg); /* макет 0.22 → противоположный знак */
+}
+
+/* Текст данных обследования (переносы — <br>) */
+.c1-text--exam-body {
+  left: var(--c1-exam-body-left);
+  top: var(--c1-exam-body-top);
+  width: var(--c1-exam-body-width);
+  height: var(--c1-exam-body-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-style: normal;
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* ФГДС (переносы — <br>) */
+.c1-text--fgds {
+  left: var(--c1-fgds-left);
+  top: var(--c1-fgds-top);
+  width: var(--c1-fgds-width);
+  height: var(--c1-fgds-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Биохимический анализ крови (переносы — <br>) */
+.c1-text--bio {
+  left: var(--c1-bio-left);
+  top: var(--c1-bio-top);
+  width: var(--c1-bio-width);
+  height: var(--c1-bio-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Суточная pH-импедансометрия (переносы — <br>) */
+.c1-text--ph {
+  left: var(--c1-ph-left);
+  top: var(--c1-ph-top);
+  width: var(--c1-ph-width);
+  height: var(--c1-ph-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Маркеры вирусных гепатитов */
+.c1-text--markers {
+  left: var(--c1-markers-left);
+  top: var(--c1-markers-top);
+  width: var(--c1-markers-width);
+  height: var(--c1-markers-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Заголовок «Предварительный диагноз» */
+.c1-text--diagnosis {
+  left: var(--c1-diagnosis-left);
+  top: var(--c1-diagnosis-top);
+  width: var(--c1-diagnosis-width);
+  height: var(--c1-diagnosis-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-24);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #00477C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-3.35deg); /* макет 3.35 → противоположный знак */
+}
+
+/* НАЖБП (переносы — <br>) */
+.c1-text--diagnosis1 {
+  left: var(--c1-diagnosis1-left);
+  top: var(--c1-diagnosis1-top);
+  width: var(--c1-diagnosis1-width);
+  height: var(--c1-diagnosis1-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-1.55deg); /* макет 1.55 → противоположный знак */
+}
+
+/* Дуоденогастральный рефлюкс (переносы — <br>) */
+.c1-text--diagnosis2 {
+  left: var(--c1-diagnosis2-left);
+  top: var(--c1-diagnosis2-top);
+  width: var(--c1-diagnosis2-width);
+  height: var(--c1-diagnosis2-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-5.29deg); /* макет 5.29 → противоположный знак */
+}
+
+/* Билиарный сладж (переносы — <br>) */
+.c1-text--diagnosis3 {
+  left: var(--c1-diagnosis3-left);
+  top: var(--c1-diagnosis3-top);
+  width: var(--c1-diagnosis3-width);
+  height: var(--c1-diagnosis3-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-13);
+  line-height: 130%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  transform: rotate(-3.35deg); /* макет 3.35 → противоположный знак */
+}
+
+/* Квиз: заголовок «Вопрос квиза» */
+.c1-text--quiz-title {
+  left: var(--c1-quiz-title-left);
+  top: var(--c1-quiz-title-top);
+  width: var(--c1-quiz-title-width);
+  height: var(--c1-quiz-title-height);
+  font-family: var(--c1-font-rubik);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-65);
+  line-height: 80%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Квиз: текст вопроса (переносы — <br>) */
+.c1-text--quiz-question {
+  left: var(--c1-quiz-question-left);
+  top: var(--c1-quiz-question-top);
+  width: var(--c1-quiz-question-width);
+  height: var(--c1-quiz-question-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-14);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Квиз: «Выберите правильный вариант ответа:» */
+.c1-text--quiz-prompt {
+  left: var(--c1-quiz-prompt-left);
+  top: var(--c1-quiz-prompt-top);
+  width: var(--c1-quiz-prompt-width);
+  height: var(--c1-quiz-prompt-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-quiz-prompt);
+  line-height: 150%;
+  letter-spacing: 0;
+  z-index: 3;
+  opacity: 1;
+  color: #333333;
+}
+
+/* Квиз: варианты ответа */
+.c1-text--quiz-opt1,
+.c1-text--quiz-opt2,
+.c1-text--quiz-opt3 {
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-14);
+  line-height: 130%;
+  letter-spacing: 0;
+  z-index: 3; /* ниже блока ответа */
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+.c1-text--quiz-opt1 {
+  left: var(--c1-quiz-opt1-left);
+  top: var(--c1-quiz-opt1-top);
+  width: var(--c1-quiz-opt1-width);
+  height: var(--c1-quiz-opt1-height);
+}
+.c1-text--quiz-opt2 {
+  left: var(--c1-quiz-opt2-left);
+  top: var(--c1-quiz-opt2-top);
+  width: var(--c1-quiz-opt2-width);
+  height: var(--c1-quiz-opt2-height);
+}
+.c1-text--quiz-opt3 {
+  left: var(--c1-quiz-opt3-left);
+  top: var(--c1-quiz-opt3-top);
+  width: var(--c1-quiz-opt3-width);
+  height: var(--c1-quiz-opt3-height);
+}
+
+/* Правильный ответ: заголовок «Правильный ответ» (переносы — <br>) */
+/* --- КНОПКИ ОТВЕТОВ КВИЗА --- */
+.c1-quiz-btn {
+  position: absolute;
+  width: 922px;
+  height: 95px;
+  left: 92px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3; /* ниже блока ответа (z-index: 4) */
+  border-radius: 0;
+  padding: 0;
+}
+.c1-quiz-btn--1 { top: 2721px; }
+.c1-quiz-btn--2 { top: 2837px; }
+.c1-quiz-btn--3 { top: 2953px; }
+
+/* --- ОКНО ПРАВИЛЬНОГО ОТВЕТА (под footer-bg) --- */
+.c1-answer-window {
+  position: absolute;
+  width: 1000px;
+  height: 738px;
+  top: 3322px;
+  left: 60px;
+  border-radius: 10px;
+  background: url('../img/answer-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+  z-index: 4; /* под footer-bg (z-index: 5) */
+  overflow: hidden;
+  transition: top 0.8s ease, box-shadow 0.8s ease;
+}
+.c1-answer-window.revealed {
+  top: 2687px;
+  box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Зона захвата для перетаскивания (верх окна ответа) — скрыта пока не revealed */
+.c1-aw-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  cursor: grab;
+  z-index: 10;
+  display: none;
+}
+.c1-answer-window.revealed .c1-aw-handle {
+  display: block;
+}
+.c1-aw-handle:active {
+  cursor: grabbing;
+}
+
+/* Убираем transition при перетаскивании */
+.c1-answer-window.dragging {
+  transition: none;
+}
+
+/* --- МОДАЛКА НЕПРАВИЛЬНОГО ОТВЕТА --- */
+.c1-wrong-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.c1-wrong-overlay.active {
+  display: flex;
+}
+
+.c1-wrong-modal {
+  position: relative;
+  width: 526px;
+  min-width: 310px;
+  height: 324px;
+  border-radius: 10px;
+  background: url('../img/incorrect-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+  overflow: visible;
+}
+
+.c1-wrong-title {
+  position: absolute;
+  width: 663px;
+  height: 88px;
+  top: 62px;
+  left: -69px;
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 80%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #333333;
+}
+
+.c1-wrong-btn {
+  position: absolute;
+  width: 284px;
+  height: 52px;
+  top: 206px;
+  left: 121px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 140%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Блокировка скролла при открытой модалке */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+.c1-aw-title {
+  position: absolute;
+  width: 502px;
+  height: 104px;
+  top: 57px;
+  left: 44px;
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 80%;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.c1-aw-line {
+  position: absolute;
+  width: 303.74px;
+  height: 46px;
+  top: 118px;
+  left: 596px;
+  transform: rotate(3.58deg);
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.c1-aw-label {
+  position: absolute;
+  width: 960px;
+  height: 40px;
+  top: 255px;
+  left: 56px;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.c1-aw-body {
+  position: absolute;
+  width: 926px;
+  top: 313px;
+  left: 56px;
+  font-family: "Old Soviet", serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  color: #333333;
+}
+.c1-aw-body p {
+  margin: 0 0 16px;
+}
+.c1-aw-body p:last-child {
+  margin-bottom: 0;
+}
+.c1-aw-body sup {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+/* Фоновый блок футера: над фоном canvas, но под текстом */
+.c1-footer-bg {
+  position: absolute;
+  width: 1374px;
+  height: 1022px;
+  top: 3276px;
+  left: -9px;
+  transform: rotate(0.78deg);
+  opacity: 1;
+  z-index: 5;
+  pointer-events: none;
+  background: url('../img/footer-bg.webp') no-repeat center center;
+  background-size: 100% 100%;
+}
+
+/* «Информация для специалистов здравоохранения» */
+.c1-text--info-title {
+  left: var(--c1-info-title-left);
+  top: var(--c1-info-title-top);
+  width: var(--c1-info-title-width);
+  height: var(--c1-info-title-height);
+  font-family: var(--c1-font-attentica);
+  font-weight: var(--c1-fw-250);
+  font-size: var(--c1-fs-137);
+  line-height: 86%;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+/* «Список литературы» */
+.c1-text--ref-heading {
+  left: var(--c1-ref-heading-left);
+  top: var(--c1-ref-heading-top);
+  width: var(--c1-ref-heading-width);
+  height: var(--c1-ref-heading-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-16);
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 1;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+/* Список литературы: нумерованный список, при переносе строка на уровне текста (висячий отступ) */
+.c1-text--ref-list {
+  left: var(--c1-ref-list-left);
+  top: var(--c1-ref-list-top);
+  width: var(--c1-ref-list-width);
+  height: var(--c1-ref-list-height);
+  font-family: var(--c1-font-old-soviet);
+  font-weight: var(--c1-fw-400);
+  font-size: var(--c1-fs-14);
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 1;
+  color: #333333;
+  z-index: 20;
+}
+.c1-text--ref-list ol {
+  margin: 0;
+  padding-left: 1.8em;
+  list-style-position: outside;
+}
+.c1-text--ref-list li {
+  margin-bottom: 0.75em;
+}
+.c1-text--ref-list .c1-ref-link {
+  font-family: var(--c1-font-old-soviet);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+}
+
+/* Стиль для невидимых кнопок, которые ты наложишь сверху */
+.hotspot {
+    position: absolute;
+    display: block;
+    background: rgba(255, 0, 0, 0);
+    /* Делаем 0.1 если нужно увидеть где кнопка при отладке */
+    cursor: pointer;
+    z-index: 100;
+}
